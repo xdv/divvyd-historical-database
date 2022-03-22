@@ -2,7 +2,7 @@ var Aggregation  = require('../../lib/aggregation/payments');
 var Parser       = require('../../lib/ledgerParser');
 var Hbase        = require('../../lib/hbase');
 var utils        = require('../../lib/utils');
-var Importer     = require('../../lib/ripple-importer');
+var Importer     = require('../../lib/divvy-importer');
 
 var options = {
   "logLevel" : 4,
@@ -11,12 +11,12 @@ var options = {
     "host"   : "54.172.205.78",
     "port"   : 9090
   },
-  "ripple" : {
+  "divvy" : {
     "trace"                 : false,
     "allow_partial_history" : false,
     "servers" : [
-      { "host" : "s-west.ripple.com", "port" : 443, "secure" : true },
-      { "host" : "s-east.ripple.com", "port" : 443, "secure" : true }
+      { "host" : "s-west.xdv.io", "port" : 443, "secure" : true },
+      { "host" : "s-east.xdv.io", "port" : 443, "secure" : true }
     ]
   }
 };
@@ -55,7 +55,7 @@ function processLedger (ledger) {
   parsed.payments.forEach(function(p) {
     var key;
 
-    if (p.currency === 'XRP') {
+    if (p.currency === 'XDV') {
       key = p.currency;
 
     } else if (p.issuer) {

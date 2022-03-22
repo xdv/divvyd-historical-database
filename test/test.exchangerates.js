@@ -8,7 +8,7 @@ var port = config.get('port') || 7111;
 describe('exchanges rates API endpoint', function() {
   it('should get exchange rate', function(done) {
     var url = 'http://localhost:' + port + '/v2/exchange_rates/' +
-      'XRP/USD+rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B';
+      'XDV/USD+rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B';
 
     request({
       url: url,
@@ -29,7 +29,7 @@ describe('exchanges rates API endpoint', function() {
 
   it('err on invalid period', function(done) {
     var url = 'http://localhost:' + port + '/v2/exchange_rates/' +
-      'XRP/USD+rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B';
+      'XDV/USD+rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B';
 
     request({
       url: url,
@@ -51,7 +51,7 @@ describe('exchanges rates API endpoint', function() {
 
   it('err on missing base issuer', function(done) {
     var url = 'http://localhost:' + port + '/v2/exchange_rates/' +
-      'USD/XRP';
+      'USD/XDV';
 
     request({
       url: url,
@@ -72,7 +72,7 @@ describe('exchanges rates API endpoint', function() {
 
   it('err on missing counter issuer', function(done) {
     var url = 'http://localhost:' + port + '/v2/exchange_rates/' +
-      'XRP/USD';
+      'XDV/USD';
 
     request({
       url: url,
@@ -92,9 +92,9 @@ describe('exchanges rates API endpoint', function() {
   });
 
 
-  it('err on XRP with base issuer', function(done) {
+  it('err on XDV with base issuer', function(done) {
     var url = 'http://localhost:' + port + '/v2/exchange_rates/' +
-      'XRP+zzz/USD+zzz';
+      'XDV+zzz/USD+zzz';
 
     request({
       url: url,
@@ -108,14 +108,14 @@ describe('exchanges rates API endpoint', function() {
       assert.strictEqual(res.statusCode, 400);
       assert.strictEqual(typeof body, 'object');
       assert.strictEqual(body.result, 'error');
-      assert.strictEqual(body.message, 'XRP cannot have an issuer');
+      assert.strictEqual(body.message, 'XDV cannot have an issuer');
       done();
     });
   });
 
-  it('err on XRP with counter issuer', function(done) {
+  it('err on XDV with counter issuer', function(done) {
     var url = 'http://localhost:' + port + '/v2/exchange_rates/' +
-      'USD+zzz/XRP+zzz';
+      'USD+zzz/XDV+zzz';
 
     request({
       url: url,
@@ -129,7 +129,7 @@ describe('exchanges rates API endpoint', function() {
       assert.strictEqual(res.statusCode, 400);
       assert.strictEqual(typeof body, 'object');
       assert.strictEqual(body.result, 'error');
-      assert.strictEqual(body.message, 'XRP cannot have an issuer');
+      assert.strictEqual(body.message, 'XDV cannot have an issuer');
       done();
     });
   });
@@ -137,7 +137,7 @@ describe('exchanges rates API endpoint', function() {
 
   it('err on future date', function(done) {
     var url = 'http://localhost:' + port + '/v2/exchange_rates/' +
-      'XRP/USD+rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B';
+      'XDV/USD+rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B';
 
     request({
       url: url,
@@ -158,7 +158,7 @@ describe('exchanges rates API endpoint', function() {
 });
 
 describe('normalization API endpoint', function() {
-  it('normalize to XRP', function(done) {
+  it('normalize to XDV', function(done) {
     var url = 'http://localhost:' + port + '/v2/normalize';
 
     request({
@@ -250,7 +250,7 @@ describe('normalization API endpoint', function() {
     });
   });
 
-  it('error on XRP + issuer', function(done) {
+  it('error on XDV + issuer', function(done) {
     var url = 'http://localhost:' + port + '/v2/normalize';
 
     request({
@@ -259,7 +259,7 @@ describe('normalization API endpoint', function() {
       qs: {
         amount: '10',
         date: '2015-01-14',
-        currency: 'XRP',
+        currency: 'XDV',
         issuer: 'ZZZ'
       }
     },
@@ -268,7 +268,7 @@ describe('normalization API endpoint', function() {
       assert.strictEqual(res.statusCode, 400);
       assert.strictEqual(typeof body, 'object');
       assert.strictEqual(body.result, 'error');
-      assert.strictEqual(body.message, 'XRP cannot have an issuer');
+      assert.strictEqual(body.message, 'XDV cannot have an issuer');
       done();
     });
   });
@@ -295,7 +295,7 @@ describe('normalization API endpoint', function() {
     });
   });
 
-  it('error on XRP + exchange issuer', function(done) {
+  it('error on XDV + exchange issuer', function(done) {
     var url = 'http://localhost:' + port + '/v2/normalize';
 
     request({
@@ -304,7 +304,7 @@ describe('normalization API endpoint', function() {
       qs: {
         amount: '10',
         date: '2015-01-14',
-        exchange_currency: 'XRP',
+        exchange_currency: 'XDV',
         exchange_issuer: 'ZZZ'
       }
     },
@@ -313,7 +313,7 @@ describe('normalization API endpoint', function() {
       assert.strictEqual(res.statusCode, 400);
       assert.strictEqual(typeof body, 'object');
       assert.strictEqual(body.result, 'error');
-      assert.strictEqual(body.message, 'XRP cannot have an issuer');
+      assert.strictEqual(body.message, 'XDV cannot have an issuer');
       done();
     });
   });

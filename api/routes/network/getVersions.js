@@ -6,7 +6,7 @@ var smoment = require('../../../lib/smoment');
 var utils = require('../../../lib/utils');
 var hbase = require('../../../lib/hbase')
 
-function getRippledVersions(req, res) {
+function getDivvydVersions(req, res) {
 
   var options = {
     format: (req.query.format || 'json').toLowerCase()
@@ -15,7 +15,7 @@ function getRippledVersions(req, res) {
 
 
   hbase.getScan({
-    table: 'rippled_versions',
+    table: 'divvyd_versions',
     startRow: ' ',
     stopRow: '~',
     limit: 1,
@@ -31,7 +31,7 @@ function getRippledVersions(req, res) {
    } else {
      var date = smoment(resp[0].date);
     hbase.getScan({
-      table: 'rippled_versions',
+      table: 'divvyd_versions',
       startRow: date.hbaseFormatStartRow(),
       stopRow: date.hbaseFormatStopRow(),
     }, function(err, resp) {
@@ -80,7 +80,7 @@ function getRippledVersions(req, res) {
 
     // csv
     if (options.format === 'csv') {
-      res.csv(resp, 'rippled-versions.csv');
+      res.csv(resp, 'divvyd-versions.csv');
 
     // json
     } else {
@@ -93,4 +93,4 @@ function getRippledVersions(req, res) {
   }
 }
 
-module.exports = getRippledVersions
+module.exports = getDivvydVersions

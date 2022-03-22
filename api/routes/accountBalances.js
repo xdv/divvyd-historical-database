@@ -4,8 +4,8 @@ var Logger = require('../../lib/logger');
 var log = new Logger({scope : 'account balances'});
 var request = require('request');
 var smoment = require('../../lib/smoment');
-var rippleAddress = require('ripple-address-codec');
-var rippled = require('../../lib/rippled')
+var divvyAddress = require('ripple-address-codec');
+var divvyd = require('../../lib/divvyd')
 var hbase = require('../../lib/hbase')
 
 var accountBalances = function (req, res, next) {
@@ -26,9 +26,9 @@ var accountBalances = function (req, res, next) {
     });
     return;
 
-  } else if (!rippleAddress.isValidAddress(options.account)) {
+  } else if (!divvyAddress.isValidAddress(options.account)) {
     errorResponse({
-      error: 'invalid ripple address',
+      error: 'invalid divvy address',
       code: 400
     });
     return;
@@ -68,7 +68,7 @@ var accountBalances = function (req, res, next) {
   }
 
   // if requesting latest ledger,
-  // add leeway to rippled request
+  // add leeway to divvyd request
   // since it may not be perfectly
   // in sync
   if (!options.ledger_index &&
@@ -108,11 +108,11 @@ var accountBalances = function (req, res, next) {
   /**
   * getBalances
   * use ledger_index from getLedger api call
-  * to get balances using rippleAPI
+  * to get balances using divvyAPI
   */
 
   function getBalances(opts) {
-    rippled.getBalances({
+    divvyd.getBalances({
       account: opts.account,
       ledger: opts.ledger_index,
       limit: opts.limit,

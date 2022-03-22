@@ -3,17 +3,17 @@ set -e
 
 if hash rpm 2>/dev/null;
 then
-  sudo rpm -Uvh --force https://mirrors.ripple.com/ripple-repo-el7.rpm >/dev/null
+  sudo rpm -Uvh --force https://mirrors.xdv.io/divvy-repo-el7.rpm >/dev/null
 
   RIPPLE_REPO="nightly"
-  yum --disablerepo=* --enablerepo=ripple-$RIPPLE_REPO clean expire-cache >/dev/null
-  NIGHTLY="$(repoquery --enablerepo=ripple-$RIPPLE_REPO --releasever=el7 --qf="%{version}" rippled | tr _ -)"
+  yum --disablerepo=* --enablerepo=divvy-$RIPPLE_REPO clean expire-cache >/dev/null
+  NIGHTLY="$(repoquery --enablerepo=divvy-$RIPPLE_REPO --releasever=el7 --qf="%{version}" divvyd | tr _ -)"
   RIPPLE_REPO="stable"
-  yum --disablerepo=* --enablerepo=ripple-$RIPPLE_REPO clean expire-cache >/dev/null
-  STABLE="$(repoquery --enablerepo=ripple-$RIPPLE_REPO --releasever=el7 --qf="%{version}" rippled | tr _ -)"
+  yum --disablerepo=* --enablerepo=divvy-$RIPPLE_REPO clean expire-cache >/dev/null
+  STABLE="$(repoquery --enablerepo=divvy-$RIPPLE_REPO --releasever=el7 --qf="%{version}" divvyd | tr _ -)"
   RIPPLE_REPO="unstable"
-  yum --disablerepo=* --enablerepo=ripple-$RIPPLE_REPO clean expire-cache >/dev/null
-  UNSTABLE="$(repoquery --enablerepo=ripple-$RIPPLE_REPO --releasever=el7 --qf="%{version}" rippled | tr _ -)"
+  yum --disablerepo=* --enablerepo=divvy-$RIPPLE_REPO clean expire-cache >/dev/null
+  UNSTABLE="$(repoquery --enablerepo=divvy-$RIPPLE_REPO --releasever=el7 --qf="%{version}" divvyd | tr _ -)"
 
   echo "{\"stable\":\"$STABLE\",\"unstable\":\"$UNSTABLE\",\"nightly\":\"$NIGHTLY\"}"
   exit 0

@@ -102,7 +102,7 @@ function handleAggregation(params, done) {
       async.map(data, function(d, asyncCallbackPair) {
         hbase.getExchangeRate({
           base: {
-            currency: 'XRP'
+            currency: 'XDV'
           },
           counter: {
             currency: d.currency,
@@ -139,7 +139,7 @@ function handleAggregation(params, done) {
     return {
       time: smoment(params.time).format(),
       total: total,
-      exchange: {currency: 'XRP'},
+      exchange: {currency: 'XDV'},
       exchangeRate: 1,
       components: data
     }

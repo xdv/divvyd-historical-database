@@ -1092,7 +1092,7 @@
                 },
                 "LowNode": "000000000000004A"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "8357A84A7DCD350EA8FEBAD396FF2B0CC062749A665855C6EB8354120E72ECBB",
               "PreviousFields": {
                 "Balance": {
@@ -1145,7 +1145,7 @@
                 },
                 "LowNode": "00000000000003E0"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "EE193C11087B77C415CD91875299A2603EFF1BC2E38390E08DFACF53F3D62576",
               "PreviousFields": {
                 "Balance": {
@@ -2903,7 +2903,7 @@
                 },
                 "LowNode": "0000000000000000"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "8C36E1B4EC07408C2492DFFD0E4058294CB9E14E82066E65C5654AB2B485AA96",
               "PreviousFields": {
                 "Balance": {
@@ -2968,7 +2968,7 @@
                 },
                 "LowNode": "00000000000000F4"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "A71A21918CBE599DD96C9511BF54BE11AAB24371E402B2DCF89A1CD8B9895867",
               "PreviousFields": {
                 "Balance": {
@@ -3003,7 +3003,7 @@
                 },
                 "LowNode": "00000000000000ED"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "B2733B5419894925A125025742B9D454CF921AF77F4D71EAF7221473001E4695",
               "PreviousFields": {
                 "Balance": {
@@ -3105,7 +3105,7 @@
                 },
                 "LowNode": "0000000000000047"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "E70DCDFAFFE25D6B3227705E0269FBB85CDE5EBF9667499C69E5E534AB51BFD2",
               "PreviousFields": {
                 "Balance": {

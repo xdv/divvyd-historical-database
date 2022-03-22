@@ -6,7 +6,7 @@ module.exports = {
   exchangeVolume: getMetric.bind(undefined, 'trade_volume'),
   paymentVolume: getMetric.bind(undefined, 'payment_volume'),
   issuedValue: getMetric.bind(undefined, 'issued_value'),
-  xrpDistribution: require('./xrpDistribution'),
+  xdvDistribution: require('./xdvDistribution'),
   topMarkets: require('./topMarkets'),
   topCurrencies: require('./topCurrencies'),
   getFees: require('./getFees'),

@@ -1,7 +1,7 @@
 var request = require('request');
 
-var API = 'https://data.ripple.com/v2/ledgers';
-var RPC = 'https://s2.ripple.com:51234';
+var API = 'https://data.xdv.io/v2/ledgers';
+var RPC = 'https://s2.xdv.io:51234';
 var account;
 var hotwallets;
 var date = '';
@@ -75,7 +75,7 @@ function getBalances() {
     }
   }, function (err, resp, body) {
     if (err) {
-      console.log('rippled error:')
+      console.log('divvyd error:')
       console.log(err);
       return;
     }

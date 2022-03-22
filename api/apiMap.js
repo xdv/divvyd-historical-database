@@ -2,7 +2,7 @@
 
 var packageJSON = require('../package.json')
 function generateMap(url) {
-  var repo = 'https://github.com/ripple/rippled-historical-database'
+  var repo = 'https://github.com/xdv/divvyd-historical-database'
   return {
     'name': packageJSON.name,
     'version': packageJSON.version,
@@ -87,11 +87,11 @@ function generateMap(url) {
       }, {
         action: 'Get Exchanges',
         route: '/v2/exchanges/{:base}/{:counter}',
-        example: url + '/exchanges/XRP/USD+rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B'
+        example: url + '/exchanges/XDV/USD+rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B'
       }, {
         action: 'Get Active Accounts',
         route: '/v2/active_accounts/{:base}/{:counter}',
-        example: url + '/active_accounts/XRP/' +
+        example: url + '/active_accounts/XDV/' +
           'USD+rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B'
       }, {
         action: 'Get Exchange Volume',
@@ -106,9 +106,9 @@ function generateMap(url) {
         route: '/v2/network/external_markets',
         example: url + '/network/external_markets?period=3day'
       }, {
-        action: 'Get XRP Distribution',
-        route: '/v2/network/xrp_distribution',
-        example: url + '/network/xrp_distribution'
+        action: 'Get XDV Distribution',
+        route: '/v2/network/xdv_distribution',
+        example: url + '/network/xdv_distribution'
       }, {
         action: 'Get Top Currencies',
         route: '/v2/network/top_currencies/{:date}',
@@ -158,18 +158,18 @@ function generateMap(url) {
         route: '/v2/network/validator_reports',
         example: url + '/network/validator_reports'
       }, {
-        action: 'Get Rippled Versions',
-        route: '/v2/network/rippled_versions',
-        example: url + '/network/rippled_versions'
+        action: 'Get Divvyd Versions',
+        route: '/v2/network/divvyd_versions',
+        example: url + '/network/divvyd_versions'
       }, {
         action: 'Get Exchange Rate',
         route: '/v2/exchange_rates/{:base}/{:counter}',
-        example: url + '/exchange_rates/XRP/' +
+        example: url + '/exchange_rates/XDV/' +
           'USD+rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B'
       }, {
         action: 'Normalize Amount',
         route: '/v2/normalize',
-        example: url + '/normalize?amount=2000&currency=XRP' +
+        example: url + '/normalize?amount=2000&currency=XDV' +
           '&exchange_currency=USD' +
           '&exchange_issuer=rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B'
       }, {

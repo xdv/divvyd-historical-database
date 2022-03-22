@@ -6,28 +6,28 @@ var tf = 'YYYY-MM-DDTHH:mm:ss';
 
 http.globalAgent.maxSockets = https.globalAgent.maxSockets = 2000;
 
-var base = 'http://data-staging.ripple.com.global.prod.fastly.net/v2';
-base = 'https://data-staging.ripple.com/v2';
-//base = 'https://data.ripple.com/v2';
+var base = 'http://data-staging.xdv.io.global.prod.fastly.net/v2';
+base = 'https://data-staging.xdv.io/v2';
+//base = 'https://data.xdv.io/v2';
 var pairs = [
   {
     base: 'USD+rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B',
-    counter: 'XRP'
+    counter: 'XDV'
   }, {
     base: 'BTC+rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B',
-    counter: 'XRP'
+    counter: 'XDV'
   }, {
     base: 'CNY+rKiCet8SdvWxPXnAgYarFUXMh1zCPz432Y',
-    counter: 'XRP'
+    counter: 'XDV'
   }, {
     base: 'BTC+rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q',
-    counter: 'XRP'
+    counter: 'XDV'
   }, {
     base: 'JPY+r94s8px6kSw1uZ1MV98dhSRTvc6VMPoPcN',
-    counter: 'XRP'
+    counter: 'XDV'
   }, {
     base: 'USD+rhub8VRN55s94qWKDv6jmDy1pUykJzF3wq',
-    counter: 'XRP'
+    counter: 'XDV'
   }
 ];
 
@@ -42,13 +42,13 @@ function landingPage() {
     '/maintenance/ripplecharts',
     '/health/importer?verbose=true',
     '/accounts?reduce=true&start=2013-01-01',
-    '/exchanges/XRP/USD+rhub8VRN55s94qWKDv6jmDy1pUykJzF3wq?limit=1000&interval=15minute&start=' + start.format(tf) + '&end=' + end.format(tf),
-    '/exchanges/XRP/JPY+r94s8px6kSw1uZ1MV98dhSRTvc6VMPoPcN?limit=1000&interval=15minute&start=' + start.format(tf) + '&end=' + end.format(tf),
-    '/exchanges/BTC+rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q/XRP?limit=1000&interval=15minute&start=' + start.format(tf) + '&end=' + end.format(tf),
-    '/exchanges/XRP/CNY+rKiCet8SdvWxPXnAgYarFUXMh1zCPz432Y?limit=1000&interval=15minute&start=' + start.format(tf) + '&end=' + end.format(tf),
-    '/exchanges/XRP/USD+rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B?limit=1000&interval=15minute&start=' + start.format(tf) + '&end=' + end.format(tf),
-    '/exchanges/BTC+rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B/XRP?limit=1000&interval=15minute&start=' + start.format(tf) + '&end=' + end.format(tf),
-    '/exchange_rates/USD+rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B/XRP',
+    '/exchanges/XDV/USD+rhub8VRN55s94qWKDv6jmDy1pUykJzF3wq?limit=1000&interval=15minute&start=' + start.format(tf) + '&end=' + end.format(tf),
+    '/exchanges/XDV/JPY+r94s8px6kSw1uZ1MV98dhSRTvc6VMPoPcN?limit=1000&interval=15minute&start=' + start.format(tf) + '&end=' + end.format(tf),
+    '/exchanges/BTC+rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q/XDV?limit=1000&interval=15minute&start=' + start.format(tf) + '&end=' + end.format(tf),
+    '/exchanges/XDV/CNY+rKiCet8SdvWxPXnAgYarFUXMh1zCPz432Y?limit=1000&interval=15minute&start=' + start.format(tf) + '&end=' + end.format(tf),
+    '/exchanges/XDV/USD+rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B?limit=1000&interval=15minute&start=' + start.format(tf) + '&end=' + end.format(tf),
+    '/exchanges/BTC+rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B/XDV?limit=1000&interval=15minute&start=' + start.format(tf) + '&end=' + end.format(tf),
+    '/exchange_rates/USD+rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B/XDV',
     '/network/issued_value?&limit=1000',
     '/network/payment_volume?&limit=1000',
     '/network/exchange_volume?&limit=1000'
@@ -71,7 +71,7 @@ function marketsPage(base, counter) {
   var markets = [
     '/maintenance/ripplecharts',
     '/health/importer?verbose=true',
-    '/currencies/xrp.svg',
+    '/currencies/xdv.svg',
     '/currencies/USD.svg',
     '/currencies/BTC.svg',
     '/currencies/CNY.svg',

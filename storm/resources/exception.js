@@ -12,7 +12,7 @@ var log;
 
 function notify(message, callback) {
   var params = {
-    from: 'Storm Import<storm-import@ripple.com>',
+    from: 'Storm Import<storm-import@xdv.io>',
     to: to,
     subject: name + ' - uncaughtException',
     html: 'The import topology received ' +
@@ -28,7 +28,7 @@ function notify(message, callback) {
  */
 
 function killTopology() {
-  exec('storm kill "ripple-ledger-importer"',
+  exec('storm kill "divvy-ledger-importer"',
        function callback(e, stdout, stderr) {
     if (e) {
       log.error(e);

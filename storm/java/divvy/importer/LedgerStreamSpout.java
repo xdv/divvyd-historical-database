@@ -1,4 +1,4 @@
-package ripple.importer;
+package divvy.importer;
 
 import backtype.storm.Config;
 import backtype.storm.spout.ShellSpout;

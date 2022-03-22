@@ -96,7 +96,7 @@ function getPayments(req, res) {
     return
 
   } else if (options.currency &&
-             options.currency !== 'XRP' &&
+             options.currency !== 'XDV' &&
             !options.issuer) {
     errorResponse({error: 'issuer is required', code: 400})
     return

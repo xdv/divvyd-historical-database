@@ -20,7 +20,7 @@ var getTopologyStatus = function() {
   .then(function(resp) {
     var topology;
     resp.topologies.every(function(t) {
-      if (t.name === 'ripple-ledger-importer') {
+      if (t.name === 'divvy-ledger-importer') {
         topology = t;
         return false;
       }
@@ -103,7 +103,7 @@ function notify(data) {
   }
 
   var params = {
-    from: 'Storm Import<storm-import@ripple.com>',
+    from: 'Storm Import<storm-import@xdv.io>',
     to: to,
     subject: 'restarting topology',
     html: 'The import topology is being restarted: <br /><br />\n' +

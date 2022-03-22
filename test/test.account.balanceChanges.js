@@ -53,7 +53,7 @@ describe('account balance changes API endpoint', function() {
   it('should handle currency correctly', function(done) {
     var url = 'http://localhost:' + port +
       '/v2/accounts/rpjZUBy92h6worVCYERZcVCzgzgmHb17Dx' +
-      '/balance_changes?currency=xrp'
+      '/balance_changes?currency=xdv'
 
     request({
       url: url,
@@ -64,7 +64,7 @@ describe('account balance changes API endpoint', function() {
       assert.strictEqual(res.statusCode, 200)
       assert.notStrictEqual(body.balance_changes.length, 0)
       body.balance_changes.forEach(function(bch) {
-        assert.strictEqual(bch.currency, 'XRP')
+        assert.strictEqual(bch.currency, 'XDV')
       })
       done()
     })
@@ -106,7 +106,7 @@ describe('account balance changes API endpoint', function() {
       assert.strictEqual(res.statusCode, 200)
       assert.notStrictEqual(body.balance_changes.length, 0)
       body.balance_changes.forEach(function(bch) {
-        assert.strictEqual(bch.currency, 'XRP')
+        assert.strictEqual(bch.currency, 'XDV')
         assert.strictEqual(bch.change_type, 'transaction_cost')
       })
       done()

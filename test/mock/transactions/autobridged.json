@@ -56,7 +56,7 @@
       },
       {
         "ModifiedNode": {
-          "LedgerEntryType": "RippleState",
+          "LedgerEntryType": "DivvyState",
           "PreviousTxnLgrSeq": 13261021,
           "PreviousTxnID": "EEA1CD622E3EB466AD3A08BEE0E972BC0BF2D67E82E2E6E71187C17F6B2E382F",
           "LedgerIndex": "3BC2F689022D8BF8C3E0AE5D092E4BFDF72BB7B2BDEA675E6CFCCD383433BBD4",
@@ -91,7 +91,7 @@
       },
       {
         "ModifiedNode": {
-          "LedgerEntryType": "RippleState",
+          "LedgerEntryType": "DivvyState",
           "PreviousTxnLgrSeq": 13261021,
           "PreviousTxnID": "EEA1CD622E3EB466AD3A08BEE0E972BC0BF2D67E82E2E6E71187C17F6B2E382F",
           "LedgerIndex": "A0E00E662B749B78D24C50BFA8E12059AA4E59EF60B5FD66B28F1D59A4A9C56B",
@@ -144,7 +144,7 @@
       },
       {
         "ModifiedNode": {
-          "LedgerEntryType": "RippleState",
+          "LedgerEntryType": "DivvyState",
           "PreviousTxnLgrSeq": 13260972,
           "PreviousTxnID": "AA37EBA90A5335C27ACB75DC500F9E543CEA60F8B800BD0BE1F33CA1DD5D81F8",
           "LedgerIndex": "B8F5454859CBB578A8E3C7BF06277AE565BEC61F41722233B01952DD2FAE0025",
@@ -198,7 +198,7 @@
       },
       {
         "ModifiedNode": {
-          "LedgerEntryType": "RippleState",
+          "LedgerEntryType": "DivvyState",
           "PreviousTxnLgrSeq": 13260972,
           "PreviousTxnID": "AA37EBA90A5335C27ACB75DC500F9E543CEA60F8B800BD0BE1F33CA1DD5D81F8",
           "LedgerIndex": "D4A56D560A458469D7DF176BFB4F6832241C6F364E6660112987602ACECC7243",

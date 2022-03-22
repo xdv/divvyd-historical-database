@@ -2940,7 +2940,7 @@
           },
           {
             "CreatedNode": {
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "A349BADB9BFE9646598B3D27236D768A28C9386F45CB91CCEEA8282D83EBB152",
               "NewFields": {
                 "Balance": {
@@ -3054,7 +3054,7 @@
                 },
                 "LowNode": "0000000000000000"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "CA265747F0827DFBA133DEE01EF87DCA03B9D1B2D4AD3C3FDDBFA2BD7BB8435D",
               "PreviousFields": {
                 "Balance": {

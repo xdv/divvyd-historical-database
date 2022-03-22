@@ -50,7 +50,7 @@ function saveVersions(data) {
 
   for (var key in data) {
     rows.push(hbase.putRow({
-      table: 'rippled_versions',
+      table: 'divvyd_versions',
       rowkey: date.hbaseFormatStartRow() + '|' + key,
       columns: {
         date: date.format(),

@@ -33,14 +33,14 @@ describe('Gateways and Currencies APIs', function() {
 
   it('should get a specific gateway by name', function(done) {
     request({
-      url: baseURL + 'gateways/BTC 2 Ripple',
+      url: baseURL + 'gateways/BTC 2 Divvy',
       json: true,
     },
       function (err, res, body) {
         assert.ifError(err);
         assert.strictEqual(res.statusCode, 200);
         assert.strictEqual(typeof body, 'object');
-        assert.strictEqual(body.name, 'BTC 2 Ripple');
+        assert.strictEqual(body.name, 'BTC 2 Divvy');
         done();
     });
   });

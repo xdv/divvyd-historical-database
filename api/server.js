@@ -71,7 +71,7 @@ function Server(options) {
   app.get('/v2/network/exchange_volume', routes.network.exchangeVolume)
   app.get('/v2/network/payment_volume', routes.network.paymentVolume)
   app.get('/v2/network/external_markets', routes.network.externalMarkets)
-  app.get('/v2/network/xrp_distribution', routes.network.xrpDistribution)
+  app.get('/v2/network/xdv_distribution', routes.network.xdvDistribution)
   app.get('/v2/network/top_markets/:date?', routes.network.topMarkets)
   app.get('/v2/network/top_currencies/:date?', routes.network.topCurrencies)
   app.get('/v2/network/fees', routes.network.getFees)
@@ -87,7 +87,7 @@ function Server(options) {
   app.get('/v2/network/validators/:pubkey/reports',
           routes.network.getValidatorReports)
   app.get('/v2/network/validator_reports', routes.network.getValidatorReports)
-  app.get('/v2/network/rippled_versions', routes.network.getVersions)
+  app.get('/v2/network/divvyd_versions', routes.network.getVersions)
   app.get('/v2/last_validated', routes.getLastValidated)
   app.get('/v2/transactions/', routes.getTransactions)
   app.get('/v2/transactions/:tx_hash', routes.getTransactions)
@@ -124,8 +124,8 @@ function Server(options) {
   app.get('/v2/stats/:family/:metric', routes.stats)
   app.get('/v2/maintenance/:domain', routes.maintenance)
   app.get('/v2/estimate', routes.estimate)
-  //app.get('/v2/xrp_index', routes.xrpIndex)
-  //app.get('/v2/xrp_index/ticker', routes.xrpIndexTicker)
+  //app.get('/v2/xdv_index', routes.xdvIndex)
+  //app.get('/v2/xdv_index/ticker', routes.xdvIndexTicker)
 
   // index page
   app.get('/', map.generate)
@@ -138,7 +138,7 @@ function Server(options) {
 
   // start the server
   server = app.listen(options.port)
-  console.log('Ripple Data API running on port: ' + options.port)
+  console.log('Divvy Data API running on port: ' + options.port)
 
   // log error
   server.on('error', function(err) {

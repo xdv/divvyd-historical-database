@@ -185,7 +185,7 @@
             "type_hex": "0000000000000001"
           },
           {
-            "currency": "XRP",
+            "currency": "XDV",
             "type": 16,
             "type_hex": "0000000000000010"
           },
@@ -236,7 +236,7 @@
                 },
                 "LowNode": "0000000000000000"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "039033A4A111848A8BB174120FA0E01E2C26459A8B020CF1668CFC3E781B777F",
               "PreviousFields": {
                 "Balance": {
@@ -271,7 +271,7 @@
                 },
                 "LowNode": "0000000000000000"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "37829ADFD55652BE80A7A81EB7E73FB078EB0E7FD34AB0EB613BA1282C695972",
               "PreviousFields": {
                 "Balance": {
@@ -325,7 +325,7 @@
                 },
                 "LowNode": "0000000000000000"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "571A7D65C0CF76CCC576F4619DE456CF494D88C347A8E68581CF3E5318B7C0FF",
               "PreviousFields": {
                 "Balance": {
@@ -398,7 +398,7 @@
                 },
                 "LowNode": "0000000000000000"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "ACF531BEFE4450127434E1578A29EE3001E11A4D5D33FB2CB237C795FEB5754E",
               "PreviousFields": {
                 "Balance": {
@@ -474,7 +474,7 @@
                 },
                 "LowNode": "0000000000000000"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "42628E04DF5AA5FD71A5DC6A72263C4C10FEE240116FFD097BD1E860A624C860",
               "PreviousFields": {
                 "Balance": {
@@ -509,7 +509,7 @@
                 },
                 "LowNode": "0000000000000032"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "77A5EE25A7C28C8B877966EE76672D573A613EFC542A37757C0B5186B16DE0EC",
               "PreviousFields": {
                 "Balance": {
@@ -1055,7 +1055,7 @@
                 },
                 "LowNode": "0000000000000032"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "77A5EE25A7C28C8B877966EE76672D573A613EFC542A37757C0B5186B16DE0EC",
               "PreviousFields": {
                 "Balance": {
@@ -1108,7 +1108,7 @@
                 },
                 "LowNode": "0000000000000032"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "7FD935B808EC2BFC3A2AFC53A0777DA827C147EDF660FDDB62104F338BC03C16",
               "PreviousFields": {
                 "Balance": {
@@ -1158,7 +1158,7 @@
                 },
                 "LowNode": "0000000000000000"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "BD7468679341085EA8E5A8F0CABAEB4CA46A168F447CB5B8BF36A78A33419AE8",
               "PreviousFields": {
                 "Balance": {
@@ -1212,7 +1212,7 @@
                 },
                 "LowNode": "00000000000000EE"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "DA170CFD8626ADE66B9EF9F902B09688DDF4A9CE6B6DB3119DC029D6841BD973",
               "PreviousFields": {
                 "Balance": {
@@ -2316,7 +2316,7 @@
                 },
                 "LowNode": "0000000000000032"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "7FD935B808EC2BFC3A2AFC53A0777DA827C147EDF660FDDB62104F338BC03C16",
               "PreviousFields": {
                 "Balance": {
@@ -2381,7 +2381,7 @@
                 },
                 "LowNode": "00000000000000E5"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "B14637B5740BD748A07D0049022B697E3E8ACB1CA62BC643F433684EFEA5D39C",
               "PreviousFields": {
                 "Balance": {
@@ -2540,7 +2540,7 @@
             "type_hex": "0000000000000001"
           },
           {
-            "currency": "XRP",
+            "currency": "XDV",
             "type": 16,
             "type_hex": "0000000000000010"
           },
@@ -2591,7 +2591,7 @@
                 },
                 "LowNode": "0000000000000000"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "039033A4A111848A8BB174120FA0E01E2C26459A8B020CF1668CFC3E781B777F",
               "PreviousFields": {
                 "Balance": {
@@ -2659,7 +2659,7 @@
                 },
                 "LowNode": "0000000000000000"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "37829ADFD55652BE80A7A81EB7E73FB078EB0E7FD34AB0EB613BA1282C695972",
               "PreviousFields": {
                 "Balance": {
@@ -2724,7 +2724,7 @@
                 },
                 "LowNode": "0000000000000000"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "571A7D65C0CF76CCC576F4619DE456CF494D88C347A8E68581CF3E5318B7C0FF",
               "PreviousFields": {
                 "Balance": {
@@ -2835,7 +2835,7 @@
                 },
                 "LowNode": "0000000000000000"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "ACF531BEFE4450127434E1578A29EE3001E11A4D5D33FB2CB237C795FEB5754E",
               "PreviousFields": {
                 "Balance": {

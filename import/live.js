@@ -1,7 +1,7 @@
 
 var config = require('../config/import.config');
 var Logger = require('../lib/logger');
-var importer = require('../lib/ripple-importer');
+var importer = require('../lib/divvy-importer');
 var hbase = require('./client');
 
 var log = new Logger({

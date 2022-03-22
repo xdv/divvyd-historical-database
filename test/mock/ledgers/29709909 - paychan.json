@@ -5667,7 +5667,7 @@
                 },
                 "LowNode": "0000000000000000"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "AE393E9936B1BE5212E771B261701338C808026526BEBFE08D8F06EEF46E8A54",
               "PreviousFields": {
                 "Balance": {
@@ -5702,7 +5702,7 @@
                 },
                 "LowNode": "0000000000000000"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "CD8B7355110F274E9A6E55FB625F81E1B826DF1793500BB5A8540C0FDD08EB96",
               "PreviousFields": {
                 "Balance": {

@@ -61,7 +61,7 @@
               "PreviousTxnID": "697C518A2C6843A7DA64066FB43DFD6E141CCB31FFB22BE553EE596DED874963",
               "PreviousTxnLgrSeq": 10934243
             },
-            "LedgerEntryType": "RippleState",
+            "LedgerEntryType": "DivvyState",
             "LedgerIndex": "2B41307A306A8B156D1A7CC9601ABE834663656999F171424BE5336C1329418E",
             "PreviousFields": {
               "Balance": {
@@ -155,7 +155,7 @@
               },
               "LowNode": "000000000000001F"
             },
-            "LedgerEntryType": "RippleState",
+            "LedgerEntryType": "DivvyState",
             "LedgerIndex": "BC0DAA0883E9B5CE6E0B50A4716078A918B2FC1BD2BE6E53CB774BECF89F08F0",
             "PreviousFields": {
               "Balance": {

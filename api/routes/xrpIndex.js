@@ -2,7 +2,7 @@
 
 const config = require('../../config')
 const Logger = require('../../lib/logger')
-const log = new Logger({scope : 'xrp index'})
+const log = new Logger({scope : 'xdv index'})
 const hbase = require('../../lib/hbase')
 const smoment = require('../../lib/smoment')
 const moment = require('moment')
@@ -153,7 +153,7 @@ function validate(params) {
 function getIndex(options, rate) {
   return new Promise((resolve, reject) => {
     const table = options.interval ?
-      'agg_xrp_index' : 'xrp_index'
+      'agg_xdv_index' : 'xdv_index'
 
     const base = options.interval ?
       options.interval + '|' : ''

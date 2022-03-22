@@ -37,7 +37,7 @@ var txResults = [
   'tecINSUF_RESERVE_LINE',
   'tecINSUF_RESERVE_OFFER',
   'tecNO_DST',
-  'tecNO_DST_INSUF_XRP',
+  'tecNO_DST_INSUF_XDV',
   'tecNO_LINE_INSUF_RESERVE',
   'tecNO_LINE_REDUNDANT',
   'tecPATH_DRY',

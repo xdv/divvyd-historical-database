@@ -99,11 +99,11 @@ function processLedger(l) {
       return;
     }
 
-    //parser expects ripple epoch
+    //parser expects divvy epoch
     ledger.close_time -= 946684800;
 
     //ledgers must be formatted according to the output from
-    //rippled's ledger command
+    //divvyd's ledger command
     ledger.transactions.forEach(function(tx, i) {
 
       var transaction      = tx.tx;

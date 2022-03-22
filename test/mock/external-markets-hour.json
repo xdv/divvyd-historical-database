@@ -5,13 +5,13 @@
       "counter_volume": 9.775573900000001,
       "vwap": 0.0000115912,
       "source": "poloniex.com",
-      "base_currency": "XRP",
+      "base_currency": "XDV",
       "counter_currency": "BTC"
     },
     {
       "base_volume": 0,
       "source": "poloniex.com",
-      "base_currency": "XRP",
+      "base_currency": "XDV",
       "counter_currency": "USDT"
     },
     {
@@ -20,25 +20,25 @@
       "count": 22,
       "vwap": 0.0000116994,
       "source": "kraken.com",
-      "base_currency": "XRP",
+      "base_currency": "XDV",
       "counter_currency": "BTC"
     },
     {
       "base_volume": 0,
       "source": "btc38.com",
-      "base_currency": "XRP",
+      "base_currency": "XDV",
       "counter_currency": "CNY"
     },
     {
       "base_volume": 0,
       "source": "btc38.com",
-      "base_currency": "XRP",
+      "base_currency": "XDV",
       "counter_currency": "BTC"
     },
     {
       "base_volume": 6052,
       "source": "jubi.com",
-      "base_currency": "XRP",
+      "base_currency": "XDV",
       "counter_currency": "CNY"
     }
   ],

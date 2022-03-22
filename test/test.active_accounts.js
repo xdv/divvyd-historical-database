@@ -12,7 +12,7 @@ describe('active accounts API endpoint', function() {
     var period = '7day';
     var exchanges = 0;
     var url = 'http://localhost:' + port +
-        '/v2/active_accounts/xrp/' + currency + '+' + issuer +
+        '/v2/active_accounts/xdv/' + currency + '+' + issuer +
         '?date=' + date +
         '&period=' + period;
         ;
@@ -49,7 +49,7 @@ describe('active accounts API endpoint', function() {
     var date = '2015-01-14';
     var period = '7day';
     var url = 'http://localhost:' + port +
-        '/v2/active_accounts/xrp/' + currency + '+' + issuer +
+        '/v2/active_accounts/xdv/' + currency + '+' + issuer +
         '?date=' + date +
         '&period=' + period +
         '&include_exchanges=true';
@@ -75,7 +75,7 @@ describe('active accounts API endpoint', function() {
     var currency = 'USD';
     var url = 'http://localhost:' + port +
         '/v2/active_accounts/' + currency +
-        '/XRP?include_exchanges=true'
+        '/XDV?include_exchanges=true'
     var last = 0;
 
     request({
@@ -95,7 +95,7 @@ describe('active accounts API endpoint', function() {
   it('should error when counter currency has no issuer', function(done) {
     var currency = 'USD';
     var url = 'http://localhost:' + port +
-        '/v2/active_accounts/XRP/' + currency +
+        '/v2/active_accounts/XDV/' + currency +
         '?include_exchanges=true'
     var last = 0;
 
@@ -114,10 +114,10 @@ describe('active accounts API endpoint', function() {
   });
 
 
-  it('should error when XRP has issuer (base)', function(done) {
+  it('should error when XDV has issuer (base)', function(done) {
     var currency = 'USD';
     var url = 'http://localhost:' + port +
-        '/v2/active_accounts/XRP+zzzz/' + currency +
+        '/v2/active_accounts/XDV+zzzz/' + currency +
         '+zzzz?include_exchanges=true'
     var last = 0;
 
@@ -130,16 +130,16 @@ describe('active accounts API endpoint', function() {
       assert.strictEqual(res.statusCode, 400);
       assert.strictEqual(typeof body, 'object');
       assert.strictEqual(body.result, 'error');
-      assert.strictEqual(body.message, 'XRP cannot have an issuer');
+      assert.strictEqual(body.message, 'XDV cannot have an issuer');
       done();
     });
   });
 
-  it('should error when XRP has issuer (base)', function(done) {
+  it('should error when XDV has issuer (base)', function(done) {
     var currency = 'USD';
     var url = 'http://localhost:' + port +
         '/v2/active_accounts/' + currency +
-        '+zzzz/XRP+zzzz?include_exchanges=true'
+        '+zzzz/XDV+zzzz?include_exchanges=true'
     var last = 0;
 
     request({
@@ -151,7 +151,7 @@ describe('active accounts API endpoint', function() {
       assert.strictEqual(res.statusCode, 400);
       assert.strictEqual(typeof body, 'object');
       assert.strictEqual(body.result, 'error');
-      assert.strictEqual(body.message, 'XRP cannot have an issuer');
+      assert.strictEqual(body.message, 'XDV cannot have an issuer');
       done();
     });
   });
@@ -161,7 +161,7 @@ describe('active accounts API endpoint', function() {
     var currency = 'USD';
     var issuer = 'rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B';
     var url = 'http://localhost:' + port +
-        '/v2/active_accounts/xrp/' + currency + '+' + issuer +
+        '/v2/active_accounts/xdv/' + currency + '+' + issuer +
         '?period=1234';
 
     request({
@@ -181,7 +181,7 @@ describe('active accounts API endpoint', function() {
   it('should error when date is invalid', function(done) {
     var currency = 'USD';
     var url = 'http://localhost:' + port +
-        '/v2/active_accounts/USD+zzz/XRP' +
+        '/v2/active_accounts/USD+zzz/XDV' +
         '?include_exchanges=true&date=zzzz';
     var last = 0;
 

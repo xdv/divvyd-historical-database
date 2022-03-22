@@ -15,7 +15,7 @@ var mockExchangeVolumeHour = require('./mock/exchange-volume-live-hour.json')
 var mockPaymentVolume = require('./mock/payment-volume.json')
 var mockPaymentVolumeHour = require('./mock/payment-volume-live-hour.json')
 var mockIssuedValue = require('./mock/issued-value.json')
-var mockXrpDistribution = require('./mock/xrp-distribution.json')
+var mockXdvDistribution = require('./mock/xdv-distribution.json')
 var mockTopCurrencies = require('./mock/top-currencies.json')
 var mockTopMarkets = require('./mock/top-markets.json')
 var mockCrawl = require('./mock/topology-crawl.json')
@@ -153,9 +153,9 @@ describe('setup mock data', function() {
       })
     ]
 
-    mockXrpDistribution.forEach(function(r) {
+    mockXdvDistribution.forEach(function(r) {
       rows.push(hbase.putRow({
-        table: 'xrp_distribution',
+        table: 'xdv_distribution',
         rowkey: moment.utc(r.date).format('YYYYMMDDHHmmss'),
         columns: r
       }))
@@ -217,7 +217,7 @@ describe('setup mock data', function() {
     })
   })
 
-  it('import rippled versions', function() {
+  it('import divvyd versions', function() {
     this.timeout(60000)
     return saveVersions(hbase)
   })
@@ -369,13 +369,13 @@ describe('external markets', function() {
 })
 
 /**
- * rippled versions
+ * divvyd versions
  */
 
-describe('rippled versions', function() {
-  it('should get current rippled versions', function(done) {
+describe('divvyd versions', function() {
+  it('should get current divvyd versions', function(done) {
     var url = 'http://localhost:' + port +
-        '/v2/network/rippled_versions'
+        '/v2/network/divvyd_versions'
     var date = smoment()
     date.moment.startOf('day')
 
@@ -927,10 +927,10 @@ describe('network - exchange volume', function() {
     })
   })
 
-  it('should error on exchange XRP with issuer', function(done) {
+  it('should error on exchange XDV with issuer', function(done) {
     var url = 'http://localhost:' + port +
       '/v2/network/exchange_volume' +
-      '?exchange_currency=XRP&exchange_issuer=zzz'
+      '?exchange_currency=XDV&exchange_issuer=zzz'
 
     request({
       url: url,
@@ -941,7 +941,7 @@ describe('network - exchange volume', function() {
       assert.strictEqual(res.statusCode, 400)
       assert.strictEqual(typeof body, 'object')
       assert.strictEqual(body.result, 'error')
-      assert.strictEqual(body.message, 'XRP cannot have an issuer')
+      assert.strictEqual(body.message, 'XDV cannot have an issuer')
       done()
     })
   })
@@ -1035,13 +1035,13 @@ describe('network - payment volume', function() {
 })
 
 /**
- * XRP distribution
+ * XDV distribution
  */
 
-describe('network - XRP distribution', function() {
-  it('get XRP distribution', function(done) {
+describe('network - XDV distribution', function() {
+  it('get XDV distribution', function(done) {
     var url = 'http://localhost:' + port +
-        '/v2/network/xrp_distribution'
+        '/v2/network/xdv_distribution'
 
     request({
       url: url,
@@ -1062,7 +1062,7 @@ describe('network - XRP distribution', function() {
     var start = '2016-03-20T00:00:00Z'
     var end = '2016-04-03T00:00:00Z'
     var url = 'http://localhost:' + port +
-        '/v2/network/xrp_distribution?' +
+        '/v2/network/xdv_distribution?' +
         'start=' + start +
         '&end=' + end
 
@@ -1084,7 +1084,7 @@ describe('network - XRP distribution', function() {
 
   it('should should get distribution in descending order', function(done) {
     var url = 'http://localhost:' + port +
-        '/v2/network/xrp_distribution?descending=true'
+        '/v2/network/xdv_distribution?descending=true'
 
     request({
       url: url,
@@ -1113,7 +1113,7 @@ describe('network - XRP distribution', function() {
 
   it('should include a link header when marker is present', function(done) {
     var url = 'http://localhost:' + port +
-      '/v2/network/xrp_distribution?limit=1'
+      '/v2/network/xdv_distribution?limit=1'
     var linkHeader = '<' + url +
       '&marker=20160320000000>; rel="next"'
 
@@ -1131,7 +1131,7 @@ describe('network - XRP distribution', function() {
 
   it('should handle pagination correctly', function(done) {
     var url = 'http://localhost:' + port +
-      '/v2/network/xrp_distribution?'
+      '/v2/network/xdv_distribution?'
 
     utils.checkPagination(url, undefined, function(ref, i, body) {
       assert.strictEqual(body.rows.length, 1)
@@ -1139,9 +1139,9 @@ describe('network - XRP distribution', function() {
     }, done)
   })
 
-  it('should get XRP distribution in CSV format', function(done) {
+  it('should get XDV distribution in CSV format', function(done) {
     var url = 'http://localhost:' + port +
-        '/v2/network/xrp_distribution?format=csv'
+        '/v2/network/xdv_distribution?format=csv'
 
     request({
       url: url
@@ -1150,7 +1150,7 @@ describe('network - XRP distribution', function() {
       assert.ifError(err)
       assert.strictEqual(res.statusCode, 200)
       assert.strictEqual(res.headers['content-disposition'],
-        'attachment; filename=XRP-distribution.csv')
+        'attachment; filename=XDV-distribution.csv')
       done()
     })
   })
@@ -1158,7 +1158,7 @@ describe('network - XRP distribution', function() {
   it('should error on invalid start date', function(done) {
     var date = 'zzz2015-01-14'
     var url = 'http://localhost:' + port +
-      '/v2/network/xrp_distribution?start=' + date
+      '/v2/network/xdv_distribution?start=' + date
 
     request({
       url: url,
@@ -1177,7 +1177,7 @@ describe('network - XRP distribution', function() {
   it('should error on invalid end date', function(done) {
     var date = 'zzz2015-01-14'
     var url = 'http://localhost:' + port +
-      '/v2/network/xrp_distribution?end=' + date
+      '/v2/network/xdv_distribution?end=' + date
 
     request({
       url: url,

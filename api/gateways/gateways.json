@@ -20,7 +20,7 @@
     ],
     "domain": "bitstamp.net"
   }, {
-    "name": "RippleChina",
+    "name": "DivvyChina",
     "start_date": "2013-05-21",
     "accounts": [{
         "address": "razqQKzJRdB4UxFPWf5NEpEG3WMkmwgcXA",
@@ -88,7 +88,7 @@
     ],
     "domain": "snapswap.us"
   }, {
-    "name": "BTC 2 Ripple",
+    "name": "BTC 2 Divvy",
     "start_date": "2013-06-18",
     "accounts": [{
       "address": "rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q",
@@ -100,7 +100,7 @@
       "rwm98fCBS8tV1YB8CGho8zUPW5J7N41th2",
       "r5ymZSvtdNgbKVc8ay1Jhmq5f9QgnvEtj"
     ],
-    "domain": "btc2ripple.com"
+    "domain": "btc2xdv.io"
   }, {
     "name": "The Rock Trading",
     "start_date": "2013-05-19",
@@ -137,7 +137,7 @@
     ],
     "domain": "wisepass.com"
   }, {
-    "name": "Dividend Rippler",
+    "name": "Dividend Divvyr",
     "accounts": [{
       "address": "rfYv1TXnwgDDK4WQNbFALykYuEBnrR4pDX",
       "currencies": {
@@ -147,7 +147,7 @@
     "hotwallets": [],
     "domain": "dividendrippler.com"
   }, {
-    "name": "RippleUnion",
+    "name": "DivvyUnion",
     "start_date": "2013-03-22",
     "accounts": [{
       "address": "r3ADD8kXSUKHd6zTCKfnKT3zV9EZHjzp1S",
@@ -182,9 +182,9 @@
     "hotwallets": [
       "rEXHeNZM52TUyoXkBqNqsteHoiZvy26GHS"
     ],
-    "domain": "xrpchina.net"
+    "domain": "xdvchina.net"
   }, {
-    "name": "Ripple Singapore",
+    "name": "Divvy Singapore",
     "start_date": "2014-01-25",
     "accounts": [{
       "address": "r9Dr5xwkeLegBeXq6ujinjSBLQzQ1zQGjH",
@@ -198,7 +198,7 @@
     "hotwallets": [],
     "domain": "ripplesingapore.com"
   }, {
-    "name": "Ripple Trade Japan",
+    "name": "Divvy Trade Japan",
     "start_date": "2014-02-21",
     "accounts": [{
       "address": "rMAz5ZnK73nyNUL4foAvaxdreczCkG3vA6",
@@ -240,7 +240,7 @@
     ],
     "domain": "coinexgateway.com"
   }, {
-    "name": "Ripple LatAm",
+    "name": "Divvy LatAm",
     "start_date": "2014-05-01",
     "accounts": [{
       "address": "rP5ShE8dGBH6hHtNvRESdMceen36XFBQmh",
@@ -261,7 +261,7 @@
     ],
     "domain": "ripplelatam.com"
   }, {
-    "name": "Ripple Fox",
+    "name": "Divvy Fox",
     "start_date": "2014-04-19",
     "accounts": [{
       "address": "rKiCet8SdvWxPXnAgYarFUXMh1zCPz432Y",
@@ -353,7 +353,7 @@
     ],
     "domain": "paxmoneta.com"
   }, {
-    "name": "Ripple Exchange Tokyo",
+    "name": "Divvy Exchange Tokyo",
     "start_date": "2014-09-25",
     "accounts": [{
       "address": "r9ZFPSb1TFdnJwbTMYHvVwFK1bQPUCVNfJ",
@@ -391,7 +391,7 @@
       }
     }],
     "hotwallets": [],
-    "domain" : "mr-ripple.com"
+    "domain" : "mr-xdv.io"
   }, {
     "name": "Gatehub",
     "start_date":"2015-02-15",
@@ -447,7 +447,7 @@
     }],
     "hotwallets": []
   }, {
-    "name": "EXRP",
+    "name": "EXDV",
     "start_date":"2015-03-16",
     "accounts": [{
       "address": "rPxU6acYni7FcXzPCMeaPSwKcuS2GTtNVN",
@@ -456,6 +456,6 @@
       }
     }],
     "hotwallets": [],
-    "domain": "exrp.co.kr"
+    "domain": "exdv.co.kr"
   }
 ]

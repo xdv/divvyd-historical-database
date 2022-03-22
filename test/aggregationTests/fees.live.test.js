@@ -2,13 +2,13 @@ var Aggregation  = require('../../lib/aggregation/fees');
 var Parser       = require('../../lib/ledgerParser');
 var Hbase        = require('../../lib/hbase');
 var utils        = require('../../lib/utils');
-var Importer     = require('../../lib/ripple-importer');
+var Importer     = require('../../lib/divvy-importer');
 var config       = require('../config');
 var moment       = require('moment');
 var options = {
   logLevel : 3,
   hbase: config.get('hbase'),
-  ripple: config.get('ripple')
+  divvy: config.get('divvy')
 };
 
 options.hbase.logLevel = 3;

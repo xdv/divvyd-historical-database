@@ -1,11 +1,11 @@
 var Parser   = require('../../lib/ledgerParser');
-var Importer = require('../../lib/ripple-importer');
+var Importer = require('../../lib/divvy-importer');
 var Hbase    = require('../../lib/hbase');
 
 var fs       = require('fs');
 var live     = new Importer({
-    "ripple": {
-      "server": "wss://s2.ripple.com:443"
+    "divvy": {
+      "server": "wss://s2.xdv.io:443"
     }
   });
 
@@ -23,7 +23,7 @@ parsed = Parser.parseTransaction(tx);
 
 console.log(parsed.exchanges);
 
-tx = JSON.parse(fs.readFileSync(path + 'demmurage-XRP.json', "utf8"));
+tx = JSON.parse(fs.readFileSync(path + 'demmurage-XDV.json', "utf8"));
 tx.metaData = tx.meta;
 tx.executed_time = tx.date + EPOCH_OFFSET;
 parsed = Parser.parseTransaction(tx);

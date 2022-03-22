@@ -10,8 +10,8 @@
       {"host" : "", "port": 9090}
     ]
   },
-  "ripple": {
-    "server" : "wss://s1.ripple.com:443"
+  "divvy": {
+    "server" : "wss://s1.xdv.io:443"
   },
   "cacheControl": {
     "max-age": 10,
@@ -24,7 +24,7 @@
     "port"   : 20550
   },
   "validators-config" : "validators.config.json.example",
-  "fee_url": "http://s1.ripple.com:51234",
+  "fee_url": "http://s1.xdv.io:51234",
   "hdfs": {
     "user": "impala",
     "host": "localhost",
@@ -32,7 +32,7 @@
     "path": "/path/"
   },
   "recipients": ["user@example.com"],
-  "rippleds_url": "https://data.ripple.com/v2/network/topology/nodes"
+  "divvyds_url": "https://data.xdv.io/v2/network/topology/nodes"
   "rateLimit": {
     "max": 60,
     "duration": 60000,

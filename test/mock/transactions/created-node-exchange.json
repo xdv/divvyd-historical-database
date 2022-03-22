@@ -24,7 +24,7 @@
     "AffectedNodes": [
       {
         "CreatedNode": {
-          "LedgerEntryType": "RippleState",
+          "LedgerEntryType": "DivvyState",
           "LedgerIndex": "02C73A61A7594685DD8CE7904A20FBC431CE4DA570938EEFF735B024F9061EF9",
           "NewFields": {
             "Balance": {
@@ -89,7 +89,7 @@
             },
             "LowNode": "0000000000000001"
           },
-          "LedgerEntryType": "RippleState",
+          "LedgerEntryType": "DivvyState",
           "LedgerIndex": "4539E2FA9857CC747BE35B7D196A8A62B7FB462386627EA8DB62364760CD781C",
           "PreviousFields": {
             "Balance": {
@@ -164,7 +164,7 @@
             },
             "LowNode": "0000000000000018"
           },
-          "LedgerEntryType": "RippleState",
+          "LedgerEntryType": "DivvyState",
           "LedgerIndex": "CF4C54A1621D8ABDAAC251881C603BC8F177C644D02DEF7F2B3523B41D03B242",
           "PreviousFields": {
             "Balance": {

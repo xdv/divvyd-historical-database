@@ -126,7 +126,7 @@ function handleAggregation(params, done) {
     markets.forEach(function(market) {
       var swap
 
-      if (market.base.currency === 'XRP') {
+      if (market.base.currency === 'XDV') {
         swap = market.base
         market.base = market.counter
         market.counter = swap
@@ -176,7 +176,7 @@ function handleAggregation(params, done) {
           data.base = market.base
           data.counter = market.counter
 
-          if (data.counter.currency === 'XRP') {
+          if (data.counter.currency === 'XDV') {
             data.converted_amount = resp.reduced.counter_volume
             data.rate = resp.reduced.vwap ?
               1 / resp.reduced.vwap : 0
@@ -190,7 +190,7 @@ function handleAggregation(params, done) {
 
   /**
    * getRates
-   * get XRP conversion rates from the results
+   * get XDV conversion rates from the results
    */
 
   function getRates(markets) {
@@ -201,7 +201,7 @@ function handleAggregation(params, done) {
 
     data.markets.forEach(function(market) {
       var key = market.base.currency + '.' + market.base.issuer
-      if (market.counter.currency === 'XRP') {
+      if (market.counter.currency === 'XDV') {
         data.rates[key] = market.rate
       }
     })
@@ -211,7 +211,7 @@ function handleAggregation(params, done) {
 
   /**
    * normalize
-   * convert the amounts to XRP using the rates
+   * convert the amounts to XDV using the rates
    * found.  If we don't have a rate, it wont be included
    */
 
@@ -260,7 +260,7 @@ function handleAggregation(params, done) {
 
     return {
       startTime: params.start.moment.format(),
-      exchange: {currency: 'XRP'},
+      exchange: {currency: 'XDV'},
       exchangeRate: 1,
       total: total,
       count: count,

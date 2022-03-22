@@ -49,7 +49,7 @@
           }
         ],
         "TransactionIndex": 2,
-        "TransactionResult": "tecNO_DST_INSUF_XRP"
+        "TransactionResult": "tecNO_DST_INSUF_XDV"
       }
     },
     {
@@ -120,7 +120,7 @@
                 },
                 "LowNode": "0000000000000006"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "919CABD78861D8774821BDC2F67633B1413C031F623571EFC5D9952B5AA18D11",
               "PreviousFields": {
                 "Balance": {
@@ -155,7 +155,7 @@
                 },
                 "LowNode": "0000000000000000"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "E5D5C0B9897F2B903D6FC1BFB9DB1DEC98DD6B6F96A34C48C9A504AC9AEC579A",
               "PreviousFields": {
                 "Balance": {
@@ -222,7 +222,7 @@
                 },
                 "LowNode": "0000000000000006"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "6ABBBF2F406E889E79E307F243488BE1C49F86F00437A4D789EDC31FDC606DF7",
               "PreviousFields": {
                 "Balance": {
@@ -276,7 +276,7 @@
                 },
                 "LowNode": "0000000000000000"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "E5D5C0B9897F2B903D6FC1BFB9DB1DEC98DD6B6F96A34C48C9A504AC9AEC579A",
               "PreviousFields": {
                 "Balance": {

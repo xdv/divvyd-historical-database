@@ -14,14 +14,14 @@ const fees = {
     exchange: .0025,
     transfer: {
       BTC: 0,
-      XRP: 0
+      XDV: 0
     }
   },
   bitso: {
     exchange: .008,
     transfer: {
       BTC: .001,
-      XRP: 0
+      XDV: 0
     }
   }
 }
@@ -31,7 +31,7 @@ module.exports = function(req, res) {
   return validate(req.query)
   .then(() => {
     return Promise.all([
-      getEstimate(req.query, 'XRP'),
+      getEstimate(req.query, 'XDV'),
     ])
   })
   .then(resp => {

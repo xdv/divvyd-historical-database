@@ -6,7 +6,7 @@ var smoment = require('../../../lib/smoment');
 var utils = require('../../../lib/utils');
 var hbase = require('../../../lib/hbase')
 
-function getXrpDistribution(req, res) {
+function getXdvDistribution(req, res) {
 
   var options = {
     start: smoment(req.query.start || '2013-01-01'),
@@ -42,7 +42,7 @@ function getXrpDistribution(req, res) {
 
 
   hbase.getScanWithMarker(hbase, {
-    table: 'xrp_distribution',
+    table: 'xdv_distribution',
     startRow: options.start.hbaseFormatStartRow(),
     stopRow: options.end.hbaseFormatStopRow(),
     marker: options.marker,
@@ -111,7 +111,7 @@ function getXrpDistribution(req, res) {
       resp.rows.forEach(function(r, i) {
         resp.rows[i] = utils.flattenJSON(r);
       });
-      res.csv(resp.rows, 'XRP-distribution.csv');
+      res.csv(resp.rows, 'XDV-distribution.csv');
 
     // json
     } else {
@@ -125,4 +125,4 @@ function getXrpDistribution(req, res) {
   }
 }
 
-module.exports = getXrpDistribution
+module.exports = getXdvDistribution

@@ -1,13 +1,13 @@
-var Importer = require('../lib/ripple-importer');
+var Importer = require('../lib/divvy-importer');
 var fs       = require('fs');
 var options  = {
   "logLevel" : 3,
-  "ripple"   : {
+  "divvy"   : {
     "trace"                 : false,
     "allow_partial_history" : false,
     "servers" : [
-      { "host" : "s-west.ripple.com", "port" : 443, "secure" : true },
-      { "host" : "s-east.ripple.com", "port" : 443, "secure" : true }
+      { "host" : "s-west.xdv.io", "port" : 443, "secure" : true },
+      { "host" : "s-east.xdv.io", "port" : 443, "secure" : true }
     ]
   }
 };

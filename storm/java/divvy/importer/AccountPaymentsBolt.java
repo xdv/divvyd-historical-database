@@ -1,4 +1,4 @@
-package ripple.importer;
+package divvy.importer;
 
 import java.util.Map;
 
@@ -7,10 +7,10 @@ import backtype.storm.topology.IRichBolt;
 import backtype.storm.topology.OutputFieldsDeclarer;
 import backtype.storm.tuple.Fields;
 
-public class PaymentsBolt extends ShellBolt implements IRichBolt {
+public class AccountPaymentsBolt extends ShellBolt implements IRichBolt {
 
-  public PaymentsBolt() {
-    super("node", "paymentsBolt.js");
+  public AccountPaymentsBolt() {
+    super("node", "accountPaymentsBolt.js");
   }
 
   @Override

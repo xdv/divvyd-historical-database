@@ -1,5 +1,5 @@
 var config   = require('../config');
-var importer = require('../lib/ripple-importer');
+var importer = require('../lib/divvy-importer');
 var Logger   = require('../lib/logger');
 var hbase    = require('../lib/hbase');
 var Parser   = require('../lib/ledgerParser');

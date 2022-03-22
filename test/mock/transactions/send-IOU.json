@@ -23,7 +23,7 @@
     "AffectedNodes": [
       {
         "ModifiedNode": {
-          "LedgerEntryType": "RippleState",
+          "LedgerEntryType": "DivvyState",
           "PreviousTxnLgrSeq": 6793203,
           "PreviousTxnID": "418FE5D1DBA5C44903811143F8A3CCE1BC62292AA25A1C9A249B4C71086C5C9E",
           "LedgerIndex": "222C5EE551FE92806C4F17EAB0863AB21E571CBC2B78FFA56A971AD36C0A884D",
@@ -77,7 +77,7 @@
       },
       {
         "ModifiedNode": {
-          "LedgerEntryType": "RippleState",
+          "LedgerEntryType": "DivvyState",
           "PreviousTxnLgrSeq": 6793090,
           "PreviousTxnID": "872CA6C6F1D245A85BD0F941A4D2C3AAC575FBE193A5FB363EB31DEA3ECEAEE5",
           "LedgerIndex": "C154D262E674ACE1B4D3A7B03885815AD9CA77AFC46A8FEFEE995FAF3BB47200",

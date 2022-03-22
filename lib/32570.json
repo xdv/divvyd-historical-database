@@ -113,7 +113,7 @@
           "issuer" : "rMYBVwiY95QyUnCeuBQA1D47kXA9zuoBui",
           "value" : "10"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "rnziParaNb8nsU4aruQdwYE3j5jUcqjzFm",
@@ -136,7 +136,7 @@
           "value" : "0"
        },
        "HighNode" : "0000000000000000",
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "EUR",
           "issuer" : "rshceBo6ftSVYo8h5uNPzRWbdqk4W6g9va",
@@ -216,7 +216,7 @@
           "issuer" : "rMYBVwiY95QyUnCeuBQA1D47kXA9zuoBui",
           "value" : "5"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "BTC",
           "issuer" : "rGLUu9LfpKyZyeTtSRXpU15e2FfrdvtADa",
@@ -249,7 +249,7 @@
           "issuer" : "rPgrEG6nMMwAM1VbTumL23dnEX4UmeUHk7",
           "value" : "0"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "rnp8kFTTm6KW8wsbgczfmv56kWXghPSWbK",
@@ -271,7 +271,7 @@
           "issuer" : "r4DGz8SxHXLaqsA9M2oocXsrty6BMSQvw3",
           "value" : "50"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "r9aRw8p1jHtR9XhDAE22TjtM7PdupNXhkx",
@@ -430,7 +430,7 @@
           "value" : "0"
        },
        "HighNode" : "0000000000000000",
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "rB5TihdPbKgMrkFqrqUC3yLdE8hhv4BdeY",
@@ -454,7 +454,7 @@
           "value" : "60000"
        },
        "HighNode" : "0000000000000000",
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "JPY",
           "issuer" : "rhxbkK9jGqPVLZSWPvCEmmf15xHBfJfCEy",
@@ -500,7 +500,7 @@
           "value" : "0"
        },
        "HighNode" : "0000000000000000",
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "rhdAw3LiEfWWmSrbnZG3udsN7PoWKT56Qo",
@@ -629,7 +629,7 @@
           "issuer" : "rGLUu9LfpKyZyeTtSRXpU15e2FfrdvtADa",
           "value" : "1"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "BTC",
           "issuer" : "rnziParaNb8nsU4aruQdwYE3j5jUcqjzFm",
@@ -697,7 +697,7 @@
           "issuer" : "rJ51FBSh6hXSUkFdMxwmtcorjx9izrC1yj",
           "value" : "0"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "BTC",
           "issuer" : "rnziParaNb8nsU4aruQdwYE3j5jUcqjzFm",
@@ -719,7 +719,7 @@
           "issuer" : "rGLUu9LfpKyZyeTtSRXpU15e2FfrdvtADa",
           "value" : "10"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "rnziParaNb8nsU4aruQdwYE3j5jUcqjzFm",
@@ -860,7 +860,7 @@
           "issuer" : "rM1oqKtfh1zgjdAgbFmaRm3btfGBX25xVo",
           "value" : "0"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "BTC",
           "issuer" : "rnziParaNb8nsU4aruQdwYE3j5jUcqjzFm",
@@ -906,7 +906,7 @@
           "issuer" : "r9aRw8p1jHtR9XhDAE22TjtM7PdupNXhkx",
           "value" : "3"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "BTC",
           "issuer" : "rf8kg7r5Fc8cCszGdD2jeUZt2FrgQd76BS",
@@ -1010,7 +1010,7 @@
           "issuer" : "r3kmLJN5D28dHuH8vZNUZpMC43pEHpaocV",
           "value" : "0"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "BTC",
           "issuer" : "rnziParaNb8nsU4aruQdwYE3j5jUcqjzFm",
@@ -1043,7 +1043,7 @@
           "issuer" : "rMYBVwiY95QyUnCeuBQA1D47kXA9zuoBui",
           "value" : "10"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "rHXS898sKZX6RY3WYPo5hW6UGnpBCnDzfr",
@@ -1133,7 +1133,7 @@
           "issuer" : "rPgrEG6nMMwAM1VbTumL23dnEX4UmeUHk7",
           "value" : "10"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "rEUXZtdhEtCDPxJ3MAgLNMQpq4ASgjrV6i",
@@ -1225,7 +1225,7 @@
           "issuer" : "r9aRw8p1jHtR9XhDAE22TjtM7PdupNXhkx",
           "value" : "50"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "rf8kg7r5Fc8cCszGdD2jeUZt2FrgQd76BS",
@@ -1322,7 +1322,7 @@
           "issuer" : "rMYBVwiY95QyUnCeuBQA1D47kXA9zuoBui",
           "value" : "10"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "CAD",
           "issuer" : "rnziParaNb8nsU4aruQdwYE3j5jUcqjzFm",
@@ -1379,7 +1379,7 @@
           "value" : "0"
        },
        "HighNode" : "0000000000000000",
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "rB5TihdPbKgMrkFqrqUC3yLdE8hhv4BdeY",
@@ -1583,7 +1583,7 @@
           "value" : "666"
        },
        "HighNode" : "0000000000000000",
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "rhxbkK9jGqPVLZSWPvCEmmf15xHBfJfCEy",
@@ -1607,7 +1607,7 @@
           "value" : "10"
        },
        "HighNode" : "0000000000000000",
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "BTC",
           "issuer" : "r3kmLJN5D28dHuH8vZNUZpMC43pEHpaocV",
@@ -1652,7 +1652,7 @@
           "issuer" : "rEe6VvCzzKU1ib9waLknXvEXywVjjUWFDN",
           "value" : "0"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "BTC",
           "issuer" : "rnziParaNb8nsU4aruQdwYE3j5jUcqjzFm",
@@ -1682,7 +1682,7 @@
           "issuer" : "r9duXXmUuhSs6JxKpPCSh2tPUg9AGvE2cG",
           "value" : "10"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "r9aRw8p1jHtR9XhDAE22TjtM7PdupNXhkx",
@@ -1764,7 +1764,7 @@
           "value" : "0"
        },
        "HighNode" : "0000000000000000",
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "r9aRw8p1jHtR9XhDAE22TjtM7PdupNXhkx",
@@ -1828,7 +1828,7 @@
           "issuer" : "rGLUu9LfpKyZyeTtSRXpU15e2FfrdvtADa",
           "value" : "10"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "CAD",
           "issuer" : "rnziParaNb8nsU4aruQdwYE3j5jUcqjzFm",
@@ -1862,7 +1862,7 @@
           "value" : "0"
        },
        "HighNode" : "0000000000000000",
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "rD1jovjQeEpvaDwn9wKaYokkXXrqo4D23x",
@@ -1967,7 +1967,7 @@
           "issuer" : "rPcHbQ26o4Xrwb2bu5gLc3gWUsS52yx1pG",
           "value" : "1"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "MEA",
           "issuer" : "rLiCWKQNUs8CQ81m2rBoFjshuVJviSRoaJ",
@@ -2156,7 +2156,7 @@
           "value" : "0"
        },
        "HighNode" : "0000000000000000",
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "rB5TihdPbKgMrkFqrqUC3yLdE8hhv4BdeY",
@@ -2190,7 +2190,7 @@
           "issuer" : "rHXS898sKZX6RY3WYPo5hW6UGnpBCnDzfr",
           "value" : "2"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "BTC",
           "issuer" : "rGLUu9LfpKyZyeTtSRXpU15e2FfrdvtADa",
@@ -2212,7 +2212,7 @@
           "issuer" : "rMYBVwiY95QyUnCeuBQA1D47kXA9zuoBui",
           "value" : "10"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "rJ51FBSh6hXSUkFdMxwmtcorjx9izrC1yj",
@@ -2264,7 +2264,7 @@
           "issuer" : "rMYBVwiY95QyUnCeuBQA1D47kXA9zuoBui",
           "value" : "10"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "CAD",
           "issuer" : "rHXS898sKZX6RY3WYPo5hW6UGnpBCnDzfr",
@@ -2295,7 +2295,7 @@
           "value" : "33"
        },
        "HighNode" : "0000000000000000",
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "BTC",
           "issuer" : "rhxbkK9jGqPVLZSWPvCEmmf15xHBfJfCEy",
@@ -2337,7 +2337,7 @@
           "issuer" : "rMYBVwiY95QyUnCeuBQA1D47kXA9zuoBui",
           "value" : "5"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "BTC",
           "issuer" : "rHXS898sKZX6RY3WYPo5hW6UGnpBCnDzfr",
@@ -2367,7 +2367,7 @@
           "issuer" : "rQsiKrEtzTFZkQjF9MrxzsXHCANZJSd1je",
           "value" : "0"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "BTC",
           "issuer" : "rnziParaNb8nsU4aruQdwYE3j5jUcqjzFm",
@@ -2400,7 +2400,7 @@
           "issuer" : "rMYBVwiY95QyUnCeuBQA1D47kXA9zuoBui",
           "value" : "10"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "rGLUu9LfpKyZyeTtSRXpU15e2FfrdvtADa",
@@ -2501,7 +2501,7 @@
           "issuer" : "rPgrEG6nMMwAM1VbTumL23dnEX4UmeUHk7",
           "value" : "10"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "rnGTwRTacmqZZBwPB6rh3H1W4GoTZCQtNA",
@@ -2898,7 +2898,7 @@
           "issuer" : "rBKPS4oLSaV2KVVuHH8EpQqMGgGefGFQs7",
           "value" : "0"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "rnGTwRTacmqZZBwPB6rh3H1W4GoTZCQtNA",
@@ -2931,7 +2931,7 @@
           "issuer" : "rsQP8f9fLtd58hwjEArJz2evtrKULnCNif",
           "value" : "0"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "rphasxS8Q5p5TLTpScQCBhh5HfJfPbM2M8",
@@ -2987,7 +2987,7 @@
           "value" : "0"
        },
        "HighNode" : "0000000000000000",
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "rhxbkK9jGqPVLZSWPvCEmmf15xHBfJfCEy",
@@ -3055,7 +3055,7 @@
           "value" : "0"
        },
        "HighNode" : "0000000000000000",
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "rB5TihdPbKgMrkFqrqUC3yLdE8hhv4BdeY",
@@ -3123,7 +3123,7 @@
           "value" : "1000"
        },
        "HighNode" : "0000000000000000",
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "rBY8EZDiCNMjjhrC7SCfaGr2PzGWtSntNy",
@@ -3160,7 +3160,7 @@
           "value" : "1"
        },
        "HighNode" : "0000000000000000",
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "r3PDtZSa5LiYp1Ysn1vMuMzB59RzV3W9QH",
@@ -3194,7 +3194,7 @@
           "issuer" : "rMYBVwiY95QyUnCeuBQA1D47kXA9zuoBui",
           "value" : "1"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "BTC",
           "issuer" : "rnziParaNb8nsU4aruQdwYE3j5jUcqjzFm",
@@ -3216,7 +3216,7 @@
           "issuer" : "rMYBVwiY95QyUnCeuBQA1D47kXA9zuoBui",
           "value" : "1"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "BTC",
           "issuer" : "rJ51FBSh6hXSUkFdMxwmtcorjx9izrC1yj",
@@ -3284,7 +3284,7 @@
           "issuer" : "rHXS898sKZX6RY3WYPo5hW6UGnpBCnDzfr",
           "value" : "0"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "rGLUu9LfpKyZyeTtSRXpU15e2FfrdvtADa",
@@ -3442,7 +3442,7 @@
           "issuer" : "rMYBVwiY95QyUnCeuBQA1D47kXA9zuoBui",
           "value" : "10"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "CAD",
           "issuer" : "rGLUu9LfpKyZyeTtSRXpU15e2FfrdvtADa",
@@ -3464,7 +3464,7 @@
           "issuer" : "rPgrEG6nMMwAM1VbTumL23dnEX4UmeUHk7",
           "value" : "10"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "rJRyob8LPaA3twGEQDPU2gXevWhpSgD8S6",
@@ -3540,7 +3540,7 @@
           "issuer" : "rBJwwXADHqbwsp6yhrqoyt2nmFx9FB83Th",
           "value" : "0"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "BTC",
           "issuer" : "rnziParaNb8nsU4aruQdwYE3j5jUcqjzFm",
@@ -3574,7 +3574,7 @@
           "value" : "1000"
        },
        "HighNode" : "0000000000000000",
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "r3kmLJN5D28dHuH8vZNUZpMC43pEHpaocV",
@@ -3619,7 +3619,7 @@
           "issuer" : "rMYBVwiY95QyUnCeuBQA1D47kXA9zuoBui",
           "value" : "10"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "CAD",
           "issuer" : "rJ51FBSh6hXSUkFdMxwmtcorjx9izrC1yj",
@@ -3740,7 +3740,7 @@
           "value" : "20"
        },
        "HighNode" : "0000000000000000",
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "rshceBo6ftSVYo8h5uNPzRWbdqk4W6g9va",
@@ -3786,7 +3786,7 @@
           "issuer" : "rJRyob8LPaA3twGEQDPU2gXevWhpSgD8S6",
           "value" : "7"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "USD",
           "issuer" : "rBKPS4oLSaV2KVVuHH8EpQqMGgGefGFQs7",
@@ -3827,7 +3827,7 @@
           "issuer" : "r4DGz8SxHXLaqsA9M2oocXsrty6BMSQvw3",
           "value" : "50"
        },
-       "LedgerEntryType" : "RippleState",
+       "LedgerEntryType" : "DivvyState",
        "LowLimit" : {
           "currency" : "BTC",
           "issuer" : "r9aRw8p1jHtR9XhDAE22TjtM7PdupNXhkx",

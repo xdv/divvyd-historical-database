@@ -9,30 +9,30 @@ var table = 'agg_exchanges_external'
 var timeout = 8000
 
   var markets = [
-    // 'coincheck.com|XRP|JPY',
-    // 'btcxindia.com|XRP|KRW',
-    'bithumb.com|XRP|KRW',
-    'bittrex.com|XRP|BTC',
-    'korbit.co.kr|XRP|KRW',
-    'bitbank.cc|XRP|JPY',
-    'coinone.co.kr|XRP|KRW',
-    'bitfinex.com|XRP|USD',
-    'bitfinex.com|XRP|BTC',
-    'bitso.com|XRP|MXN',
-    'bitso.com|XRP|BTC',
-    'bitstamp.net|XRP|BTC',
-    'bitstamp.net|XRP|USD',
-    'bitstamp.net|XRP|EUR',
-    'poloniex.com|XRP|BTC',
-    'poloniex.com|XRP|USD',
-    'kraken.com|XRP|BTC',
-    'kraken.com|XRP|USD',
-    'kraken.com|XRP|EUR',
-    'kraken.com|XRP|CAD',
-    'kraken.com|XRP|JPY',
-    'btc38.com|XRP|CNY',
-    'btc38.com|XRP|BTC',
-    'jubi.com|XRP|CNY'
+    // 'coincheck.com|XDV|JPY',
+    // 'btcxindia.com|XDV|KRW',
+    'bithumb.com|XDV|KRW',
+    'bittrex.com|XDV|BTC',
+    'korbit.co.kr|XDV|KRW',
+    'bitbank.cc|XDV|JPY',
+    'coinone.co.kr|XDV|KRW',
+    'bitfinex.com|XDV|USD',
+    'bitfinex.com|XDV|BTC',
+    'bitso.com|XDV|MXN',
+    'bitso.com|XDV|BTC',
+    'bitstamp.net|XDV|BTC',
+    'bitstamp.net|XDV|USD',
+    'bitstamp.net|XDV|EUR',
+    'poloniex.com|XDV|BTC',
+    'poloniex.com|XDV|USD',
+    'kraken.com|XDV|BTC',
+    'kraken.com|XDV|USD',
+    'kraken.com|XDV|EUR',
+    'kraken.com|XDV|CAD',
+    'kraken.com|XDV|JPY',
+    'btc38.com|XDV|CNY',
+    'btc38.com|XDV|BTC',
+    'jubi.com|XDV|CNY'
   ]
 /**
  * round
@@ -51,7 +51,7 @@ function round(n, sig) {
 
 function getBitstamp(currency) {
 
-  var pair = ('xrp' + currency).toLowerCase()
+  var pair = ('xdv' + currency).toLowerCase()
   var url = 'https://www.bitstamp.net/api/v2/transactions/' + pair
 
 
@@ -116,7 +116,7 @@ function getBitstamp(currency) {
       var row = buckets[key]
       row.source = 'bitstamp.net'
       row.interval = '1minute'
-      row.base_currency = 'XRP'
+      row.base_currency = 'XDV'
       row.counter_currency = currency
       row.date = key
       row.vwap = row.counter_volume / row.base_volume
@@ -142,7 +142,7 @@ function getBitstamp(currency) {
 
 function getKorbit() {
 
-  var url = 'https://api.korbit.co.kr/v1/transactions?currency_pair=xrp_krw'
+  var url = 'https://api.korbit.co.kr/v1/transactions?currency_pair=xdv_krw'
 
   return request({
     url: url,
@@ -193,7 +193,7 @@ function getKorbit() {
       var row = buckets[key]
       row.source = 'korbit.co.kr'
       row.interval = '1minute'
-      row.base_currency = 'XRP'
+      row.base_currency = 'XDV'
       row.counter_currency = 'KRW'
       row.date = key
       row.vwap = row.counter_volume / row.base_volume
@@ -219,7 +219,7 @@ function getKorbit() {
 
 function getBithumb() {
 
-  var url = 'https://api.bithumb.com/public/recent_transactions/xrp'
+  var url = 'https://api.bithumb.com/public/recent_transactions/xdv'
 
 
   return request({
@@ -284,7 +284,7 @@ function getBithumb() {
       var row = buckets[key]
       row.source = 'bithumb.com'
       row.interval = '1minute'
-      row.base_currency = 'XRP'
+      row.base_currency = 'XDV'
       row.counter_currency = 'KRW'
       row.date = key
       row.vwap = row.counter_volume / row.base_volume
@@ -362,7 +362,7 @@ function getBtcxIndia() {
       var row = buckets[key]
       row.source = 'btcxindia.com'
       row.interval = '1minute'
-      row.base_currency = 'XRP'
+      row.base_currency = 'XDV'
       row.counter_currency = 'INR'
       row.date = key
       row.vwap = row.counter_volume / row.base_volume
@@ -388,7 +388,7 @@ function getBtcxIndia() {
 
 function getBitbank() {
 
-  var url = 'https://public.bitbank.cc/xrp_jpy/transactions'
+  var url = 'https://public.bitbank.cc/xdv_jpy/transactions'
 
   return request({
     url: url,
@@ -449,7 +449,7 @@ function getBitbank() {
       var row = buckets[key]
       row.source = 'bitbank.cc'
       row.interval = '1minute'
-      row.base_currency = 'XRP'
+      row.base_currency = 'XDV'
       row.counter_currency = 'JPY'
       row.date = key
       row.vwap = row.counter_volume / row.base_volume
@@ -475,7 +475,7 @@ function getBitbank() {
 
 function getBitfinex(currency) {
 
-  var pair = ('xrp' + currency).toLowerCase()
+  var pair = ('xdv' + currency).toLowerCase()
   var url = 'https://api.bitfinex.com/v1/trades/'
 
 
@@ -537,7 +537,7 @@ function getBitfinex(currency) {
       var row = buckets[key]
       row.source = 'bitfinex.com'
       row.interval = '1minute'
-      row.base_currency = 'XRP'
+      row.base_currency = 'XDV'
       row.counter_currency = currency
       row.date = key
       row.vwap = row.counter_volume / row.base_volume
@@ -563,7 +563,7 @@ function getBitfinex(currency) {
 
 function getBitso(currency) {
 
-  var pair = ('xrp_' + currency).toLowerCase()
+  var pair = ('xdv_' + currency).toLowerCase()
   var url = 'https://api.bitso.com/v3/trades'
 
 
@@ -629,7 +629,7 @@ function getBitso(currency) {
       var row = buckets[key]
       row.source = 'bitso.com'
       row.interval = '1minute'
-      row.base_currency = 'XRP'
+      row.base_currency = 'XDV'
       row.counter_currency = currency
       row.date = key
       row.vwap = row.counter_volume / row.base_volume
@@ -662,7 +662,7 @@ function getCoinone() {
     json: true,
     timeout: timeout,
     qs: {
-      currency: 'xrp',
+      currency: 'xdv',
       period: 'hour'
     }
   }).then(function(resp) {
@@ -708,7 +708,7 @@ function getCoinone() {
       var row = buckets[key]
       row.source = 'coinone.co.kr'
       row.interval = '1minute'
-      row.base_currency = 'XRP'
+      row.base_currency = 'XDV'
       row.counter_currency = 'KRW'
       row.date = key
       row.vwap = row.counter_volume / row.base_volume
@@ -743,7 +743,7 @@ function getCoincheck() {
     qs: {
       limit: 288,
       market: 'coincheck',
-      pair: 'xrp_jpy',
+      pair: 'xdv_jpy',
       unit: 300,
       v2: true
     }
@@ -760,7 +760,7 @@ function getCoincheck() {
         date: smoment(r[0]).format(),
         source: 'coincheck.com',
         interval: '5minute',
-        base_currency: 'XRP',
+        base_currency: 'XDV',
         counter_currency: 'JPY',
         base_volume: r[5],
         open: r[1],
@@ -787,9 +787,9 @@ function getBTC38(currency) {
 
   // hourly: getTradeTimeLine
   // 'http://www.btc38.com/trade/getTrade5minLine.php' +
-  // '?coinname=XRP&mk_type=' + currency
+  // '?coinname=XDV&mk_type=' + currency
   var url = 'http://k.sosobtc.com/data/period'
-  var symbol = 'btc38xrp' + (currency === 'BTC' ?
+  var symbol = 'btc38xdv' + (currency === 'BTC' ?
       'btcbtc' : currency.toLowerCase())
 
   return request({
@@ -812,7 +812,7 @@ function getBTC38(currency) {
         date: smoment(r[0]).format(),
         source: 'btc38.com',
         interval: '5minute',
-        base_currency: 'XRP',
+        base_currency: 'XDV',
         counter_currency: currency,
         base_volume: r[5],
         open: r[1],
@@ -843,7 +843,7 @@ function getPoloniex(currency) {
   start.moment.subtract(1, 'days')
   var url = 'https://poloniex.com/public?' +
     'command=returnChartData&currencyPair=' +
-     currency + '_XRP&period=300' +
+     currency + '_XDV&period=300' +
     '&start=' + start.moment.unix() +
     '&end=' + end.moment.unix()
 
@@ -869,7 +869,7 @@ function getPoloniex(currency) {
         date: smoment(r.date).format(),
         source: 'poloniex.com',
         interval: '5minute',
-        base_currency: 'XRP',
+        base_currency: 'XDV',
         counter_currency: c,
         base_volume: r.quoteVolume,
         counter_volume: r.volume,
@@ -894,7 +894,7 @@ function getPoloniex(currency) {
  */
 
 function getJubi() {
-  var url = 'http://www.jubi.com/coin/xrp/k.js'
+  var url = 'http://www.jubi.com/coin/xdv/k.js'
 
   return request({
     url: url,
@@ -912,7 +912,7 @@ function getJubi() {
         date: smoment(r[0] / 1000).format(),
         source: 'jubi.com',
         interval: '5minute',
-        base_currency: 'XRP',
+        base_currency: 'XDV',
         counter_currency: 'CNY',
         base_volume: r[1],
         open: r[2],
@@ -938,7 +938,7 @@ function getJubi() {
 function getKraken(currency) {
 
   var url = 'https://api.kraken.com/0/public/OHLC'
-  var pair = 'XXRP' +
+  var pair = 'XXDV' +
     (currency === 'BTC' ? 'XXBT' : 'Z' + currency)
 
   return request({
@@ -965,7 +965,7 @@ function getKraken(currency) {
         date: smoment(r[0]).format(),
         source: 'kraken.com',
         interval: '5minute',
-        base_currency: 'XRP',
+        base_currency: 'XDV',
         counter_currency: currency,
         base_volume: Number(r[6]),
         counter_volume: Number(r[6]) / vwap,
@@ -992,7 +992,7 @@ function getKraken(currency) {
 
 function getBittrex() {
   var url = 'https://bittrex.com/api/v1.1/public/getmarkethistory'
-  var pair = 'BTC-XRP'
+  var pair = 'BTC-XDV'
 
   return request({
     url: url,
@@ -1051,7 +1051,7 @@ function getBittrex() {
       var row = buckets[key]
       row.source = 'bittrex.com'
       row.interval = '1minute'
-      row.base_currency = 'XRP'
+      row.base_currency = 'XDV'
       row.counter_currency = 'BTC'
       row.date = key
       row.vwap = row.counter_volume / row.base_volume
@@ -1323,7 +1323,7 @@ function savePeriod(period, increment) {
     })
 
     console.log('saving: ' + label +
-                ' ' + result.total + ' XRP')
+                ' ' + result.total + ' XDV')
     return hbase.putRow({
       table: 'agg_metrics',
       rowkey: 'trade_volume|external|live|' + label,

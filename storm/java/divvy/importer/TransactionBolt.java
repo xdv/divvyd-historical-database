@@ -1,4 +1,4 @@
-package ripple.importer;
+package divvy.importer;
 
 import java.util.Map;
 

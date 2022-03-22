@@ -27,7 +27,7 @@ require('./exception')(log)
  */
 
 function killTopology() {
-  exec('storm kill "ripple-ledger-importer" -w 0',
+  exec('storm kill "divvy-ledger-importer" -w 0',
   function callback(e, stdout, stderr) {
     if (e) {
       log.error(e)
@@ -49,11 +49,11 @@ function killTopology() {
 
 function notify(message, kill) {
   var params = {
-    from: 'Storm Import<storm-import@ripple.com>',
+    from: 'Storm Import<storm-import@xdv.io>',
     to: to,
-    subject: name + ' - rippleAPI error',
+    subject: name + ' - divvyAPI error',
     html: 'The import topology received ' +
-      'a rippleAPI error: <br /><br />\n' +
+      'a divvyAPI error: <br /><br />\n' +
       '<blockquote><pre>' + message + '</pre></blockquote><br />\n'
   }
 

@@ -63,7 +63,7 @@
                 },
                 "LowNode": "0000000000000006"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "817FBB44944C3A153F78B2BF0C521A490028C75C170D81C47C2E7C3D86AC6FE7",
               "PreviousFields": {
                 "Balance": {
@@ -117,7 +117,7 @@
                 },
                 "LowNode": "0000000000000000"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "E5D5C0B9897F2B903D6FC1BFB9DB1DEC98DD6B6F96A34C48C9A504AC9AEC579A",
               "PreviousFields": {
                 "Balance": {
@@ -203,7 +203,7 @@
                 },
                 "LowNode": "0000000000000000"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "E5D5C0B9897F2B903D6FC1BFB9DB1DEC98DD6B6F96A34C48C9A504AC9AEC579A",
               "PreviousFields": {
                 "Balance": {
@@ -238,7 +238,7 @@
                 },
                 "LowNode": "0000000000000006"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "E9A900B96F8F071E2EA2D75F40AA7234D8FB4F98D3368CE85653E8B0C0044605",
               "PreviousFields": {
                 "Balance": {
@@ -305,7 +305,7 @@
                 },
                 "LowNode": "0000000000000000"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "59C77FE7F10091932C4203CDD089C04CD7D47958B1B59FF44C518C299FD3E567",
               "PreviousFields": {
                 "Balance": {
@@ -340,7 +340,7 @@
                 },
                 "LowNode": "0000000000000000"
               },
-              "LedgerEntryType": "RippleState",
+              "LedgerEntryType": "DivvyState",
               "LedgerIndex": "E5D5C0B9897F2B903D6FC1BFB9DB1DEC98DD6B6F96A34C48C9A504AC9AEC579A",
               "PreviousFields": {
                 "Balance": {

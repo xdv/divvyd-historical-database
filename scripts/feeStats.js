@@ -15,10 +15,10 @@ var inactive = true;
 log.info(('queue threshold: ' + QUEUE_THRESHOLD + '%').red);
 
 /**
- * dropsToXRP
+ * dropsToXDV
  */
 
-function dropsToXRP(d) {
+function dropsToXDV(d) {
   return Number(d) / 1000000;
 }
 
@@ -54,9 +54,9 @@ function getFeeStats() {
         expected_ledger_size: Number(d.result.expected_ledger_size),
         current_queue_size: Number(d.result.current_queue_size),
         pct_max_queue_size: pct.toFixed(2),
-        minimum_fee: dropsToXRP(d.result.drops.minimum_fee),
-        open_ledger_fee: dropsToXRP(d.result.drops.open_ledger_fee),
-        median_fee: dropsToXRP(d.result.drops.median_fee)
+        minimum_fee: dropsToXDV(d.result.drops.minimum_fee),
+        open_ledger_fee: dropsToXDV(d.result.drops.open_ledger_fee),
+        median_fee: dropsToXDV(d.result.drops.median_fee)
       }
     };
   });
@@ -97,7 +97,7 @@ function checkAlerts(d) {
       inactive = true;
     }, 5 * 60 * 1000);
 
-    params.from = 'Ripple Fee Notification <notify@ripple.com>';
+    params.from = 'Divvy Fee Notification <notify@xdv.io>';
     params.to = recipients;
     params.subject = 'Pct max queue exeeded threshold: ' + pct + '%';
     params.html = 'The current que size exceeded ' + QUEUE_THRESHOLD + '%' +

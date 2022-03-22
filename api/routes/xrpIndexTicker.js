@@ -2,7 +2,7 @@
 
 const config = require('../../config')
 const Logger = require('../../lib/logger')
-const log = new Logger({scope : 'xrp index'})
+const log = new Logger({scope : 'xdv index'})
 const hbase = require('../../lib/hbase')
 const smoment = require('../../lib/smoment')
 const moment = require('moment')
@@ -96,7 +96,7 @@ function validate(params) {
 function getTicker(options, rate) {
   return new Promise((resolve, reject) => {
     hbase.getScan({
-      table: 'agg_xrp_index',
+      table: 'agg_xdv_index',
       startRow: 'live|',
       stopRow: 'live|z',
     },

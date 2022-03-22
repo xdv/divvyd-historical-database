@@ -71,9 +71,9 @@ var AcccountBalanceChanges = function(req, res) {
 
     if (options.counterparty &&
        options.currency &&
-       options.currency.toUpperCase() === 'XRP') {
+       options.currency.toUpperCase() === 'XDV') {
       return {
-        error: 'counterparty cannot be specified for XRP',
+        error: 'counterparty cannot be specified for XDV',
         code: 400
       };
     }

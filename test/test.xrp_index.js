@@ -8,9 +8,9 @@ const utils = require('./utils')
 const hbase = require('../lib/hbase')
 const port = config.get('port') || 7111
 
-const XRPIndex = require('./mock/xrp-index.json')
-const aggXRPIndex = require('./mock/agg-xrp-index.json')
-const XRPIndexTicker = require('./mock/xrp-index-ticker.json')
+const XDVIndex = require('./mock/xdv-index.json')
+const aggXDVIndex = require('./mock/agg-xdv-index.json')
+const XDVIndexTicker = require('./mock/xdv-index-ticker.json')
 const date = moment.utc().format('YYYYMMDDHHmmss')
 const forex = {}
 
@@ -26,16 +26,16 @@ describe('setup mock data', function() {
   it('load data into hbase', function(done) {
     Promise.all([
       hbase.putRows({
-        table: 'xrp_index',
-        rows: XRPIndex
+        table: 'xdv_index',
+        rows: XDVIndex
       }),
       hbase.putRows({
-        table: 'agg_xrp_index',
-        rows: aggXRPIndex
+        table: 'agg_xdv_index',
+        rows: aggXDVIndex
       }),
       hbase.putRows({
-        table: 'agg_xrp_index',
-        rows: XRPIndexTicker
+        table: 'agg_xdv_index',
+        rows: XDVIndexTicker
       }),
       hbase.putRows({
         table: 'forex_rates',
@@ -51,9 +51,9 @@ describe('setup mock data', function() {
   })
 })
 
-describe.skip('XRP Index API endpoint', function() {
-  it('should should get XRP index data', function(done) {
-    const url = 'http://localhost:' + port + '/v2/xrp_index'
+describe.skip('XDV Index API endpoint', function() {
+  it('should should get XDV index data', function(done) {
+    const url = 'http://localhost:' + port + '/v2/xdv_index'
     request({
       url: url,
       json: true,
@@ -75,8 +75,8 @@ describe.skip('XRP Index API endpoint', function() {
     })
   })
 
-  it('should should get XRP index data with currency', function(done) {
-    const url = 'http://localhost:' + port + '/v2/xrp_index'
+  it('should should get XDV index data with currency', function(done) {
+    const url = 'http://localhost:' + port + '/v2/xdv_index'
     request({
       url: url,
       json: true,
@@ -102,8 +102,8 @@ describe.skip('XRP Index API endpoint', function() {
     })
   })
 
-  it('should should get XRP index data within date range', function(done) {
-    const url = 'http://localhost:' + port + '/v2/xrp_index'
+  it('should should get XDV index data within date range', function(done) {
+    const url = 'http://localhost:' + port + '/v2/xdv_index'
     const start = '2017-11-07T17:14:59Z'
     const end = '2017-11-07T17:17:00Z'
     request({
@@ -133,8 +133,8 @@ describe.skip('XRP Index API endpoint', function() {
     })
   })
 
-  it('should should get aggregated XRP index data', function(done) {
-    const url = 'http://localhost:' + port + '/v2/xrp_index'
+  it('should should get aggregated XDV index data', function(done) {
+    const url = 'http://localhost:' + port + '/v2/xdv_index'
 
     request({
       url: url,
@@ -164,8 +164,8 @@ describe.skip('XRP Index API endpoint', function() {
     })
   })
 
-  it('should should get aggregated XRP index data with currency', function(done) {
-    const url = 'http://localhost:' + port + '/v2/xrp_index'
+  it('should should get aggregated XDV index data with currency', function(done) {
+    const url = 'http://localhost:' + port + '/v2/xdv_index'
 
     request({
       url: url,
@@ -198,7 +198,7 @@ describe.skip('XRP Index API endpoint', function() {
   })
 
   it('should handle pagination', function(done) {
-    const url = 'http://localhost:' + port + '/v2/xrp_index?descending=true'
+    const url = 'http://localhost:' + port + '/v2/xdv_index?descending=true'
 
     utils.checkPagination(url, undefined, function(ref, i, body) {
       assert.strictEqual(body.rows.length, 1)
@@ -207,7 +207,7 @@ describe.skip('XRP Index API endpoint', function() {
   })
 
   it('should include a link header when marker is present', function(done) {
-    var url = 'http://localhost:' + port + '/v2/xrp_index?limit=1'
+    var url = 'http://localhost:' + port + '/v2/xdv_index?limit=1'
     var linkHeader = '<' + url +
       '&marker=79828892828299>; rel="next"'
 
@@ -224,7 +224,7 @@ describe.skip('XRP Index API endpoint', function() {
   })
 
   it('should error on invalid start date', function(done) {
-    const url = 'http://localhost:' + port + '/v2/xrp_index'
+    const url = 'http://localhost:' + port + '/v2/xdv_index'
 
     request({
       url: url,
@@ -244,7 +244,7 @@ describe.skip('XRP Index API endpoint', function() {
   })
 
   it('should error on invalid end date', function(done) {
-    const url = 'http://localhost:' + port + '/v2/xrp_index'
+    const url = 'http://localhost:' + port + '/v2/xdv_index'
 
     request({
       url: url,
@@ -264,7 +264,7 @@ describe.skip('XRP Index API endpoint', function() {
   })
 
   it('should error on invalid interval', function(done) {
-    const url = 'http://localhost:' + port + '/v2/xrp_index'
+    const url = 'http://localhost:' + port + '/v2/xdv_index'
 
     request({
       url: url,
@@ -283,7 +283,7 @@ describe.skip('XRP Index API endpoint', function() {
   })
 
   it('should error on invalid currency', function(done) {
-    const url = 'http://localhost:' + port + '/v2/xrp_index'
+    const url = 'http://localhost:' + port + '/v2/xdv_index'
 
     request({
       url: url,
@@ -303,9 +303,9 @@ describe.skip('XRP Index API endpoint', function() {
 })
 
 
-describe.skip('XRP Index Ticker API endpoint', function() {
-  it('should should get XRP index data', function(done) {
-    const url = 'http://localhost:' + port + '/v2/xrp_index/ticker'
+describe.skip('XDV Index Ticker API endpoint', function() {
+  it('should should get XDV index data', function(done) {
+    const url = 'http://localhost:' + port + '/v2/xdv_index/ticker'
     const fields = [
       'result',
       '1hour',
@@ -351,8 +351,8 @@ describe.skip('XRP Index Ticker API endpoint', function() {
     })
   })
 
-  it('should should get XRP index data with currency', function(done) {
-    const url = 'http://localhost:' + port + '/v2/xrp_index/ticker'
+  it('should should get XDV index data with currency', function(done) {
+    const url = 'http://localhost:' + port + '/v2/xdv_index/ticker'
     const fields = [
       'result',
       'fx_rate',
@@ -404,7 +404,7 @@ describe.skip('XRP Index Ticker API endpoint', function() {
   })
 
   it('should error on invalid currency', function(done) {
-    const url = 'http://localhost:' + port + '/v2/xrp_index/ticker'
+    const url = 'http://localhost:' + port + '/v2/xdv_index/ticker'
 
     request({
       url: url,

@@ -1,33 +1,33 @@
 # Divvy Data API v2
 
-The Ripple Data API v2 provides access to information about changes in the XRP Ledger, including transaction history and processed analytical data. This information is stored in a dedicated database, which frees `rippled` servers to keep fewer historical ledger versions. The Data API v2 also acts as data source for applications such as [XRP Charts](https://xrpcharts.ripple.com/) and [ripple.com](https://www.ripple.com).
+The Divvy Data API v2 provides access to information about changes in the XDV Ledger, including transaction history and processed analytical data. This information is stored in a dedicated database, which frees `divvyd` servers to keep fewer historical ledger versions. The Data API v2 also acts as data source for applications such as [XDV Charts](https://xdvcharts.xdv.io/) and [xdv.io](https://www.xdv.io).
 
-Ripple provides a live instance of the Data API with as complete a transaction record as possible at the following address:
+Divvy provides a live instance of the Data API with as complete a transaction record as possible at the following address:
 
-[**https://data.ripple.com**](https://data.ripple.com)
+[**https://data.xdv.io**](https://data.xdv.io)
 
 
 ## More Information
-The Ripple Data API v2 replaces the Historical Database v1 and the [Charts API](https://github.com/ripple/ripple-data-api/).
+The Divvy Data API v2 replaces the Historical Database v1 and the [Charts API](https://github.com/xdv/divvy-data-api/).
 
 * [API Methods](#api-method-reference)
 * [API Conventions](#api-conventions)
 * [Setup (local instance)](#running-the-historical-database)
-* [Source Code on Github](https://github.com/ripple/rippled-historical-database)
-* [Release Notes](https://github.com/ripple/rippled-historical-database/releases)
+* [Source Code on Github](https://github.com/xdv/divvyd-historical-database)
+* [Release Notes](https://github.com/xdv/divvyd-historical-database/releases)
 
-[v2.0.4]: https://github.com/ripple/rippled-historical-database/releases/tag/v2.0.4
-[v2.0.5]: https://github.com/ripple/rippled-historical-database/releases/tag/v2.0.5
-[v2.0.6]: https://github.com/ripple/rippled-historical-database/releases/tag/v2.0.6
-[v2.0.7]: https://github.com/ripple/rippled-historical-database/releases/tag/v2.0.7
-[v2.0.8]: https://github.com/ripple/rippled-historical-database/releases/tag/v2.0.8
-[v2.1.0]: https://github.com/ripple/rippled-historical-database/releases/tag/v2.1.0
-[v2.2.0]: https://github.com/ripple/rippled-historical-database/releases/tag/v2.2.0
-[v2.3.0]: https://github.com/ripple/rippled-historical-database/releases/tag/v2.3.0
-[v2.3.2]: https://github.com/ripple/rippled-historical-database/releases/tag/v2.3.2
-[v2.3.5]: https://github.com/ripple/rippled-historical-database/releases/tag/v2.3.5
-[v2.3.7]: https://github.com/ripple/rippled-historical-database/releases/tag/v2.3.7
-[v2.4.0]: https://github.com/ripple/rippled-historical-database/releases/tag/v2.4.0
+[v2.0.4]: https://github.com/xdv/divvyd-historical-database/releases/tag/v2.0.4
+[v2.0.5]: https://github.com/xdv/divvyd-historical-database/releases/tag/v2.0.5
+[v2.0.6]: https://github.com/xdv/divvyd-historical-database/releases/tag/v2.0.6
+[v2.0.7]: https://github.com/xdv/divvyd-historical-database/releases/tag/v2.0.7
+[v2.0.8]: https://github.com/xdv/divvyd-historical-database/releases/tag/v2.0.8
+[v2.1.0]: https://github.com/xdv/divvyd-historical-database/releases/tag/v2.1.0
+[v2.2.0]: https://github.com/xdv/divvyd-historical-database/releases/tag/v2.2.0
+[v2.3.0]: https://github.com/xdv/divvyd-historical-database/releases/tag/v2.3.0
+[v2.3.2]: https://github.com/xdv/divvyd-historical-database/releases/tag/v2.3.2
+[v2.3.5]: https://github.com/xdv/divvyd-historical-database/releases/tag/v2.3.5
+[v2.3.7]: https://github.com/xdv/divvyd-historical-database/releases/tag/v2.3.7
+[v2.4.0]: https://github.com/xdv/divvyd-historical-database/releases/tag/v2.4.0
 
 
 # API Method Reference
@@ -49,7 +49,7 @@ Ledger Contents Methods:
 * [Get Exchange Volume - `GET /v2/network/exchange_volume`](#get-exchange-volume)
 * [Get Payment Volume - `GET /v2/network/payment_volume`](#get-payment-volume)
 * [Get External Markets - `GET /v2/network/external_markets`](#get-external-markets)
-* [Get XRP Distribution - `GET /v2/network/xrp_distribution`](#get-xrp-distribution)
+* [Get XDV Distribution - `GET /v2/network/xdv_distribution`](#get-xdv-distribution)
 * [Get Top Currencies - `GET /v2/network/top_currencies`](#get-top-currencies)
 * [Get Top Markets - `GET /v2/network/top_markets`](#get-top-markets)
 
@@ -89,7 +89,7 @@ Validation Network Methods:
 * [Get Validator Manifests - `GET /v2/network/validators/{pubkey}/manifests`](#get-validator-manifests)
 * [Get Single Validator Reports - `GET /v2/network/validators/{pubkey}/reports`](#get-single-validator-reports)
 * [Get Daily Validator Reports - `GET /v2/network/validator_reports`](#get-daily-validator-reports)
-* [Get `rippled` Versions - `GET /v2/network/rippled_versions`](#get-rippled-versions)
+* [Get `divvyd` Versions - `GET /v2/network/divvyd_versions`](#get-divvyd-versions)
 
 Health Checks:
 
@@ -100,7 +100,7 @@ Health Checks:
 
 
 ## Get Ledger
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/getLedger.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/getLedger.js "Source")
 
 Retrieve a specific Ledger by hash, index, date, or latest validated.
 
@@ -116,7 +116,7 @@ GET /v2/ledgers/{identifier}
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-ledger)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-ledger)
 
 This method requires the following URL parameters:
 
@@ -172,7 +172,7 @@ Response:
 
 
 ## Get Ledger Validations
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/getLedger.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/getLedger.js "Source")
 
 Retrieve a any validations recorded for a specific ledger hash.  This dataset includes ledger versions that are outside the validated ledger chain. _(New in [v2.2.0][])_
 
@@ -190,7 +190,7 @@ GET /v2/ledgers/{ledger_hash}/validations
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-ledger-validations)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-ledger-validations)
 
 This method requires the following URL parameters:
 
@@ -262,7 +262,7 @@ Response:
 
 
 ## Get Ledger Validation
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/getLedger.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/getLedger.js "Source")
 
 Retrieve a validation vote recorded for a specific ledger hash by a specific validator.  This dataset includes ledger versions that are outside the validated ledger chain. _(New in [v2.2.0][])_
 
@@ -280,7 +280,7 @@ GET /v2/ledgers/{ledger_hash}/validations/{pubkey}
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-ledger-validation)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-ledger-validation)
 
 This method requires the following URL parameters:
 
@@ -326,7 +326,7 @@ Response:
 
 
 ## Get Transaction
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/getTransactions.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/getTransactions.js "Source")
 
 Retrieve a specific transaction by its identifying hash.
 
@@ -342,7 +342,7 @@ GET /v2/transactions/{hash}
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-transaction)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-transaction)
 
 This method requires the following URL parameters:
 
@@ -436,7 +436,7 @@ Response (trimmed for size):
 
 
 ## Get Transactions
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/getTransactions.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/getTransactions.js "Source")
 
 Retrieve transactions by time
 
@@ -452,7 +452,7 @@ GET /v2/transactions/
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-transactions)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-transactions)
 
 Optionally, you can provide the following query parameters:
 
@@ -461,8 +461,8 @@ Optionally, you can provide the following query parameters:
 | `start`      | String - [Timestamp][] | Filter results to this time and later. |
 | `end`        | String - [Timestamp][] | Filter results to this time and earlier. |
 | `descending` | Boolean                | If `true`, return results in reverse chronological order. The default is `false`. |
-| `type`       | String                 | Filter transactions to a specific [transaction type](https://developers.ripple.com/transaction-types.html). |
-| `result`     | String                 | Filter transactions for a specific [transaction result](https://developers.ripple.com/transaction-results.html). |
+| `type`       | String                 | Filter transactions to a specific [transaction type](https://developers.xdv.io/transaction-types.html). |
+| `result`     | String                 | Filter transactions for a specific [transaction result](https://developers.xdv.io/transaction-results.html). |
 | `binary`     | Boolean                | If `true`, return transactions in binary form. The default is `false`. |
 | `limit`      | Integer                | Maximum results per page. The default is 20. Cannot be more than 100. |
 | `marker`     | String                 | [Pagination](#pagination) marker from a previous response. |
@@ -595,7 +595,7 @@ Response:
 
 
 ## Get Payments
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/getPayments.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/getPayments.js "Source")
 
 Retrieve Payments over time, where Payments are defined as `Payment` type transactions where the sender of the transaction is not also the destination. _(New in [v2.0.4][])_
 
@@ -619,13 +619,13 @@ GET /v2/payments/{currency}
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-payments)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-payments)
 
 This method uses the following URL parameters:
 
 | Field      | Value  | Description                                            |
 |:-----------|:-------|:-------------------------------------------------------|
-| `currency` | String | _(Optional)_ Currency code, followed by `+` and a counterparty address. (Or `XRP` with no counterparty.) If omitted, return payments for all currencies. |
+| `currency` | String | _(Optional)_ Currency code, followed by `+` and a counterparty address. (Or `XDV` with no counterparty.) If omitted, return payments for all currencies. |
 
 Optionally, you can provide the following query parameters:
 
@@ -735,7 +735,7 @@ Response:
 
 
 ## Get Exchanges
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/getExchanges.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/getExchanges.js "Source")
 
 Retrieve Exchanges for a given currency pair over time.  Results can be returned as individual exchanges or aggregated to a specific list of intervals
 
@@ -751,14 +751,14 @@ GET /v2/exchanges/{base}/{counter}
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-exchanges)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-exchanges)
 
 This method requires the following URL parameters:
 
 | Field     | Value  | Description                                             |
 |:----------|:-------|:--------------------------------------------------------|
-| `base`    | String | Base currency of the pair, as a [Currency Code][], followed by `+` and the issuer [Address][] unless it's XRP. |
-| `counter` | String | Counter currency of the pair, as a [Currency Code][], followed by `+` and the issuer [Address][] unless it's XRP. |
+| `base`    | String | Base currency of the pair, as a [Currency Code][], followed by `+` and the issuer [Address][] unless it's XDV. |
+| `counter` | String | Counter currency of the pair, as a [Currency Code][], followed by `+` and the issuer [Address][] unless it's XDV. |
 
 Optionally, you can provide the following query parameters:
 
@@ -789,7 +789,7 @@ A successful response uses the HTTP code **200 OK** and has a JSON body with the
 Request:
 
 ```
-GET /v2/exchanges/USD+rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q/XRP?descending=true&limit=3&result=tesSUCCESS&type=OfferCreate
+GET /v2/exchanges/USD+rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q/XDV?descending=true&limit=3&result=tesSUCCESS&type=OfferCreate
 ```
 
 Response:
@@ -799,7 +799,7 @@ Response:
 {
     "result": "success",
     "count": 3,
-    "marker": "USD|rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q|XRP||20151021222220|000016612683|00017|00000",
+    "marker": "USD|rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q|XDV||20151021222220|000016612683|00017|00000",
     "exchanges": [
         {
             "base_amount": 4.98954834453577,
@@ -818,7 +818,7 @@ Response:
             "tx_type": "Payment",
             "base_currency": "USD",
             "base_issuer": "rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q",
-            "counter_currency": "XRP"
+            "counter_currency": "XDV"
         },
         {
             "base_amount": 0.0004716155440678037,
@@ -837,7 +837,7 @@ Response:
             "tx_type": "Payment",
             "base_currency": "USD",
             "base_issuer": "rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q",
-            "counter_currency": "XRP"
+            "counter_currency": "XDV"
         },
         {
             "base_amount": 0.0004714169229390923,
@@ -858,7 +858,7 @@ Response:
             "tx_type": "OfferCreate",
             "base_currency": "USD",
             "base_issuer": "rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q",
-            "counter_currency": "XRP"
+            "counter_currency": "XDV"
         }
     ]
 }
@@ -867,7 +867,7 @@ Response:
 
 
 ## Get Exchange Rates
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/getExchangeRate.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/getExchangeRate.js "Source")
 
 Retrieve an exchange rate for a given currency pair at a specific time.
 
@@ -883,14 +883,14 @@ GET /v2/exchange_rates/{base}/{counter}
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-exchange-rates)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-exchange-rates)
 
 This method requires the following URL parameters:
 
 | Field     | Value  | Description                                             |
 |:----------|:-------|:--------------------------------------------------------|
-| `base`    | String | Base currency of the pair, as a [Currency Code][], followed by `+` and the issuer [Address][]. Omit the `+` and the issuer for XRP. |
-| `counter` | String | Counter currency of the pair, as a [Currency Code][], followed by `+` and the issuer [Address][]. Omit the `+` and the issuer for XRP. |
+| `base`    | String | Base currency of the pair, as a [Currency Code][], followed by `+` and the issuer [Address][]. Omit the `+` and the issuer for XDV. |
+| `counter` | String | Counter currency of the pair, as a [Currency Code][], followed by `+` and the issuer [Address][]. Omit the `+` and the issuer for XDV. |
 
 
 Optionally, you can provide the following query parameters:
@@ -909,7 +909,7 @@ A successful response uses the HTTP code **200 OK** and has a JSON body with the
 | `result` | String | The value `success` indicates that this is a successful response. |
 | `rate`   | Number | The requested exchange rate, or `0` if the exchange rate could not be determined. |
 
-All exchange rates are calcuated by converting the base currency and counter currency to XRP.
+All exchange rates are calcuated by converting the base currency and counter currency to XDV.
 
 The rate is derived from the volume weighted average over the calendar day specified, averaged with the volume weighted average of the last 50 trades within the last 14 days.
 
@@ -918,7 +918,7 @@ The rate is derived from the volume weighted average over the calendar day speci
 Request:
 
 ```
-GET /v2/exchange_rates/USD+rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q/XRP?date=2015-11-13T00:00:00Z
+GET /v2/exchange_rates/USD+rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q/XDV?date=2015-11-13T00:00:00Z
 ```
 
 Response:
@@ -935,7 +935,7 @@ Response:
 
 
 ## Normalize
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/normalize.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/normalize.js "Source")
 
 Convert an amount from one currency and issuer to another, using the network exchange rates.
 
@@ -951,17 +951,17 @@ GET /v2/normalize
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#normalize)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#normalize)
 
 You must provide at least some of the following query parameters:
 
 | Field               | Value                      | Description               |
 |:--------------------|:---------------------------|:--------------------------|
 | `amount`            | Number                     | (Required) Amount of currency to normalize. |
-| `currency`          | String - [Currency Code][] | The currency code of the `amount` to convert from. The default is XRP. |
-| `issuer`            | String - [Address][]       | The issuer of the currency to convert from. (Required if `currency` is not XRP.) |
-| `exchange_currency` | String - [Currency Code][] | The currency to convert to. The default is XRP. |
-| `exchange_issuer`   | String - [Address][]       | The issuer of the currency to convert to. (Required if `exchange_currency` is not XRP.) |
+| `currency`          | String - [Currency Code][] | The currency code of the `amount` to convert from. The default is XDV. |
+| `issuer`            | String - [Address][]       | The issuer of the currency to convert from. (Required if `currency` is not XDV.) |
+| `exchange_currency` | String - [Currency Code][] | The currency to convert to. The default is XDV. |
+| `exchange_issuer`   | String - [Address][]       | The issuer of the currency to convert to. (Required if `exchange_currency` is not XDV.) |
 | `date`              | String - [Timestamp][]     | Convert according to the exchange rate at this time. The default is the current time. |
 | `strict`            | Boolean                    | If `true`, do not use exchange rates that are determined by less than 10 exchanges. The default is `true`. |
 
@@ -976,14 +976,14 @@ A successful response uses the HTTP code **200 OK** and has a JSON body with the
 | `converted` | Number | Post-conversion amount of the `exchange_currency`, or `0` if the exchange rate could not be determined. |
 | `rate`      | Number | Exchange rate used to calculate the conversion, or `0` if the exchange rate could not be determined. |
 
-All exchange rates are calculating by converting both currencies to XRP.
+All exchange rates are calculating by converting both currencies to XDV.
 
 #### Example
 
 Request:
 
 ```
-GET /v2/normalize?amount=100&currency=XRP&exchange_currency=USD&exchange_issuer=rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q
+GET /v2/normalize?amount=100&currency=XDV&exchange_currency=USD&exchange_issuer=rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q
 ```
 
 Response:
@@ -1002,7 +1002,7 @@ Response:
 
 
 ## Get Daily Reports
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/reports.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/reports.js "Source")
 
 Retrieve per account per day aggregated payment summaries
 
@@ -1018,7 +1018,7 @@ GET /v2/reports/{date}
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-daily-reports)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-daily-reports)
 
 This method uses the following URL parameter:
 
@@ -1166,9 +1166,9 @@ Response (trimmed for size):
 
 
 ## Get Stats
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/stats.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/stats.js "Source")
 
-Retrieve statistics about transaction activity in the XRP Ledger, divided into intervals of time.
+Retrieve statistics about transaction activity in the XDV Ledger, divided into intervals of time.
 
 #### Request Format
 
@@ -1182,7 +1182,7 @@ GET /v2/stats
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-stats)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-stats)
 
 Optionally, you can provide the following query parameters:
 
@@ -1204,8 +1204,8 @@ The `family` and `metrics` query parameters provide a way to filter results to a
 
 | Family   | Included Metrics | Meaning |
 |:---------|:-----------------|:--------|
-| `type`   | All XRP Ledger [transaction types](https://developers.ripple.com/transaction-formats.html), including `Payment`, `AccountSet`, `OfferCreate`, and others. | Number of transactions of the given type that occurred during the interval. |
-| `result` | All [transaction result codes](https://developers.ripple.com/transaction-results.html) (string codes, not the numeric codes), including `tesSUCCESS`, `tecPATH_DRY`, and many others. | Number of transactions that resulted in the given code during the interval. |
+| `type`   | All XDV Ledger [transaction types](https://developers.xdv.io/transaction-formats.html), including `Payment`, `AccountSet`, `OfferCreate`, and others. | Number of transactions of the given type that occurred during the interval. |
+| `result` | All [transaction result codes](https://developers.xdv.io/transaction-results.html) (string codes, not the numeric codes), including `tesSUCCESS`, `tecPATH_DRY`, and many others. | Number of transactions that resulted in the given code during the interval. |
 | `metric` | Data-API defined Special Transaction Metrics. | (Varies) |
 
 ##### Special Transaction Metrics
@@ -1270,7 +1270,7 @@ Response:
 
 
 ## Get Active Accounts
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/activeAccounts.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/activeAccounts.js "Source")
 
 Get information on which accounts are actively trading in a specific currency pair. _(New in [v2.0.4][])_
 
@@ -1286,14 +1286,14 @@ GET /v2/active_accounts/{base}/{counter}
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-active-accounts)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-active-accounts)
 
 This method requires the following URL parameters:
 
 | Field     | Value  | Description                                             |
 |:----------|:-------|:--------------------------------------------------------|
-| `base`    | String | Base currency of the pair, as a [Currency Code][], followed by `+` and the issuer [Address][] unless it's XRP. |
-| `counter` | String | Counter currency of the pair, as a [Currency Code][], followed by `+` and the issuer [Address][] unless it's XRP. |
+| `base`    | String | Base currency of the pair, as a [Currency Code][], followed by `+` and the issuer [Address][] unless it's XDV. |
+| `counter` | String | Counter currency of the pair, as a [Currency Code][], followed by `+` and the issuer [Address][] unless it's XDV. |
 
 Optionally, you can provide the following query parameters:
 
@@ -1336,7 +1336,7 @@ Each **Account Trading Object** describes the activity of a single account durin
 Request:
 
 ```
-GET /v2/active_accounts/XRP/USD+rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q
+GET /v2/active_accounts/XDV/USD+rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q
 ```
 
 Response:
@@ -1422,11 +1422,11 @@ Response:
 
 
 ## Get Exchange Volume
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/network/getMetric.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/network/getMetric.js "Source")
 
 Get aggregated exchange volume for a given time period. _(New in [v2.0.4][])_
 
-The API returns results in units of a single _display currency_ rather than many different currencies. The conversion uses standard rates to and from XRP.
+The API returns results in units of a single _display currency_ rather than many different currencies. The conversion uses standard rates to and from XDV.
 
 #### Request Format
 
@@ -1440,14 +1440,14 @@ GET /v2/network/exchange_volume
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-exchange-volume)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-exchange-volume)
 
 Optionally, you can provide the following query parameters:
 
 | Field               | Value                      | Description               |
 |:--------------------|:---------------------------|:--------------------------|
 | `live`              | String                     | Return a live rolling window of this length of time. Valid values are `day`, `hour`, or `minute`. _(New in [v2.3.0][])_ |
-| `exchange_currency` | String - [Currency Code][] | Normalize all amounts to use this as a display currency. If not XRP, `exchange_issuer` is also required. The default is XRP. |
+| `exchange_currency` | String - [Currency Code][] | Normalize all amounts to use this as a display currency. If not XDV, `exchange_issuer` is also required. The default is XDV. |
 | `exchange_issuer`   | String - [Address][]       | Normalize results to the specified `currency` issued by this issuer. |
 | `format`            | String                     | Format of returned results: `csv` or `json`. The default is `json`. |
 
@@ -1469,8 +1469,8 @@ Each object in the `components` array of the Volume Objects represent the volume
 | `count`            | Number | The number of exchanges in this market during this interval. |
 | `rate`             | Number | The exchange rate from the base currency to the display currency. |
 | `amount`           | Number | The amount of volume in the market, in units of the base currency. |
-| `base`             | Object | The `currency` and `issuer` of the base currency of this market. There is no `issuer` for XRP. |
-| `counter`          | Object | The `currency` and `issuer` of the counter currency of this market. There is no `issuer` for XRP. |
+| `base`             | Object | The `currency` and `issuer` of the base currency of this market. There is no `issuer` for XDV. |
+| `counter`          | Object | The `currency` and `issuer` of the counter currency of this market. There is no `issuer` for XDV. |
 | `converted_amount` | Number | The total amount of volume in the market, converted to the display currency. _(Before [v2.1.0][], this was `convertedAmount`.)_ |
 
 #### Example
@@ -1501,7 +1501,7 @@ Response:
                         "issuer": "rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B"
                     },
                     "counter": {
-                        "currency": "XRP"
+                        "currency": "XDV"
                     },
                     "converted_amount": 117720.99268355068
                 },
@@ -1514,7 +1514,7 @@ Response:
                         "issuer": "rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B"
                     },
                     "counter": {
-                        "currency": "XRP"
+                        "currency": "XDV"
                     },
                     "converted_amount": 74003.51871932109
                 },
@@ -1569,11 +1569,11 @@ Response:
 
 
 ## Get Payment Volume
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/network/getMetric.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/network/getMetric.js "Source")
 
 Get aggregated payment volume for a given time period. _(New in [v2.0.4][])_
 
-The API returns results in units of a single _display currency_ rather than many different currencies. The conversion uses standard rates to and from XRP.
+The API returns results in units of a single _display currency_ rather than many different currencies. The conversion uses standard rates to and from XDV.
 
 #### Request Format
 
@@ -1587,14 +1587,14 @@ GET /v2/network/payment_volume
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-payment-volume)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-payment-volume)
 
 Optionally, you can provide the following query parameters:
 
 | Field               | Value                      | Description               |
 |:--------------------|:---------------------------|:--------------------------|
 | `live`              | String                     | Return a live rolling window of this length of time. Valid values are `day`, `hour`, or `minute`. _(New in [v2.3.0][])_ |
-| `exchange_currency` | String - [Currency Code][] | Normalize all amounts to use this as a display currency. If not XRP, `exchange_issuer` is also required. The default is XRP. |
+| `exchange_currency` | String - [Currency Code][] | Normalize all amounts to use this as a display currency. If not XDV, `exchange_issuer` is also required. The default is XDV. |
 | `exchange_issuer`   | String - [Address][]       | Normalize results to the specified `currency` issued by this issuer. |
 | `format`            | String                     | Format of returned results: `csv` or `json`. The default is `json`. |
 
@@ -1614,7 +1614,7 @@ Each object in the `components` array of the Volume Objects represent the volume
 | Field              | Value                      | Description                |
 |:-------------------|:---------------------------|:---------------------------|
 | `currency`         | String - [Currency Code][] | The currency of this payment volume object. |
-| `issuer`           | String - [Address][]       | (Omitted for XRP) The issuer of this payment volume object. |
+| `issuer`           | String - [Address][]       | (Omitted for XDV) The issuer of this payment volume object. |
 | `amount`           | Number                     | Total payment volume for this currency during the interval, in units of the currency itself. |
 | `count`            | Number                     | The total number of payments in this currency. |
 | `rate`             | Number                     | The exchange rate between this currency and the display currency. |
@@ -1674,7 +1674,7 @@ Response:
                     "converted_amount": 644756.0609868265
                 },
                 {
-                    "currency": "XRP",
+                    "currency": "XDV",
                     "amount": 296246369.30089426,
                     "count": 8691,
                     "rate": 1,
@@ -1684,7 +1684,7 @@ Response:
             "count": 9388,
             "endTime": "2015-09-11T19:58:59+00:00",
             "exchange": {
-                "currency": "XRP"
+                "currency": "XDV"
             },
             "exchangeRate": 1,
             "startTime": "2015-11-10T00:19:04+00:00",
@@ -1697,11 +1697,11 @@ Response:
 
 
 ## Get External Markets
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/network/externalMarkets.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/network/externalMarkets.js "Source")
 
 Get aggregated exchange volume from a list of off ledger exchanges for a specified rolling interval.
 
-The API returns results in units of a single _display currency_ rather than many different currencies. The conversion uses standard rates to and from XRP.
+The API returns results in units of a single _display currency_ rather than many different currencies. The conversion uses standard rates to and from XDV.
 
 #### Request Format ####
 
@@ -1715,14 +1715,14 @@ GET /v2/network/external_markets
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-external-markets)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-external-markets)
 
 Optionally, you can provide the following query parameters:
 
 | Field               | Value                      | Description               |
 |:--------------------|:---------------------------|:--------------------------|
 | `period`            | String                     | Aggregation Period - valid intervals are `1hour`, `1day`, `3day`, `7day`, or `30day`. The default is `1day`. |
-| `exchange_currency` | String - [Currency Code][] | Normalize all amounts to use this as a display currency. If not XRP, `exchange_issuer` is also required. The default is XRP. |
+| `exchange_currency` | String - [Currency Code][] | Normalize all amounts to use this as a display currency. If not XDV, `exchange_issuer` is also required. The default is XDV. |
 | `exchange_issuer`   | String - [Address][]       | Normalize results to the specified `currency` issued by this issuer. |
 
 
@@ -1734,7 +1734,7 @@ A successful response uses the HTTP code **200 OK** and has a JSON body with the
 | `result`      | String | The value `success` indicates that this is a successful response. |
 | `data`        | Object | Contains data for the specified period.             |
 | `data.date`   | String | Date at which this period was calculated.           |
-| `data.total`  | Number | Total XRP volume exchanged during the period.       |
+| `data.total`  | Number | Total XDV volume exchanged during the period.       |
 | `data.period` | String | Name of the period queried.                         |
 
 Each object in the `components` array of the Volume Objects represent the volume of a single external market.  Not all fields will be present for each market, depending on availability.
@@ -1742,7 +1742,7 @@ Each object in the `components` array of the Volume Objects represent the volume
 | Field              | Value  | Description                                    |
 |:-------------------|:-------|:-----------------------------------------------|
 | `source`           | String | Domain name of the specific external market.   |
-| `base_volume`      | Number | Exchange volume in terms of the base currency (XRP). |
+| `base_volume`      | Number | Exchange volume in terms of the base currency (XDV). |
 | `counter_volume`   | Number | Exchange volume in terms of the counter currency. |
 | `base_currecy`     | String | Base currency of the market pair.              |
 | `counter_currency` | String | Counter currency of the market pair.           |
@@ -1770,7 +1770,7 @@ Response:
         "base_volume": "52847221.256202064",
         "counter_volume": "619.8111371100003",
         "source": "poloniex.com",
-        "base_currency": "XRP",
+        "base_currency": "XDV",
         "counter_currency": "BTC",
         "rate": "0.0000117284"
       },
@@ -1778,7 +1778,7 @@ Response:
         "base_volume": "389955.29648717004",
         "counter_volume": "3212.07137265",
         "source": "poloniex.com",
-        "base_currency": "XRP",
+        "base_currency": "XDV",
         "counter_currency": "USD",
         "rate": "0.00823702"
       },
@@ -1787,26 +1787,26 @@ Response:
         "counter_volume": "70.57870572291264",
         "count": 250,
         "source": "kraken.com",
-        "base_currency": "XRP",
+        "base_currency": "XDV",
         "counter_currency": "BTC",
         "rate": "0.0000117138"
       },
       {
         "base_volume": "4141962.161763998",
         "source": "btc38.com",
-        "base_currency": "XRP",
+        "base_currency": "XDV",
         "counter_currency": "CNY"
       },
       {
         "base_volume": "303505",
         "source": "btc38.com",
-        "base_currency": "XRP",
+        "base_currency": "XDV",
         "counter_currency": "BTC"
       },
       {
         "base_volume": "1275008.2922999999",
         "source": "jubi.com",
-        "base_currency": "XRP",
+        "base_currency": "XDV",
         "counter_currency": "CNY"
       }
     ],
@@ -1819,10 +1819,10 @@ Response:
 
 
 
-## Get XRP Distribution
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/network/xrpDistribution.js "Source")
+## Get XDV Distribution
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/network/xdvDistribution.js "Source")
 
-Get information on the total amount of XRP in existence and in circulation, by weekly intervals. _(New in [v2.2.0][])_
+Get information on the total amount of XDV in existence and in circulation, by weekly intervals. _(New in [v2.2.0][])_
 
 #### Request Format
 
@@ -1831,12 +1831,12 @@ Get information on the total amount of XRP in existence and in circulation, by w
 *REST*
 
 ```
-GET /v2/network/xrp_distribution
+GET /v2/network/xdv_distribution
 ```
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-xrp-distribution)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-xdv-distribution)
 
 Optionally, you can provide the following query parameters:
 
@@ -1857,23 +1857,23 @@ A successful response uses the HTTP code **200 OK** and has a JSON body with the
 |:---------|:------------------------------|:----------------------------------|
 | `result` | String                        | The value `success` indicates that the body represents a successful response. |
 | `count`  | Integer                       | Number of rows returned.          |
-| `rows`   | Array of Distribution Objects | Weekly snapshots of the XRP distribution. |
+| `rows`   | Array of Distribution Objects | Weekly snapshots of the XDV distribution. |
 
 Each Distribution Object has the following fields:
 
 | Field           | Value                  | Description                       |
 |:----------------|:-----------------------|:----------------------------------|
 | `date`          | String - [Timestamp][] | The time of this snapshot.        |
-| `total`         | String                 | Total XRP in existence.           |
-| `undistributed` | String                 | Aggregate amount of XRP held by Ripple (the company). |
-| `distributed`   | String                 | Aggregate amount of XRP held by others. |
+| `total`         | String                 | Total XDV in existence.           |
+| `undistributed` | String                 | Aggregate amount of XDV held by Divvy (the company). |
+| `distributed`   | String                 | Aggregate amount of XDV held by others. |
 
 #### Example
 
 Request:
 
 ```
-GET /v2/network/xrp_distribution
+GET /v2/network/xdv_distribution
 ```
 
 Response:
@@ -1898,9 +1898,9 @@ Response:
 
 
 ## Get Top Currencies
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/network/topCurrencies.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/network/topCurrencies.js "Source")
 
-Returns the top currencies on the XRP Ledger, ordered from highest rank to lowest. The ranking is determined by the volume and count of transactions and the number of unique counterparties. By default, returns results for the 30-day rolling window ending on the current date. You can specify a date to get results for the 30-day window ending on that date. _(New in [v2.1.0][])_
+Returns the top currencies on the XDV Ledger, ordered from highest rank to lowest. The ranking is determined by the volume and count of transactions and the number of unique counterparties. By default, returns results for the 30-day rolling window ending on the current date. You can specify a date to get results for the 30-day window ending on that date. _(New in [v2.1.0][])_
 
 
 #### Request Format
@@ -1921,7 +1921,7 @@ GET /v2/network/top_currencies/{date}
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-top-currencies)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-top-currencies)
 
 This method uses the following URL parameter:
 
@@ -1952,12 +1952,12 @@ Each Top Currency Object has the following fields:
 | Field                 | Value                      | Description             |
 |:----------------------|:---------------------------|:------------------------|
 | `currency`            | String - [Currency Code][] | The currency this object describes. |
-| `issuer`              | String - [Address][]       | The XRP Ledger address that issues this currency. |
+| `issuer`              | String - [Address][]       | The XDV Ledger address that issues this currency. |
 | `avg_exchange_count`  | [String - Number][]        | Daily average number of [exchanges](#exchange-objects). |
-| `avg_exchange_volume` | [String - Number][]        | Daily average volume of exchanges, normalized to XRP. |
+| `avg_exchange_volume` | [String - Number][]        | Daily average volume of exchanges, normalized to XDV. |
 | `avg_payment_count`   | [String - Number][]        | Daily average number of [payments](#payment-objects). |
-| `avg_payment_volume`  | [String - Number][]        | Daily average volume of payments, normalized to XRP. |
-| `issued_value`        | [String - Number][]        | Total amount of this currency issued by this issuer, normalized to XRP. |
+| `avg_payment_volume`  | [String - Number][]        | Daily average volume of payments, normalized to XDV. |
+| `issued_value`        | [String - Number][]        | Total amount of this currency issued by this issuer, normalized to XDV. |
 
 #### Example
 
@@ -2001,9 +2001,9 @@ Response:
 
 
 ## Get Top Markets
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/network/topMarkets.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/network/topMarkets.js "Source")
 
-Returns the top exchange markets on the XRP Ledger, ordered from highest rank to lowest. The rank is determined by the number and volume of exchanges and the number of counterparties participating. By default, returns top markets for the 30-day rolling window ending on the current date. You can specify a date to get results for the 30-day window ending on that date. _(New in [v2.1.0][])_
+Returns the top exchange markets on the XDV Ledger, ordered from highest rank to lowest. The rank is determined by the number and volume of exchanges and the number of counterparties participating. By default, returns top markets for the 30-day rolling window ending on the current date. You can specify a date to get results for the 30-day window ending on that date. _(New in [v2.1.0][])_
 
 #### Request Format
 
@@ -2023,7 +2023,7 @@ GET /v2/network/top_markets/{date}
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-top-markets)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-top-markets)
 
 This method uses the following URL parameter:
 
@@ -2054,13 +2054,13 @@ Each Top Market object has the following fields:
 | Field                | Value                      | Description              |
 |:---------------------|:---------------------------|:-------------------------|
 | `base_currency`      | String - [Currency Code][] | The base currency for this market. |
-| `base_issuer`        | String - [Address][]       | (Omitted if `base_currency` is XRP) The XRP Ledger address that issues the base currency. |
+| `base_issuer`        | String - [Address][]       | (Omitted if `base_currency` is XDV) The XDV Ledger address that issues the base currency. |
 | `counter_currency`   | String - [Currency Code][] | The counter currency for this market. |
-| `counter_issuer`     | String - [Address][]       | (Omitted if `counter_currency` is XRP) The XRP Ledger address that issues the counter currency. |
+| `counter_issuer`     | String - [Address][]       | (Omitted if `counter_currency` is XDV) The XDV Ledger address that issues the counter currency. |
 | `avg_base_volume`    | String                     | Daily average volume in terms of the base currency. |
 | `avg_counter_volume` | String                     | Daily average volume in terms of the counter currency. |
 | `avg_exchange_count` | String                     | Daily average number of [exchanges](#exchange-objects). |
-| `avg_volume`         | String                     | Daily average volume, normalized to XRP. |
+| `avg_volume`         | String                     | Daily average volume, normalized to XDV. |
 
 #### Example
 
@@ -2086,7 +2086,7 @@ Response:
       "avg_volume": "1.6657039295476614E7",
       "base_currency": "USD",
       "base_issuer": "rvYAfWj5gh67oV6fW32ZzP3Aw4Eubs59B",
-      "counter_currency": "XRP"
+      "counter_currency": "XDV"
     },
     {
       "avg_base_volume": "410510.0286920887",
@@ -2095,7 +2095,7 @@ Response:
       "avg_volume": "9117398.719214212",
       "base_currency": "CNY",
       "base_issuer": "rKiCet8SdvWxPXnAgYarFUXMh1zCPz432Y",
-      "counter_currency": "XRP"
+      "counter_currency": "XDV"
     },
     ...
   ]
@@ -2105,9 +2105,9 @@ Response:
 
 
 ## Get Transaction Costs
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/network/getFees.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/network/getFees.js "Source")
 
-Returns [transaction cost](https://developers.ripple.com/transaction-cost.html) stats per ledger, hour, or day.  The data shows the average, minimum, maximum, and total transaction costs paid for the given interval or ledger. _(New in [v2.2.0][])_
+Returns [transaction cost](https://developers.xdv.io/transaction-cost.html) stats per ledger, hour, or day.  The data shows the average, minimum, maximum, and total transaction costs paid for the given interval or ledger. _(New in [v2.2.0][])_
 
 #### Request Format
 
@@ -2121,7 +2121,7 @@ GET /v2/network/fees
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-transaction-costs)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-transaction-costs)
 
 Optionally, you can provide the following query parameters:
 
@@ -2153,7 +2153,7 @@ Each Fee Summary object has the following fields:
 | `avg`          | Number                     | Average transaction cost paid in this interval. |
 | `min`          | Number                     | Minimum  transaction cost paid in this interval. |
 | `max`          | Number                     | Maximum  transaction cost paid in this interval. |
-| `total`        | Number                     | Total XRP destroyed by transaction costs. |
+| `total`        | Number                     | Total XDV destroyed by transaction costs. |
 | `tx_count`     | Number                     | Number of transactions in this interval. |
 | `date`         | String - [Timestamp][]     | The start time of this interval (time intervals), or the close time of this ledger (`ledger` interval). |
 | `ledger_index` | Integer - [Ledger Index][] | (Only present in `ledger` interval) The ledger this object describes. |
@@ -2207,9 +2207,9 @@ Response:
 
 
 ## Get Fee Stats
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/network/getFeeStats.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/network/getFeeStats.js "Source")
 
-Returns snapshots of the metrics derived from `rippled`'s [`fee` command](https://developers.ripple.com/fee.html). _(New in [v2.3.2][])_
+Returns snapshots of the metrics derived from `divvyd`'s [`fee` command](https://developers.xdv.io/fee.html). _(New in [v2.3.2][])_
 
 #### Request Format
 
@@ -2223,7 +2223,7 @@ GET /v2/network/fee_stats
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-fee-stats)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-fee-stats)
 
 Optionally, you can provide the following query parameters:
 
@@ -2307,9 +2307,9 @@ Response:
 
 
 ## Get Topology
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/network/getTopology.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/network/getTopology.js "Source")
 
-Get known `rippled` servers and peer-to-peer connections between them. _(New in [v2.2.0][])_
+Get known `divvyd` servers and peer-to-peer connections between them. _(New in [v2.2.0][])_
 
 
 #### Request Format
@@ -2324,7 +2324,7 @@ GET /v2/network/topology
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-topology)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-topology)
 
 Optionally, you can provide the following query parameters:
 
@@ -2341,10 +2341,10 @@ A successful response uses the HTTP code **200 OK** and has a JSON body with the
 |:-------------|:----------------------------|:--------------------------------|
 | `result`     | String                      | The value `success` indicates that the body represents a successful response. |
 | `date`       | String - [Timestamp][]      | The time of this measurement.   |
-| `node_count` | Integer                     | Number of `rippled` servers in the topology. |
+| `node_count` | Integer                     | Number of `divvyd` servers in the topology. |
 | `link_count` | Integer                     | Number of links in the topology. |
-| `nodes`      | Array of [Server Objects][] | Details of `rippled` servers in the peer-to-peer network. |
-| `links`      | Array of [Link Objects][]   | Network connections between `rippled` servers in the peer-to-peer network. |
+| `nodes`      | Array of [Server Objects][] | Details of `divvyd` servers in the peer-to-peer network. |
+| `links`      | Array of [Link Objects][]   | Network connections between `divvyd` servers in the peer-to-peer network. |
 
 #### Example
 
@@ -2366,7 +2366,7 @@ Response:
   "nodes": [
     {
       "node_public_key": "n94fDXS3ta92gRSi7DKngh47S7Rg4z1FuNsahvbiakFEg51dLeVa",
-      "version": "rippled-0.31.0-rc1",
+      "version": "divvyd-0.31.0-rc1",
       "uptime": 266431,
       "inbound_count": 24,
       "last_updated": "2016-06-03T21:50:57Z"
@@ -2375,7 +2375,7 @@ Response:
       "node_public_key": "n94h5KNspwUGLaGcdHGxruYNmExWHjPkLcMvwsNrivR9czRp6Lor",
       "ip": "104.247.221.178",
       "port": 51235,
-      "version": "rippled-0.31.0",
+      "version": "divvyd-0.31.0",
       "uptime": 608382,
       "inbound_count": 10,
       "outbound_count": 11,
@@ -2412,9 +2412,9 @@ Response:
 
 
 ## Get Topology Nodes
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/network/getNodes.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/network/getNodes.js "Source")
 
-Get known `rippled` nodes. (This is a subset of the data returned by the [Get Topology method](#get-topology).) _(New in [v2.2.0][])_
+Get known `divvyd` nodes. (This is a subset of the data returned by the [Get Topology method](#get-topology).) _(New in [v2.2.0][])_
 
 #### Request Format
 
@@ -2428,7 +2428,7 @@ GET /v2/network/topology/nodes
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-topology-nodes)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-topology-nodes)
 
 Optionally, you can provide the following query parameters:
 
@@ -2446,8 +2446,8 @@ A successful response uses the HTTP code **200 OK** and has a JSON body with the
 |:---------|:----------------------------|:------------------------------------|
 | `result` | String                      | The value `success` indicates that the body represents a successful response. |
 | `date`   | String - [Timestamp][]      | When this the data was measured.    |
-| `count`  | Integer                     | Number of `rippled` servers described. |
-| `nodes`  | Array of [Server Objects][] | Details of the `rippled` servers in the topology. |
+| `count`  | Integer                     | Number of `divvyd` servers described. |
+| `nodes`  | Array of [Server Objects][] | Details of the `divvyd` servers in the topology. |
 
 #### Example
 
@@ -2468,7 +2468,7 @@ Response:
   "nodes": [
     {
       "node_public_key": "n94BuARkPiYLrMuAVZqMQFhTAGpo12dqUPiH3yrzEnhaEcXfLAnV",
-      "version": "rippled-0.30.1",
+      "version": "divvyd-0.30.1",
       "uptime": 122424,
       "inbound_count": 10,
       "last_updated": "2016-06-06T14:36:52Z"
@@ -2477,7 +2477,7 @@ Response:
       "node_public_key": "n94h5KNspwUGLaGcdHGxruYNmExWHjPkLcMvwsNrivR9czRp6Lor",
       "ip": "104.247.221.178",
       "port": 51235,
-      "version": "rippled-0.31.2",
+      "version": "divvyd-0.31.2",
       "uptime": 38649,
       "inbound_count": 10,
       "outbound_count": 11,
@@ -2503,9 +2503,9 @@ Response:
 
 
 ## Get Topology Node
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/network/getNodes.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/network/getNodes.js "Source")
 
-Get information about a single `rippled` server by its [node public key](#public-keys) (not validator public key). _(New in [v2.2.0][])_
+Get information about a single `divvyd` server by its [node public key](#public-keys) (not validator public key). _(New in [v2.2.0][])_
 
 #### Request Format
 
@@ -2519,7 +2519,7 @@ GET /v2/network/topology/nodes/{pubkey}
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-topology-node)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-topology-node)
 
 This method requires the following URL parameters:
 
@@ -2553,7 +2553,7 @@ Response:
   "node_public_key": "n94h5KNspwUGLaGcdHGxruYNmExWHjPkLcMvwsNrivR9czRp6Lor",
   "ip": "104.247.221.178",
   "port": 51235,
-  "version": "rippled-0.31.2",
+  "version": "divvyd-0.31.2",
   "uptime": 43342,
   "inbound_count": 10,
   "outbound_count": 11,
@@ -2575,9 +2575,9 @@ Response:
 
 
 ## Get Topology Links
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/network/getLinks.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/network/getLinks.js "Source")
 
-Get information on peer-to-peer connections between `rippled` servers. (This is a subset of the data returned by the [Get Topology method](#get-topology).) _(New in [v2.2.0][])_
+Get information on peer-to-peer connections between `divvyd` servers. (This is a subset of the data returned by the [Get Topology method](#get-topology).) _(New in [v2.2.0][])_
 
 #### Request Format
 
@@ -2591,7 +2591,7 @@ GET /v2/network/topology/links
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-topology-links)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-topology-links)
 
 Optionally, you can provide the following query parameters:
 
@@ -2609,7 +2609,7 @@ A successful response uses the HTTP code **200 OK** and has a JSON body with the
 | `result` | String                    | The value `success` indicates that the body represents a successful response. |
 | `date`   | String - [Timestamp][]    | When this data was measured.          |
 | `count`  | Integer                   | Number of links returned.             |
-| `links`  | Array of [Link Objects][] | Links between `rippled` servers.      |
+| `links`  | Array of [Link Objects][] | Links between `divvyd` servers.      |
 
 #### Example
 
@@ -2640,9 +2640,9 @@ Response:
 
 
 ## Get Validator
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/network/getValidators.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/network/getValidators.js "Source")
 
-Get details of a single validator in the [consensus network](https://developers.ripple.com/consensus.html). _(Updated in [v2.4.0][])_
+Get details of a single validator in the [consensus network](https://developers.xdv.io/consensus.html). _(Updated in [v2.4.0][])_
 
 
 #### Request Format
@@ -2657,7 +2657,7 @@ GET /v2/network/validators/{pubkey}
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-validator)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-validator)
 
 This method requires the following URL parameters:
 
@@ -2680,7 +2680,7 @@ A successful response uses the HTTP code **200 OK** and has a JSON body with the
 | `result`                | String                          | The value `success` indicates that the body represents a successful response. |
 | `validation_public_key` | String - Base-58 [Public Key][] | This validator's validator public key. |
 | `domain`                | String                          | (May be omitted) The DNS domain associated with this validator. |
-| `chain`                 | String                          | Ledger hash chain which this validator is currently following. The value `main` indicates the main network and `altnet` indicates the XRP Test Network. Other forks are named `chain.{NUMBER}`, where `{NUMBER}` is a unique number for each fork. |
+| `chain`                 | String                          | Ledger hash chain which this validator is currently following. The value `main` indicates the main network and `altnet` indicates the XDV Test Network. Other forks are named `chain.{NUMBER}`, where `{NUMBER}` is a unique number for each fork. |
 | `unl`                   | Bool                            | True if the validator is part of the ledger chain's recommended UNL. |
 | `current_index`         | Number                          | Ledger index of most recently validated ledger. |
 | `partial`               | Bool                            | True if the most recent validation was a partial one. |
@@ -2734,7 +2734,7 @@ Response:
 
 
 ## Get Validators
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/network/getValidators.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/network/getValidators.js "Source")
 
 Get a list of known validators active in the last 24 hours. _(Updated in [v2.4.0][])_
 
@@ -2751,7 +2751,7 @@ GET /v2/network/validators
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-validators)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-validators)
 
 Optionally, you can provide the following query parameters:
 
@@ -2776,7 +2776,7 @@ A successful response uses the HTTP code **200 OK** and has a JSON body with the
 |:------------------------|:--------------------------------|:-----------------|
 | `validation_public_key` | String - Base-58 [Public Key][] | This validator's validator public key. |
 | `domain`                | String                          | (May be omitted) The DNS domain associated with this validator. |
-| `chain`                 | String                          | Ledger hash chain which this validator is currently following. The value `main` indicates the main network and `altnet` indicates the XRP Test Network. Other forks are named `chain.{NUMBER}`, where `{NUMBER}` is a unique number for each fork. |
+| `chain`                 | String                          | Ledger hash chain which this validator is currently following. The value `main` indicates the main network and `altnet` indicates the XDV Test Network. Other forks are named `chain.{NUMBER}`, where `{NUMBER}` is a unique number for each fork. |
 | `unl`                   | Bool                            | True if the validator is part of the ledger chain's recommended UNL. |
 | `current_index`         | Number                          | Ledger index of most recently validated ledger. |
 | `partial`               | Bool                            | True if the most recent validation was a partial one. |
@@ -2857,7 +2857,7 @@ Response:
 
 
 ## Get Validator Manifests
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/network/getManifests.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/network/getManifests.js "Source")
 
 Retrieve manifests signed by a specified validator. (Manifests, also called _subkey authorizations_, designate the ephemeral key a validator uses to sign proposals and validations.) _(New in [v2.3.7][])_
 
@@ -2875,7 +2875,7 @@ GET /v2/network/validators/{pubkey}/manifests
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-validator-manifests)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-validator-manifests)
 
 This method requires the following URL parameters:
 
@@ -2964,7 +2964,7 @@ Response:
 
 
 ## Get Single Validator Reports
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/network/getValidatorReports.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/network/getValidatorReports.js "Source")
 
 Get a single validator's validation vote stats for 24-hour intervals. _(Updated in [v2.4.0][])_
 
@@ -2980,7 +2980,7 @@ GET /v2/network/validators/{pubkey}/reports
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-single-validator-reports)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-single-validator-reports)
 
 This method requires the following URL parameters:
 
@@ -3016,7 +3016,7 @@ Each Single Validator Report Object describes a validator's performance on a giv
 |:---------------------|:--------------------------------|:-----------------------------|
 | `validation_public_key` | String - Base-58 [Public Key][] | Validator public key. |
 | `date`               | String - [Timestamp][]          | The start time of the date this object describes. |
-| `chain`              | String                          | Ledger hash chain which this validator is currently following. The value `main` indicates the main network and `altnet` indicates the XRP Test Network. Other forks are named `chain.{NUMBER}`, where `{NUMBER}` is a unique number for each fork. |
+| `chain`              | String                          | Ledger hash chain which this validator is currently following. The value `main` indicates the main network and `altnet` indicates the XDV Test Network. Other forks are named `chain.{NUMBER}`, where `{NUMBER}` is a unique number for each fork. |
 | `score`              | String                          | Score of agreement with the ledger chain being followed. |
 | `missed`             | Integer                         | Number of ledgers not validated during the time period. |
 | `total`              | Integer                         | Number of ledgers that could have been validated during the time period. |
@@ -3064,7 +3064,7 @@ Response:
 
 
 ## Get Daily Validator Reports
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/network/getValidatorReports.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/network/getValidatorReports.js "Source")
 
 Get validation vote stats and validator information for all known validators in a 24-hour period.
 
@@ -3080,7 +3080,7 @@ GET /v2/network/validator_reports
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-daily-validator-reports)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-daily-validator-reports)
 
 Optionally, you can provide the following query parameters:
 
@@ -3108,7 +3108,7 @@ Each member in the `reports` array describes one validator's performance on that
 |:---------------------|:--------------------------------|:-----------------------------|
 | `validation_public_key` | String - Base-58 [Public Key][] | Validator public key. |
 | `date`               | String - [Timestamp][]          | The start time of the date this object describes. |
-| `chain`              | String                          | Ledger hash chain which this validator is currently following. The value `main` indicates the main network and `altnet` indicates the XRP Test Network. Other forks are named `chain.{NUMBER}`, where `{NUMBER}` is a unique number for each fork. |
+| `chain`              | String                          | Ledger hash chain which this validator is currently following. The value `main` indicates the main network and `altnet` indicates the XDV Test Network. Other forks are named `chain.{NUMBER}`, where `{NUMBER}` is a unique number for each fork. |
 | `score`              | String                          | Score of agreement with the ledger chain being followed. |
 | `missed`             | Integer                         | Number of ledgers not validated during the time period. |
 | `total`              | Integer                         | Number of ledgers that could have been validated during the time period. |
@@ -3143,10 +3143,10 @@ Response:
 ```
 
 
-## Get rippled Versions
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/network/getVersions.js "Source")
+## Get divvyd Versions
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/network/getVersions.js "Source")
 
-Reports the latest versions of `rippled` available from the official Ripple Yum repositories. _(New in [v2.3.0][].)_
+Reports the latest versions of `divvyd` available from the official Divvy Yum repositories. _(New in [v2.3.0][].)_
 
 #### Request Format
 
@@ -3155,12 +3155,12 @@ Reports the latest versions of `rippled` available from the official Ripple Yum 
 *REST*
 
 ```
-GET /v2/network/rippled_versions
+GET /v2/network/divvyd_versions
 ```
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-rippled-versions)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-divvyd-versions)
 
 
 #### Response Format
@@ -3171,22 +3171,22 @@ A successful response uses the HTTP code **200 OK** and has a JSON body with the
 |:---------|:-------------------------|:---------------------------------------|
 | `result` | String                   | The value `success` indicates that the body represents a successful response. |
 | `count`  | Integer                  | Number of rows returned.               |
-| `rows`   | Array of Version Objects | Description of the latest `rippled` version in each repository. |
+| `rows`   | Array of Version Objects | Description of the latest `divvyd` version in each repository. |
 
 Each Version Object contains the following fields:
 
 | Field     | Value                  | Description                             |
 |:----------|:-----------------------|:----------------------------------------|
-| `date`    | String - [Timestamp][] | The date this `rippled` version was released. |
-| `repo`    | String                 | The Yum repository where this `rippled` is available. The `stable` repository has the latest production version. Other versions are for development and testing. |
-| `version` | String                 | The version string for this version of `rippled`. |
+| `date`    | String - [Timestamp][] | The date this `divvyd` version was released. |
+| `repo`    | String                 | The Yum repository where this `divvyd` is available. The `stable` repository has the latest production version. Other versions are for development and testing. |
+| `version` | String                 | The version string for this version of `divvyd`. |
 
 #### Example
 
 Request:
 
 ```
-GET /v2/network/rippled_versions
+GET /v2/network/divvyd_versions
 ```
 
 Response:
@@ -3219,9 +3219,9 @@ Response:
 
 
 ## Get All Gateways
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/gateways.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/gateways.js "Source")
 
-Get information about [known gateways](https://github.com/ripple/rippled-historical-database/blob/v2.0.4/api/gateways/gateways.json). _(New in [v2.0.4][])_
+Get information about [known gateways](https://github.com/xdv/divvyd-historical-database/blob/v2.0.4/api/gateways/gateways.json). _(New in [v2.0.4][])_
 
 #### Request Format
 
@@ -3235,7 +3235,7 @@ GET /v2/gateways/
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-all-gateways)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-all-gateways)
 
 This method takes no query parameters.
 
@@ -3248,10 +3248,10 @@ Each field in the top level JSON object is a [Currency Code][]. The content of e
 | Field      | Value                | Description                              |
 |:-----------|:---------------------|:-----------------------------------------|
 | `name`     | String               | A human-readable proper name for the gateway. |
-| `account`  | String - [Address][] | The [issuing address](https://developers.ripple.com/issuing-and-operational-addresses.html) of this currency. |
-| `featured` | Boolean              | Whether this gateway is considered a "featured" issuer of the currency. Ripple decides which gateways to feature based on responsible business practices, volume, and other measures. |
+| `account`  | String - [Address][] | The [issuing address](https://developers.xdv.io/issuing-and-operational-addresses.html) of this currency. |
+| `featured` | Boolean              | Whether this gateway is considered a "featured" issuer of the currency. Divvy decides which gateways to feature based on responsible business practices, volume, and other measures. |
 | `label`    | String               | (May be omitted) Only provided when the [Currency Code][] is a 40-character hexadecimal value. This is an alternate human-readable name for the currency issued by this gateway. |
-| `assets`   | Array of Strings     | Graphics filenames available for this gateway, if any. (Mostly, these are logos used by XRP Charts.) |
+| `assets`   | Array of Strings     | Graphics filenames available for this gateway, if any. (Mostly, these are logos used by XDV Charts.) |
 
 #### Example
 
@@ -3297,7 +3297,7 @@ Response:
     ],
     "KRW": [
         {
-            "name": "EXRP",
+            "name": "EXDV",
             "account": "rPxU6acYni7FcXzPCMeaPSwKcuS2GTtNVN",
             "featured": true,
             "assets": []
@@ -3315,10 +3315,10 @@ Response:
 
 
 ## Get Gateway
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/gateways.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/gateways.js "Source")
 
 <!-- STYLE_OVERRIDE: gateway, gateways -->
-Get information about a specific gateway from [the Data API's list of known gateways](https://github.com/ripple/rippled-historical-database/blob/v2.0.4/api/gateways/gateways.json). _(New in [v2.0.4][])_
+Get information about a specific gateway from [the Data API's list of known gateways](https://github.com/xdv/divvyd-historical-database/blob/v2.0.4/api/gateways/gateways.json). _(New in [v2.0.4][])_
 
 #### Request Format
 
@@ -3332,7 +3332,7 @@ GET /v2/gateways/{gateway}
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-gateway)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-gateway)
 
 This method requires the following URL parameters:
 
@@ -3350,18 +3350,18 @@ A successful response uses the HTTP code **200 OK** and has a JSON body with the
 |:-------------|:-----------------------|:-------------------------------------|
 | `name`       | String                 | Human-readable name of the gateway.  |
 | `start_date` | String - [Timestamp][] | The approximate date of the first time exchanges for this gateway's currencies appeared in the ledger. |
-| `accounts`   | Array                  | A list of [issuing addresses](https://developers.ripple.com/issuing-and-operational-addresses.html) used by this gateway. (Gateways may use different issuing accounts for different currencies.) |
-| `hotwallets` | Array of [Address][]es | This gateway's [operational addresses](https://developers.ripple.com/issuing-and-operational-addresses.html). |
+| `accounts`   | Array                  | A list of [issuing addresses](https://developers.xdv.io/issuing-and-operational-addresses.html) used by this gateway. (Gateways may use different issuing accounts for different currencies.) |
+| `hotwallets` | Array of [Address][]es | This gateway's [operational addresses](https://developers.xdv.io/issuing-and-operational-addresses.html). |
 | `domain`     | String                 | The domain name where this gateway does business. |
 | `normalized` | String                 | A normalized version of the `name` field suitable for including in URLs. |
-| `assets`     | Array of Strings       | Graphics filenames available for this gateway, if any. (Mostly, these are logos used by XRP Charts.) |
+| `assets`     | Array of Strings       | Graphics filenames available for this gateway, if any. (Mostly, these are logos used by XDV Charts.) |
 
 Each object in the `accounts` field array has the following fields:
 
 | Field        | Value  | Description                                          |
 |:-------------|:-------|:-----------------------------------------------------|
-| `address`    | String | The [issuing address](https://developers.ripple.com/issuing-and-operational-addresses.html) used by this gateway. |
-| `currencies` | Object | Each field in this object is a [Currency Code][] corresponding to a currency issued from this address. Each value is an object with a `featured` boolean indicating whether that currency is featured. Ripple decides which currencies and gateways to feature based on responsible business practices, volume, and other measures. |
+| `address`    | String | The [issuing address](https://developers.xdv.io/issuing-and-operational-addresses.html) used by this gateway. |
+| `currencies` | Object | Each field in this object is a [Currency Code][] corresponding to a currency issued from this address. Each value is an object with a `featured` boolean indicating whether that currency is featured. Divvy decides which currencies and gateways to feature based on responsible business practices, volume, and other measures. |
 
 #### Example
 
@@ -3408,7 +3408,7 @@ Response:
 
 ## Get Currency Image
 
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/gateways.js#L199 "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/gateways.js#L199 "Source")
 
 Retrieve vector icons for various currencies. _(New in [v2.0.4][])_
 
@@ -3428,7 +3428,7 @@ This method requires the following URL parameter:
 
 | Field           | Value  | Description                                       |
 |:----------------|:-------|:--------------------------------------------------|
-| `currencyimage` | String | An image file for a currency, such as `xrp.svg`. See [the source code](https://github.com/ripple/rippled-historical-database/tree/develop/api/gateways/currencyAssets) for a list of available images. |
+| `currencyimage` | String | An image file for a currency, such as `xdv.svg`. See [the source code](https://github.com/xdv/divvyd-historical-database/tree/develop/api/gateways/currencyAssets) for a list of available images. |
 
 #### Response Format
 A successful response uses the HTTP code **200 OK** and has a **Content-Type** header of `image/svg+xml` to indicate that the contents are XML representing a file in [SVG format](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics).
@@ -3469,9 +3469,9 @@ Content-Type: image/svg+xml
 
 
 ## Get Accounts
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/accounts.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/accounts.js "Source")
 
-Retrieve information about the creation of new accounts in the XRP Ledger.
+Retrieve information about the creation of new accounts in the XDV Ledger.
 
 #### Request Format
 
@@ -3485,7 +3485,7 @@ GET /v2/accounts
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-accounts)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-accounts)
 
 Optionally, you can provide the following query parameters:
 
@@ -3557,9 +3557,9 @@ Response:
 
 
 ## Get Account
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/getAccount.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/getAccount.js "Source")
 
-Get creation info for a specific ripple account
+Get creation info for a specific divvy account
 
 #### Request Format
 
@@ -3574,13 +3574,13 @@ GET /v2/accounts/{address}
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-account)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-account)
 
 This method requires the following URL parameters:
 
 | Field     | Value  | Description                  |
 |:----------|:-------|:-----------------------------|
-| `address` | String | XRP Ledger address to query. |
+| `address` | String | XDV Ledger address to query. |
 
 #### Response Format
 
@@ -3619,9 +3619,9 @@ Response:
 
 
 ## Get Account Balances
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/accountBalances.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/accountBalances.js "Source")
 
-Get all balances held or owed by a specific XRP Ledger account.
+Get all balances held or owed by a specific XDV Ledger account.
 
 <!-- MULTICODE_BLOCK_START -->
 
@@ -3633,13 +3633,13 @@ GET /v2/accounts/{address}/balances
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-account-balances)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-account-balances)
 
 This method requires the following URL parameters:
 
 | Field     | Value  | Description                  |
 |:----------|:-------|:-----------------------------|
-| `address` | String | XRP Ledger address to query. |
+| `address` | String | XDV Ledger address to query. |
 
 Optionally, you can provide the following query parameters:
 
@@ -3704,7 +3704,7 @@ Response:
 
 
 ## Get Account Orders
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/accountOrders.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/accountOrders.js "Source")
 
 Get orders in the order books, placed by a specific account. This does not return orders that have already been filled.
 
@@ -3720,13 +3720,13 @@ GET /v2/account/{address}/orders
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-account-orders)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-account-orders)
 
 This method requires the following URL parameters:
 
 | Field     | Value                | Description                  |
 |:----------|:---------------------|:-----------------------------|
-| `address` | String - [Address][] | XRP Ledger address to query. |
+| `address` | String - [Address][] | XDV Ledger address to query. |
 
 Optionally, you can provide the following query parameters:
 
@@ -3760,7 +3760,7 @@ Each order object has the following fields:
 | `specification.quantity`       | [Balance Object][]   | The maximum amount of the base currency this order would buy or sell (depending on the direction). This value decreases as the order gets partially filled. |
 | `specification.totalPrice`     | [Balance Object][]   | The maximum amount of the counter currency the order can spend or gain to buy or sell the base currency. This value decreases as the order gets partially filled. |
 | `properties`                   | Object               | Details of how the order was placed. |
-| `properties.maker`             | String - [Address][] | The XRP Ledger account that placed the order. |
+| `properties.maker`             | String - [Address][] | The XDV Ledger account that placed the order. |
 | `properties.sequence`          | Number               | The sequence number of the transaction that placed this order. |
 | `properties.makerExchangeRate` | [String - Number][]  | The exchange rate from the point of view of the account that submitted the order. |
 
@@ -3830,9 +3830,9 @@ Response:
 
 
 ## Get Account Transaction History
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/accountTransactions.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/accountTransactions.js "Source")
 
-Retrieve a history of transactions that affected a specific account. This includes all transactions the account sent, payments the account received, and payments that rippled through the account.
+Retrieve a history of transactions that affected a specific account. This includes all transactions the account sent, payments the account received, and payments that divvyd through the account.
 
 #### Request Format
 
@@ -3846,13 +3846,13 @@ GET /v2/accounts/{address}/transactions
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-account-transaction-history)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-account-transaction-history)
 
 This method requires the following URL parameters:
 
 | Field     | Value                | Description                  |
 |:----------|:---------------------|:-----------------------------|
-| `address` | String - [Address][] | XRP Ledger address to query. |
+| `address` | String - [Address][] | XDV Ledger address to query. |
 
 
 Optionally, you can provide the following query parameters:
@@ -3863,14 +3863,14 @@ Optionally, you can provide the following query parameters:
 | `end`          | String - [Timestamp][] | End time of query range. The default is the current date. |
 | `min_sequence` | String                 | Minimum sequence number to query.  |
 | `max_sequence` | String                 | Max sequence number to query.      |
-| `type`         | String                 | Restrict results to a specified [transaction type](https://developers.ripple.com/transaction-types.html). |
-| `result`       | String                 | Restrict results to a specified [transaction result](https://developers.ripple.com/transaction-results.html). |
+| `type`         | String                 | Restrict results to a specified [transaction type](https://developers.xdv.io/transaction-types.html). |
+| `result`       | String                 | Restrict results to a specified [transaction result](https://developers.xdv.io/transaction-results.html). |
 | `binary`       | Boolean                | Return results in binary format.   |
 | `descending`   | Boolean                | If `true`, return results in reverse chronological order. The default is `false`. |
 | `limit`        | Integer                | Maximum results per page. The default is 20. Cannot be more than 1,000. |
 | `marker`       | String                 | [Pagination](#pagination) key from previously returned response. |
 
-**Note:** This method cannot return CSV format; only JSON results are supported for raw XRP Ledger transactions.
+**Note:** This method cannot return CSV format; only JSON results are supported for raw XDV Ledger transactions.
 
 
 #### Response Format
@@ -3962,7 +3962,7 @@ Response:
 
 
 ## Get Transaction By Account And Sequence
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/accountTxSeq.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/accountTxSeq.js "Source")
 
 Retrieve a specifc transaction originating from a specified account
 
@@ -3978,13 +3978,13 @@ GET /v2/accounts/{address}/transactions/{sequence}
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-transaction-by-account-and-sequence)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-transaction-by-account-and-sequence)
 
 This method requires the following URL parameters:
 
 | Field      | Value   | Description                  |
 |:-----------|:--------|:-----------------------------|
-| `address`  | String  | XRP Ledger address to query. |
+| `address`  | String  | XDV Ledger address to query. |
 | `sequence` | Integer | Transaction sequence number. |
 
 
@@ -4031,7 +4031,7 @@ Response:
 
 
 ## Get Account Payments
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/accountPayments.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/accountPayments.js "Source")
 
 Retrieve a payments for a specified account
 
@@ -4047,13 +4047,13 @@ GET /v2/accounts/{address}/payments
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-account-payments)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-account-payments)
 
 This method requires the following URL parameters:
 
 | Field     | Value  | Description                  |
 |:----------|:-------|:-----------------------------|
-| `address` | String | XRP Ledger address to query. |
+| `address` | String | XDV Ledger address to query. |
 
 
 Optionally, you can provide the following query parameters:
@@ -4136,7 +4136,7 @@ Response:
 
 
 ## Get Account Exchanges
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/accountExchanges.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/accountExchanges.js "Source")
 
 Retrieve Exchanges for a given account over time.
 
@@ -4160,15 +4160,15 @@ GET /v2/accounts/{address}/exchanges/{base}/{counter}
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-account-exchanges-all)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-account-exchanges-all)
 
 This method requires the following URL parameters:
 
 | Field     | Value  | Description                                             |
 |:----------|:-------|:--------------------------------------------------------|
-| `address` | String | XRP Ledger address to query.                            |
-| `base`    | String | Base currency of the pair, as a [Currency Code][], followed by `+` and the issuer [Address][] unless it's XRP. |
-| `counter` | String | Counter currency of the pair, as a [Currency Code][], followed by `+` and the issuer [Address][] unless it's XRP. |
+| `address` | String | XDV Ledger address to query.                            |
+| `base`    | String | Base currency of the pair, as a [Currency Code][], followed by `+` and the issuer [Address][] unless it's XDV. |
+| `counter` | String | Counter currency of the pair, as a [Currency Code][], followed by `+` and the issuer [Address][] unless it's XDV. |
 
 
 Optionally, you can provide the following query parameters:
@@ -4198,7 +4198,7 @@ A successful response uses the HTTP code **200 OK** and has a JSON body with the
 Request:
 
 ```
-GET /v2/accounts/rsyDrDi9Emy6vPU78qdxovmNpmj5Qh4NKw/exchanges/KRW+rUkMKjQitpgAM5WTGk79xpjT38DEJY283d/XRP?start=2015-08-08T00:00:00Z&end=2015-08-31T00:00:00Z&limit=2
+GET /v2/accounts/rsyDrDi9Emy6vPU78qdxovmNpmj5Qh4NKw/exchanges/KRW+rUkMKjQitpgAM5WTGk79xpjT38DEJY283d/XDV?start=2015-08-08T00:00:00Z&end=2015-08-31T00:00:00Z&limit=2
 
 ```
 
@@ -4220,7 +4220,7 @@ Response:
             "base_currency": "KRW",
             "base_issuer": "rUkMKjQitpgAM5WTGk79xpjT38DEJY283d",
             "buyer": "rnAqwsu2BEbCjacoZmsXrpViqd3miZhHbT",
-            "counter_currency": "XRP",
+            "counter_currency": "XDV",
             "executed_time": "2015-08-08T02:57:40",
             "ledger_index": 15122851,
             "offer_sequence": "1738",
@@ -4238,7 +4238,7 @@ Response:
             "base_issuer": "rUkMKjQitpgAM5WTGk79xpjT38DEJY283d",
             "buyer": "r9xQi5YT8jqVM3wZhbiV94ZKKvGHaVeSDj",
             "client": "rt1.1-26-gbeb68ab",
-            "counter_currency": "XRP",
+            "counter_currency": "XDV",
             "executed_time": "2015-08-08T07:15:00",
             "ledger_index": 15126536,
             "offer_sequence": "1738",
@@ -4256,7 +4256,7 @@ Response:
 
 
 ## Get Account Balance Changes
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/accountBalanceChanges.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/accountBalanceChanges.js "Source")
 
 Retrieve Balance changes for a given account over time.
 
@@ -4272,13 +4272,13 @@ GET /v2/accounts/{address}/balance_changes/
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-account-balance-changes)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-account-balance-changes)
 
 This method requires the following URL parameters:
 
 | Field     | Value  | Description                  |
 |:----------|:-------|:-----------------------------|
-| `address` | String | XRP Ledger address to query. |
+| `address` | String | XDV Ledger address to query. |
 
 
 Optionally, you can provide the following query parameters:
@@ -4327,7 +4327,7 @@ Response:
       "final_balance": "75.169663",
       "tx_index": 7,
       "change_type": "transaction_cost",
-      "currency": "XRP",
+      "currency": "XDV",
       "executed_time": "2016-01-29T22:57:20Z",
       "ledger_index": 18555460,
       "tx_hash": "2B44EBE00728D04658E597A85EC4F71D20503B31ABBF556764AD8F7A80BA72F6"
@@ -4338,7 +4338,7 @@ Response:
       "node_index": 1,
       "tx_index": 4,
       "change_type": "payment_source",
-      "currency": "XRP",
+      "currency": "XDV",
       "executed_time": "2016-01-26T08:32:20Z",
       "ledger_index": 18489336,
       "tx_hash": "E5C6DD25B2DCF534056D98A2EFE3B7CFAE4EBC624854DE3FA436F733A56D8BD9"
@@ -4348,7 +4348,7 @@ Response:
       "final_balance": "100.181663",
       "tx_index": 4,
       "change_type": "transaction_cost",
-      "currency": "XRP",
+      "currency": "XDV",
       "executed_time": "2016-01-26T08:32:20Z",
       "ledger_index": 18489336,
       "tx_hash": "E5C6DD25B2DCF534056D98A2EFE3B7CFAE4EBC624854DE3FA436F733A56D8BD9"
@@ -4361,7 +4361,7 @@ Response:
 
 
 ## Get Account Reports
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/accountReports.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/accountReports.js "Source")
 
 Retrieve daily summaries of payment activity for an account.
 
@@ -4381,13 +4381,13 @@ GET /v2/accounts/{address}/reports/{date}
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-account-reports-by-day)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-account-reports-by-day)
 
 This method requires the following URL parameters:
 
 | Field     | Value  | Description                                             |
 |:----------|:-------|:--------------------------------------------------------|
-| `address` | String | XRP Ledger address to query.                            |
+| `address` | String | XDV Ledger address to query.                            |
 | `date`    | String | _(Optional)_ UTC date for single report. If omitted, use the `start` and `end` query parameters. |
 
 
@@ -4474,7 +4474,7 @@ Response:
 
 
 ## Get Account Transaction Stats
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/accountStats.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/accountStats.js "Source")
 
 Retrieve daily summaries of transaction activity for an account. _(New in [v2.1.0][].)_
 
@@ -4488,13 +4488,13 @@ GET /v2/accounts/{address}/stats/transactions
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-account-transaction-stats)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-account-transaction-stats)
 
 This method requires the following URL parameters:
 
 | Field     | Value  | Description                  |
 |:----------|:-------|:-----------------------------|
-| `address` | String | XRP Ledger address to query. |
+| `address` | String | XDV Ledger address to query. |
 
 
 Optionally, you can provide the following query parameters:
@@ -4524,8 +4524,8 @@ Each Transaction Stats Object has the following fields:
 |:--------------------|:-----------------------|:------------------------------|
 | `date`              | String - [Timestamp][] | This object describes activity on this date. |
 | `transaction_count` | Integer                | The total number of transactions sent by the account on this date. |
-| `result`            | Object                 | Map of [transaction result codes](https://developers.ripple.com/transaction-results.html), indicating how many of each result code occurred in the transactions sent by this account on this date. |
-| `type`              | Object                 | Map of [transaction types](https://developers.ripple.com/transaction-formats.html), indicating how many of each transaction type the account sent on this date. |
+| `result`            | Object                 | Map of [transaction result codes](https://developers.xdv.io/transaction-results.html), indicating how many of each result code occurred in the transactions sent by this account on this date. |
+| `type`              | Object                 | Map of [transaction types](https://developers.xdv.io/transaction-formats.html), indicating how many of each transaction type the account sent on this date. |
 
 #### Example
 
@@ -4573,7 +4573,7 @@ Response:
 
 
 ## Get Account Value Stats
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/accountStats.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/accountStats.js "Source")
 
 Retrieve daily summaries of transaction activity for an account. _(New in [v2.1.0][].)_
 
@@ -4587,13 +4587,13 @@ GET /v2/accounts/{address}/stats/value
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#get-account-value-stats)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#get-account-value-stats)
 
 This method requires the following URL parameters:
 
 | Field     | Value  | Description                  |
 |:----------|:-------|:-----------------------------|
-| `address` | String | XRP Ledger address to query. |
+| `address` | String | XDV Ledger address to query. |
 
 
 Optionally, you can provide the following query parameters:
@@ -4622,7 +4622,7 @@ Each Value Stats Object has the following fields:
 | Field                  | Value                  | Description                |
 |:-----------------------|:-----------------------|:---------------------------|
 | `date`                 | String - [Timestamp][] | This object describes activity on this date. |
-| `value`                | [String - Number][]    | The total of all currency held by this account, normalized to XRP. |
+| `value`                | [String - Number][]    | The total of all currency held by this account, normalized to XDV. |
 | `balance_change_count` | Number                 | The number of times the account's balance changed on this date. |
 
 #### Example
@@ -4660,7 +4660,7 @@ Response:
 
 
 ## Health Check - API
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/checkHealth.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/checkHealth.js "Source")
 
 Check the health of the API service.
 
@@ -4674,7 +4674,7 @@ GET /v2/health/api
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#api-health-check)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#api-health-check)
 
 Optionally, you can provide the following query parameters:
 
@@ -4723,7 +4723,7 @@ Response:
 
 
 ## Health Check - Ledger Importer
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/checkHealth.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/checkHealth.js "Source")
 
 Check the health of the Ledger Importer Service.
 
@@ -4737,7 +4737,7 @@ GET /v2/health/importer
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#importer-health-check)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#importer-health-check)
 
 Optionally, you can provide the following query parameters:
 
@@ -4795,7 +4795,7 @@ Response:
 
 
 ## Health Check - Nodes ETL
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/checkHealth.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/checkHealth.js "Source")
 
 Check the health of the Topology Nodes Extract, Transform, Load (ETL) Service.
 
@@ -4809,7 +4809,7 @@ GET /v2/health/nodes_etl
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#nodes-etl-health-check)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#nodes-etl-health-check)
 
 Optionally, you can provide the following query parameters:
 
@@ -4861,7 +4861,7 @@ Response:
 
 
 ## Health Check - Validations ETL
-[[Source]<br>](https://github.com/ripple/rippled-historical-database/blob/develop/api/routes/checkHealth.js "Source")
+[[Source]<br>](https://github.com/xdv/divvyd-historical-database/blob/develop/api/routes/checkHealth.js "Source")
 
 Check the health of the Validations Extract, Transform, Load (ETL) Service.
 
@@ -4875,7 +4875,7 @@ GET /v2/health/validations_etl
 
 <!-- MULTICODE_BLOCK_END -->
 
-[Try it! >](https://developers.ripple.com/data-api-v2-tool.html#validations-etl-health-check)
+[Try it! >](https://developers.xdv.io/data-api-v2-tool.html#validations-etl-health-check)
 
 Optionally, you can provide the following query parameters:
 
@@ -4935,7 +4935,7 @@ As a REST API, the Data API v2 uses [JSON](http://json.org/)'s native datatypes 
 ### Numbers and Precision
 [String - Number]: #numbers-and-precision
 
-XRP Ledger APIs generally use strings, rather than native JSON numbers, to represent numeric amounts of currency for both XRP and issued currencies. This protects against a loss of precision when using JSON parsers, which may automatically try to represent all JSON numbers in a floating-point format. Within the String value, the numbers are serialized in the same way as native JSON numbers:
+XDV Ledger APIs generally use strings, rather than native JSON numbers, to represent numeric amounts of currency for both XDV and issued currencies. This protects against a loss of precision when using JSON parsers, which may automatically try to represent all JSON numbers in a floating-point format. Within the String value, the numbers are serialized in the same way as native JSON numbers:
 
 * Base-10.
 * Non-zero-prefaced.
@@ -4943,25 +4943,25 @@ XRP Ledger APIs generally use strings, rather than native JSON numbers, to repre
 * May contain `E` or `e` to indicate being raised to a power of 10 (scientific notation). For example, `1.2E5` is equivalent to 1.2×10<sup>5</sup>, or `120000`.
 * No comma (`,`) characters are used.
 
-The precision for amounts of **non-XRP currency** in the XRP Ledger is as follows:
+The precision for amounts of **non-XDV currency** in the XDV Ledger is as follows:
 
 * Minimum nonzero absolute value: `1000000000000000e-96`
 * Maximum value: `9999999999999999e80`
 * Minimum value: `-9999999999999999e80`
 * 15 decimal digits of precision
 
-**XRP** has a different internal representation, and its precision is different:
+**XDV** has a different internal representation, and its precision is different:
 
 * Minimum value: `0`
 * Maximum value: `100000000000` (`1e11`)
 * Precise to the nearest `0.000001` (`1e-6`)
 
-In other words, XRP has the same precision as a 64-bit unsigned integer where each unit is equivalent to 0.000001 XRP.
+In other words, XDV has the same precision as a 64-bit unsigned integer where each unit is equivalent to 0.000001 XDV.
 
 ### Addresses
 [Address]: #addresses
 
-Accounts in the XRP Ledger are identified by a base58 XRP Ledger Address. The address is derived from the account's master [public key](https://en.wikipedia.org/wiki/Public-key_cryptography), which is in turn derived from a secret key. An address is represented as a string in JSON and has the following characteristics:
+Accounts in the XDV Ledger are identified by a base58 XDV Ledger Address. The address is derived from the account's master [public key](https://en.wikipedia.org/wiki/Public-key_cryptography), which is in turn derived from a secret key. An address is represented as a string in JSON and has the following characteristics:
 
 * Between 25 and 35 characters in length
 * Starts with the character `r`
@@ -4970,18 +4970,18 @@ Accounts in the XRP Ledger are identified by a base58 XRP Ledger Address. The ad
 * Includes a 4-byte checksum so that the probability of generating a valid address from random characters is approximately 1 in 2^32
 
 
-For more information, see [Accounts](https://developers.ripple.com/accounts.html).
+For more information, see [Accounts](https://developers.xdv.io/accounts.html).
 
 
 
 ### Public Keys
 [Public Key]: #public-keys
 
-The XRP Ledger uses public keys to verify cryptographic signatures in several places:
+The XDV Ledger uses public keys to verify cryptographic signatures in several places:
 
-* To authorize transactions, a public key is attached to the transaction. The public key must be mathematically associated with the sending XRP Ledger address or the sender's regular key address.
-* To secure peer-to-peer communications between `rippled` servers. This uses a "node public key" that the server generates randomly when it starts with an empty database.
-* To sign validation votes as part of the consensus process. This uses a "validator public key" that the server operator [defines in the config file](https://developers.ripple.com/run-rippled-as-a-validator.html).
+* To authorize transactions, a public key is attached to the transaction. The public key must be mathematically associated with the sending XDV Ledger address or the sender's regular key address.
+* To secure peer-to-peer communications between `divvyd` servers. This uses a "node public key" that the server generates randomly when it starts with an empty database.
+* To sign validation votes as part of the consensus process. This uses a "validator public key" that the server operator [defines in the config file](https://developers.xdv.io/run-divvyd-as-a-validator.html).
 
 Validator public keys and node public keys use the exact same format.
 
@@ -4989,21 +4989,21 @@ Public keys can be represented in hexadecimal or in base-58. In hexadecimal, all
 
 In base-58 format, validator public keys and node public keys always start with the character `n`, commonly followed by the character `9`. A validator public key in base-58 format can be up to 53 characters long. Example node public key: `n9Mxf6qD4J55XeLSCEpqaePW4GjoCR5U1ZeGZGJUCNe3bQa4yQbG`.
 
-XRP Ledger addresses are mathematically associated with a public key. This public key is rarely encoded in base-58, but when it is, it starts with the character `a`.
+XDV Ledger addresses are mathematically associated with a public key. This public key is rarely encoded in base-58, but when it is, it starts with the character `a`.
 
 
 ### Hashes
 [Hash]: #hashes
 
-Many objects in the XRP Ledger, particularly transactions and ledgers, are uniquely identified by a 256-bit hash value. This value is typically calculated as a "SHA-512Half", which calculates a [SHA-512](http://dx.doi.org/10.6028/NIST.FIPS.180-4) hash from some contents, then takes the first 64 characters of the hexadecimal representation. Since the hash of an object is derived from the contents in a way that is extremely unlikely to produce collisions, two objects with the same hash can be considered the same.
+Many objects in the XDV Ledger, particularly transactions and ledgers, are uniquely identified by a 256-bit hash value. This value is typically calculated as a "SHA-512Half", which calculates a [SHA-512](http://dx.doi.org/10.6028/NIST.FIPS.180-4) hash from some contents, then takes the first 64 characters of the hexadecimal representation. Since the hash of an object is derived from the contents in a way that is extremely unlikely to produce collisions, two objects with the same hash can be considered the same.
 
-An XRP Ledger hash value has the following characteristics:
+An XDV Ledger hash value has the following characteristics:
 
 * Exactly 64 characters in length
 * [Hexadecimal](https://en.wikipedia.org/wiki/Hexadecimal) character set: 0-9 and A-F.
 * Typically written in upper case.
 
-**Note:** SHA-512Half has similar security to the officially-defined _SHA-512/256_ hash function. However, the XRP Ledger's usage predates SHA-512/256 and is also easier to implement on top of an existing SHA-512 function. (As of this writing, SHA-512 support in cryptographic libraries is much more common than for SHA-512/256.)
+**Note:** SHA-512Half has similar security to the officially-defined _SHA-512/256_ hash function. However, the XDV Ledger's usage predates SHA-512/256 and is also easier to implement on top of an existing SHA-512 function. (As of this writing, SHA-512 support in cryptographic libraries is much more common than for SHA-512/256.)
 
 
 ### Timestamps
@@ -5030,7 +5030,7 @@ A ledger index is a 32-bit unsigned integer used to identify a ledger. The ledge
 
 The ledger index indicates the order of the ledgers; the [Hash][] value identifies the exact contents of the ledger. Two ledgers with the same hash are always the same. For validated ledgers, hash values and sequence numbers are equally valid and correlate 1:1. However, this is not true for in-progress ledgers:
 
-* Two different `rippled` servers may have different contents for a current ledger with the same ledger index, due to latency in propagating transactions throughout the network.
+* Two different `divvyd` servers may have different contents for a current ledger with the same ledger index, due to latency in propagating transactions throughout the network.
 * There may be multiple closed ledger versions competing to be validated by consensus. These ledger versions have the same sequence number but different contents (and different hashes). Only one of these closed ledgers can become validated.
 * A current ledger's contents change over time, which would cause its hash to change, even though its ledger index number stays the same. The hash of a ledger is not calculated until the ledger is closed.
 
@@ -5039,17 +5039,17 @@ The ledger index indicates the order of the ledgers; the [Hash][] value identifi
 
 A Sequence number is a 32-bit unsigned integer used to identify a transaction or Offer relative to a specific account.
 
-Every [account in the XRP Ledger](https://developers.ripple.com/accounts.html) has a Sequence number, which starts at 1. For a transaction to be relayed to the network and possibly included in a validated ledger, it must have a `Sequence` field that matches the sending account's current `Sequence` number. An account's Sequence field is incremented whenever a transaction from that account is included in a validated ledger (regardless of whether the transaction succeeded or failed). This preserves the order of transactions submitted by an account, and differentiates transactions that would otherwise be the same.
+Every [account in the XDV Ledger](https://developers.xdv.io/accounts.html) has a Sequence number, which starts at 1. For a transaction to be relayed to the network and possibly included in a validated ledger, it must have a `Sequence` field that matches the sending account's current `Sequence` number. An account's Sequence field is incremented whenever a transaction from that account is included in a validated ledger (regardless of whether the transaction succeeded or failed). This preserves the order of transactions submitted by an account, and differentiates transactions that would otherwise be the same.
 
-Every [Offer in the XRP Ledger's decentralized exchange](https://developers.ripple.com/offers.html) is marked with the sending `Account` [Address][] and the `Sequence` value of the [OfferCreate transaction](https://developers.ripple.com/offercreate.html) that created it. These two fields, together, uniquely identify the Offer.
+Every [Offer in the XDV Ledger's decentralized exchange](https://developers.xdv.io/offers.html) is marked with the sending `Account` [Address][] and the `Sequence` value of the [OfferCreate transaction](https://developers.xdv.io/offercreate.html) that created it. These two fields, together, uniquely identify the Offer.
 
 ### Currency Code
 [Currency Code]: #currency-code
 
-There are two kinds of currency code in the XRP Ledger:
+There are two kinds of currency code in the XDV Ledger:
 
-* Three-character currency code. We recommend using all-uppercase [ISO 4217 Currency Codes](http://www.xe.com/iso4217.php). However, any combination of the following characters is permitted: all uppercase and lowercase letters, digits, as well as the symbols `?`, `!`, `@`, `#`, `$`, `%`, `^`, `&`, `*`, `<`, `>`, `(`, `)`, `{`, `}`, `[`, `]`, and <code>&#124;</code>. The currency code `XRP` (all-uppercase) is reserved for XRP and cannot be used by issued currencies.
-* 160-bit hexadecimal values, such as `0158415500000000C1F76FF6ECB0BAC600000000`, according to the XRP Ledger's internal [Currency Format](https://developers.ripple.com/currency-formats.html). This representation is uncommon.
+* Three-character currency code. We recommend using all-uppercase [ISO 4217 Currency Codes](http://www.xe.com/iso4217.php). However, any combination of the following characters is permitted: all uppercase and lowercase letters, digits, as well as the symbols `?`, `!`, `@`, `#`, `$`, `%`, `^`, `&`, `*`, `<`, `>`, `(`, `)`, `{`, `}`, `[`, `]`, and <code>&#124;</code>. The currency code `XDV` (all-uppercase) is reserved for XDV and cannot be used by issued currencies.
+* 160-bit hexadecimal values, such as `0158415500000000C1F76FF6ECB0BAC600000000`, according to the XDV Ledger's internal [Currency Format](https://developers.xdv.io/currency-formats.html). This representation is uncommon.
 
 ## Pagination
 
@@ -5072,7 +5072,7 @@ Transactions have two formats - a compact "binary" format where the defining fie
 | `hash`         | String - [Hash][]         | An identifying hash value unique to this transaction, as a hex string. |
 | `date`         | String - [Timestamp][]    | The time when this transaction was included in a validated ledger. |
 | `ledger_index` | Number - [Ledger Index][] | The sequence number of the ledger that included this ledger. |
-| `tx`           | Object                    | The fields of this transaction object, as defined by the [Transaction Format](https://developers.ripple.com/transaction-formats.html). |
+| `tx`           | Object                    | The fields of this transaction object, as defined by the [Transaction Format](https://developers.xdv.io/transaction-formats.html). |
 | `meta`         | Object                    | Metadata about the results of this transaction. |
 
 ### Binary Format
@@ -5094,7 +5094,7 @@ A "ledger" is one version of the shared global ledger. Each ledger object has th
 | `ledger_hash`       | String - [Hash][]         | An identifying hash unique to this ledger, as a hex string. |
 | `ledger_index`      | Number - [Ledger Index][] | The sequence number of the ledger. Each new ledger has a ledger index 1 higher than the ledger that came before it. |
 | `parent_hash`       | String - [Hash][]         | The identifying hash of the previous ledger. |
-| `total_coins`       | [String - Number][]       | The total number of "drops" of XRP still in existence at the time of the ledger. (Each XRP is 1,000,000 drops.) |
+| `total_coins`       | [String - Number][]       | The total number of "drops" of XDV still in existence at the time of the ledger. (Each XDV is 1,000,000 drops.) |
 | `close_time_res`    | Number                    | The ledger close time is rounded to this many seconds. |
 | `accounts_hash`     | String - [Hash][]         | Hash of the account information contained in this ledger, as hex. |
 | `transactions_hash` | String - [Hash][]         | Hash of the transaction information contained in this ledger, as hex. |
@@ -5105,28 +5105,28 @@ A "ledger" is one version of the shared global ledger. Each ledger object has th
 
 ### Genesis Ledger
 
-Due to a mishap early in the XRP Ledger's history, ledgers 1 through 32569 were lost. Thus, ledger #32570 is the earliest ledger available anywhere. For purposes of the Data API v2, ledger #32570 is considered the _genesis ledger_.
+Due to a mishap early in the XDV Ledger's history, ledgers 1 through 32569 were lost. Thus, ledger #32570 is the earliest ledger available anywhere. For purposes of the Data API v2, ledger #32570 is considered the _genesis ledger_.
 
 ## Account Creation Objects
 
-An account creation object represents the action of creating an account in the XRP Ledger. There are two variations, depending on whether the account was already present in ledger 32570, the earliest ledger available. Accounts that were already present in ledger 32570 are termed _genesis accounts_.
+An account creation object represents the action of creating an account in the XDV Ledger. There are two variations, depending on whether the account was already present in ledger 32570, the earliest ledger available. Accounts that were already present in ledger 32570 are termed _genesis accounts_.
 
 | Field             | Value                        | Description               |
 |:------------------|:-----------------------------|:--------------------------|
 | `address`         | String - [Address][]         | The identifying address of this account, in base-58. |
 | `inception`       | String - [Timestamp][]       | The UTC timestamp when the address was funded. For genesis accounts, this is the timestamp of ledger 32570. |
 | `ledger_index`    | Number - [Ledger Index][]    | The sequence number of the ledger when the account was created, or 32570 for genesis accounts. |
-| `parent`          | String - [Address][]         | (Omitted for genesis accounts) The address that provided the XRP to fund this address. |
+| `parent`          | String - [Address][]         | (Omitted for genesis accounts) The address that provided the XDV to fund this address. |
 | `tx_hash`         | String - [Hash][]            | (Omitted for genesis accounts) The identifying hash of the transaction that funded this account. |
-| `initial_balance` | [String - Number][]          | (Omitted for genesis accounts) The amount of XRP that funded this account. |
-| `genesis_balance` | [String - Number][]          | (Genesis accounts only) The amount of XRP this account held as of ledger #32570. |
+| `initial_balance` | [String - Number][]          | (Omitted for genesis accounts) The amount of XDV that funded this account. |
+| `genesis_balance` | [String - Number][]          | (Genesis accounts only) The amount of XDV this account held as of ledger #32570. |
 | `genesis_index`   | Number - [Sequence Number][] | (Genesis accounts only) The transaction sequence number of the account as of ledger #32570. |
 
 
 ## Exchange Objects
 [Exchange Objects]: #exchange-objects
 
-An exchange object represents an actual exchange of currency, which can occur in the XRP Ledger as the result of executing either an OfferCreate transaction or a Payment transaction. In order for currency to actually change hands, there must be a previously-unfilled Offer previously placed in the ledger with an OfferCreate transaction.
+An exchange object represents an actual exchange of currency, which can occur in the XDV Ledger as the result of executing either an OfferCreate transaction or a Payment transaction. In order for currency to actually change hands, there must be a previously-unfilled Offer previously placed in the ledger with an OfferCreate transaction.
 
 A single transaction can cause several exchanges to occur. In this case, the sender of the transaction is the taker for all the exchanges, but each exchange has a different provider, currency pair, or both.
 
@@ -5135,14 +5135,14 @@ A single transaction can cause several exchanges to occur. In this case, the sen
 | `base_amount`          | Number                       | The amount of the base currency that was traded. |
 | `counter_amount`       | Number                       | The amount of the counter currency that was traded. |
 | `rate`                 | Number                       | The amount of the counter currency acquired per 1 unit of the base currency. |
-| `autobridged_currency` | String - [Currency Code][]   | (May be omitted) If the offer was autobridged (XRP order books were used to bridge two non-XRP currencies), this is the other currency from the offer that executed this exchange. |
-| `autobridged_issuer`   | String - [Address][]         | (May be omitted) If the offer was autobridged (XRP order books were used to bridge two non-XRP currencies), this is the other currency from the offer that executed this exchange. |
+| `autobridged_currency` | String - [Currency Code][]   | (May be omitted) If the offer was autobridged (XDV order books were used to bridge two non-XDV currencies), this is the other currency from the offer that executed this exchange. |
+| `autobridged_issuer`   | String - [Address][]         | (May be omitted) If the offer was autobridged (XDV order books were used to bridge two non-XDV currencies), this is the other currency from the offer that executed this exchange. |
 | `base_currency`        | String - [Currency Code][]   | The base currency.   |
-| `base_issuer`          | String - [Address][]         | (Omitted for XRP) The account that issued the base currency. |
+| `base_issuer`          | String - [Address][]         | (Omitted for XDV) The account that issued the base currency. |
 | `buyer`                | String - [Address][]         | The account that acquired the base currency. |
 | `client`               | String                       | (May be omitted) If the transaction contains a memo indicating what client application sent it, this is the contents of the memo. |
 | `counter_currency`     | String - [Currency Code][]   | The counter currency. |
-| `counter_issuer`       | String - [Address][]         | (Omitted for XRP) The account that issued the counter currency. |
+| `counter_issuer`       | String - [Address][]         | (Omitted for XDV) The account that issued the counter currency. |
 | `executed_time`        | String - [Timestamp][]       | The time the exchange occurred. |
 | `ledger_index`         | Number - [Ledger Index][]    | The sequence number of the ledger that included this transaction. |
 | `offer_sequence`       | Number - [Sequence Number][] | The sequence number of the `provider`'s existing offer in the ledger. |
@@ -5162,16 +5162,16 @@ Reports objects show the activity of a given account over a specific interval of
 |:---------------------------|:-------------------------------------|:---------|
 | `account`                  | String - [Address][]                 | The address of the account to which this report pertains. |
 | `date`                     | String - [Timestamp][]               | The start of the interval to which this report pertains. |
-| `high_value_received`      | [String - Number][]                  | Largest amount received in a single transaction, normalized to XRP (as closely as possible). This includes payments and exchanges. |
-| `high_value_sent`          | [String - Number][]                  | The largest amount sent in a single transaction, normalized to XRP (as closely as possible). |
+| `high_value_received`      | [String - Number][]                  | Largest amount received in a single transaction, normalized to XDV (as closely as possible). This includes payments and exchanges. |
+| `high_value_sent`          | [String - Number][]                  | The largest amount sent in a single transaction, normalized to XDV (as closely as possible). |
 | `payments`                 | Array of [Payment Summary Objects][] | (May be omitted) Array with information on each payment sent or received by the account during this interval. |
-| `payments_received`        | Number                               | The number of payments sent to this account. (This only includes payments for which this account was the destination, not payments that only rippled through the account or consumed the account's offers.) |
+| `payments_received`        | Number                               | The number of payments sent to this account. (This only includes payments for which this account was the destination, not payments that only divvyd through the account or consumed the account's offers.) |
 | `payments_sent`            | Number                               | The number of payments sent by this account. |
 | `receiving_counterparties` | Array or Number                      | If account lists requested, an array of addresses that received payments from this account. Otherwise, the number of different accounts that received payments from this account. |
 | `sending_counterparties`   | Array or Number                      | If account lists requested, an array of addresses that sent payments to this account. Otherwise, the number of different accounts that sent payments to this account. |
-| `total_value`              | [String - Number][]                  | Sum of total value received and sent in payments, normalized to XRP (as closely as possible). |
-| `total_value_received`     | [String - Number][]                  | Sum value of all payments to this account, normalized to XRP (as closely as possible). |
-| `total_value_sent`         | [String - Number][]                  | Sum value of all payments from this account, normalized to XRP (as closely as possible). |
+| `total_value`              | [String - Number][]                  | Sum of total value received and sent in payments, normalized to XDV (as closely as possible). |
+| `total_value_received`     | [String - Number][]                  | Sum value of all payments to this account, normalized to XDV (as closely as possible). |
+| `total_value_sent`         | [String - Number][]                  | Sum value of all payments from this account, normalized to XDV (as closely as possible). |
 
 ## Payment Summary Objects
 [Payment Summary Objects]: #payment-summary-objects
@@ -5183,14 +5183,14 @@ A Payment Summary Object contains a reduced amount of information about a single
 | `tx_hash`          | String - [Hash][]          | The identifying hash of the transaction that caused the payment. |
 | `delivered_amount` | [String - Number][]        | The amount of the destination `currency` actually received by the destination account. |
 | `currency`         | String - [Currency Code][] | The currency delivered to the recipient of the transaction. |
-| `issuer`           | String - [Address][]       | The gateway issuing the currency, or an empty string for XRP. |
+| `issuer`           | String - [Address][]       | The gateway issuing the currency, or an empty string for XDV. |
 | `type`             | String                     | Either `sent` or `received`, indicating whether the perspective account is sender or receiver of this transaction. |
 
 
 ## Payment Objects
 [Payment Objects]: #payment-objects
 
-In the Data API, a Payment Object represents an event where one account sent value to another account. This mostly lines up with XRP Ledger transactions of the `Payment` [transaction type](https://developers.ripple.com/transaction-types.html), except that the Data API does not consider a transaction to be a payment if the sending `Account` and the `Destination` account are the same, or if the transaction failed.
+In the Data API, a Payment Object represents an event where one account sent value to another account. This mostly lines up with XDV Ledger transactions of the `Payment` [transaction type](https://developers.xdv.io/transaction-types.html), except that the Data API does not consider a transaction to be a payment if the sending `Account` and the `Destination` account are the same, or if the transaction failed.
 
 Payment objects have the following fields:
 
@@ -5199,10 +5199,10 @@ Payment objects have the following fields:
 | `amount`                      | [String - Number][]        | The amount of the destination `currency` that the transaction was instructed to send. In the case of Partial Payments, this is a "maximum" amount. |
 | `delivered_amount`            | [String - Number][]        | The amount of the destination `currency` actually received by the destination account. |
 | `destination_balance_changes` | Array                      | Array of [balance change objects][], indicating all changes made to the `destination` account's balances. |
-| `source_balance_changes`      | Array                      | Array of [balance change objects][], indicating all changes to the `source` account's balances (except the XRP transaction cost). |
-| `transaction_cost`            | [String - Number][]        | The amount of XRP spent by the `source` account on the transaction cost. (Prior to [v2.0.4][], this parameter was called `fee`.) |
-| `destination_tag`             | Integer                    | (May be omitted) A [destination tag](https://developers.ripple.com/become-an-xrp-ledger-gateway.html#source-and-destination-tags) specified in this payment. |
-| `source_tag`                  | Integer                    | (May be omitted) A [source tag](https://developers.ripple.com/become-an-xrp-ledger-gateway.html#source-and-destination-tags) specified in this payment. |
+| `source_balance_changes`      | Array                      | Array of [balance change objects][], indicating all changes to the `source` account's balances (except the XDV transaction cost). |
+| `transaction_cost`            | [String - Number][]        | The amount of XDV spent by the `source` account on the transaction cost. (Prior to [v2.0.4][], this parameter was called `fee`.) |
+| `destination_tag`             | Integer                    | (May be omitted) A [destination tag](https://developers.xdv.io/become-an-xdv-ledger-gateway.html#source-and-destination-tags) specified in this payment. |
+| `source_tag`                  | Integer                    | (May be omitted) A [source tag](https://developers.xdv.io/become-an-xdv-ledger-gateway.html#source-and-destination-tags) specified in this payment. |
 | `currency`                    | String - [Currency Code][] | The currency that the `destination` account received. |
 | `destination`                 | String - [Address][]       | The account that received the payment. |
 | `executed_time`               | String - [Timestamp][]     | The time the ledger that included this payment closed. |
@@ -5216,15 +5216,15 @@ Payment objects have the following fields:
 [balance change objects]: #balance-objects-and-balance-change-objects
 [Balance Object]: #balance-objects-and-balance-change-objects
 
-Balance objects represent an XRP Ledger account's balance in a specific currency with a specific counterparty at a single point in time. Balance change objects represent a change to such balances that occurs in transaction execution.
+Balance objects represent an XDV Ledger account's balance in a specific currency with a specific counterparty at a single point in time. Balance change objects represent a change to such balances that occurs in transaction execution.
 
-A single XRP Ledger transaction may cause changes to balances with several counterparties, as well as changes to XRP.
+A single XDV Ledger transaction may cause changes to balances with several counterparties, as well as changes to XDV.
 
 Balance objects and Balance Change objects have the same format, with the following fields:
 
 | Field          | Value                      | Description                    |
 |:---------------|:---------------------------|:-------------------------------|
-| `counterparty` | String - [Address][]       | The counterparty, or issuer, of the `currency`. In the case of XRP, this is an empty string. |
+| `counterparty` | String - [Address][]       | The counterparty, or issuer, of the `currency`. In the case of XDV, this is an empty string. |
 | `currency`     | String - [Currency Code][] | The currency for which this balance changed. |
 | `value`        | [String - Number][]        | The amount of the `currency` that the associated account gained or lost. In balance change objects, this value can be positive (for amounts gained) or negative (for amounts lost). In balance objects, this value can be positive (for amounts the counterparty owes the account) or negative (for amounts owed to the counterparty). |
 
@@ -5240,12 +5240,12 @@ Balance Change Descriptors have the following fields:
 |:----------------|:---------------------------|:------------------------------|
 | `amount_change` | [String - Number][]        | The difference in the amount of currency held before and after this change. _(Prior to [v2.0.6][], this field was called `change`.)_ |
 | `final_balance` | [String - Number][]        | The balance after the change occurred. |
-| `node_index`    | Number (or `null`)         | This balance change is represented by the entry at this index of the ModifiedNodes array within the metadata section of the transaction that executed this balance change. **Note:** When the transaction cost is combined with other changes to XRP balance, the transaction cost has a `node_index` of **null** instead. |
+| `node_index`    | Number (or `null`)         | This balance change is represented by the entry at this index of the ModifiedNodes array within the metadata section of the transaction that executed this balance change. **Note:** When the transaction cost is combined with other changes to XDV balance, the transaction cost has a `node_index` of **null** instead. |
 | `tx_index`      | Number                     | The transaction that executed this balance change is at this index in the array of transactions for the ledger that included it. |
 | `change_type`   | String                     | One of several [](#change-types) describing what caused this balance change to occur. |
 | `currency`      | String - [Currency Code][] | The change affected this currency. |
 | `executed_time` | String - [Timestamp][]     | The time the change occurred. (This is based on the close time of the ledger that included the transaction that executed the change. |
-| `counterparty`  | String - [Address][]       | (Omitted for XRP) The `currency` is held in a trust line to or from this account. _(Prior to [v2.0.6][], this field was called `issuer`.)_ |
+| `counterparty`  | String - [Address][]       | (Omitted for XDV) The `currency` is held in a trust line to or from this account. _(Prior to [v2.0.6][], this field was called `issuer`.)_ |
 | `ledger_index`  | Number - [Ledger Index][]  | The sequence number of the ledger that included the transaction that executed this balance change. |
 | `tx_hash`       | String - [Hash][]          | The identifying hash of the transaction that executed this balance change. |
 
@@ -5255,7 +5255,7 @@ The following values are valid for the `change_type` field of a Balance Change D
 
 | Value                 | Meaning                                              |
 |:----------------------|:-----------------------------------------------------|
-| `transaction_cost`    | This balance change reflects XRP that was destroyed to relay a transaction. _(Prior to [v2.0.4][], this was `network fee` instead.)_ |
+| `transaction_cost`    | This balance change reflects XDV that was destroyed to relay a transaction. _(Prior to [v2.0.4][], this was `network fee` instead.)_ |
 | `payment_destination` | This balance change reflects currency that was received from a payment. |
 | `payment_source`      | This balance change reflects currency that was spent in a payment. |
 | `exchange`            | This balance change reflects currency that was traded for other currency, or the same currency from a different issuer. This can occur in the middle of payment execution as well as from offers. |
@@ -5270,8 +5270,8 @@ Volume objects represent the total volumes of money moved, in either payments or
 | `components`    | Array of Objects       | The data that was used to assemble this total. For payment volume, each object represents payments in a particular currency and issuer. For exchange volume, each object represents a market between two currencies. |
 | `count`         | Number                 | The total number of exchanges in this period. |
 | `end_time`      | String - [Timestamp][] | The end time of this interval.    |
-| `exchange`      | Object                 | Indicates the display currency used, as with fields `currency` and (except for XRP) `issuer`. All amounts are normalized by first converting to XRP, and then to the display currency specified in the request. |
-| `exchange_rate` | Number                 | The exchange rate to the displayed currency from XRP. |
+| `exchange`      | Object                 | Indicates the display currency used, as with fields `currency` and (except for XDV) `issuer`. All amounts are normalized by first converting to XDV, and then to the display currency specified in the request. |
+| `exchange_rate` | Number                 | The exchange rate to the displayed currency from XDV. |
 | `start_time`    | String - [Timestamp][] | The start of this period.         |
 | `total`         | Number                 | Total volume of all recorded exchanges in the period. |
 
@@ -5280,17 +5280,17 @@ Volume objects represent the total volumes of money moved, in either payments or
 [Server Object]: #server-objects
 [Server Objects]: #server-objects
 
-A "Server Object" describes one `rippled` server in the XRP Ledger peer-to-peer network. Server objects are returned by the [Get Topology](#get-topology), [Get Toplogy Nodes](#get-topology-nodes), and [Get Topology Node](#get-topology-node) methods. The Data API collects reported network topology approximately every 30 seconds using the [peer crawler](https://developers.ripple.com/peer-protocol.html#peer-crawler).
+A "Server Object" describes one `divvyd` server in the XDV Ledger peer-to-peer network. Server objects are returned by the [Get Topology](#get-topology), [Get Toplogy Nodes](#get-topology-nodes), and [Get Topology Node](#get-topology-node) methods. The Data API collects reported network topology approximately every 30 seconds using the [peer crawler](https://developers.xdv.io/peer-protocol.html#peer-crawler).
 
 Server objects have the following fields, with some only appearing if the request specified a verbose response:
 
 | Field              | Value                           | Description           |
 |:-------------------|:--------------------------------|:----------------------|
 | `node_public_key`  | String - Base-58 [Public Key][] | The public key used by this server to sign its peer-to-peer communications, not including validations. |
-| `version`          | String                          | The `rippled` version of this server, when it was last asked. |
+| `version`          | String                          | The `divvyd` version of this server, when it was last asked. |
 | `uptime`           | Integer                         | Number of seconds this server has been connected to the network. |
 | `ip`               | String                          | (May be omitted) IP address of the node (may be omitted). |
-| `port`             | Integer                         | (May be omitted) Port where this server speaks the [`rippled` Peer Protocol](https://developers.ripple.com/peer-protocol.html). |
+| `port`             | Integer                         | (May be omitted) Port where this server speaks the [`divvyd` Peer Protocol](https://developers.xdv.io/peer-protocol.html). |
 | `inbound_count`    | Integer                         | (May be omitted) Number of inbound peer-to-peer connections to this server. |
 | `inbound_added`    | String                          | (May be omitted) Number of new inbound peer-to-peer connections since the last measurement. |
 | `inbound_dropped`  | String                          | (May be omitted) Number of inbound peer-to-peer connections dropped since the last measurement. |
@@ -5314,12 +5314,12 @@ Server objects have the following fields, with some only appearing if the reques
 [Link Object]: #link-objects
 [Link Objects]: #link-objects
 
-A Link Object represents a peer-to-peer network connection between two `rippled` servers. It has the following fields:
+A Link Object represents a peer-to-peer network connection between two `divvyd` servers. It has the following fields:
 
 | Field    | Value                           | Description                     |
 |:---------|:--------------------------------|:--------------------------------|
-| `source` | String - Base-58 [Public Key][] | The node public key of the `rippled` making the outgoing connection. |
-| `target` | String - Base-58 [Public Key][] | The node public key of the `rippled` receiving the incoming connection. |
+| `source` | String - Base-58 [Public Key][] | The node public key of the `divvyd` making the outgoing connection. |
+| `target` | String - Base-58 [Public Key][] | The node public key of the `divvyd` receiving the incoming connection. |
 
 
 ## Validation Objects
@@ -5334,9 +5334,9 @@ A Validation Object has the following fields:
 
 | Field                   | Value                           | Description      |
 |:------------------------|:--------------------------------|:-----------------|
-| `count`                 | Integer                         | (May be omitted) The number of `rippled` servers that reported seeing this validation. Not available for old data. |
+| `count`                 | Integer                         | (May be omitted) The number of `divvyd` servers that reported seeing this validation. Not available for old data. |
 | `ledger_hash`           | String - [Hash][]               | The hash of the ledger version this validation vote applies to. |
-| `reporter_public_key`   | String - Base-58 [Public Key][] | The public key of the `rippled` server that first reported this validation, in base-58. |
+| `reporter_public_key`   | String - Base-58 [Public Key][] | The public key of the `divvyd` server that first reported this validation, in base-58. |
 | `validation_public_key` | String - Base-58 [Public Key][] | The public key of the validator used to sign this validation, in base-58. |
 | `signature`             | String                          | The validator's signature of the validation details, in hexadecimal. |
 | `first_datetime`        | String - [Timestamp][]          | Date and time of the first report of this validation. |
@@ -5346,7 +5346,7 @@ A Validation Object has the following fields:
 
 # Running the Historical Database
 
-You can also serve the Data API v2 from your own instance of the Historical Database software, and populate it with transactions from your own `rippled` instance. This is useful if you do not want to depend on Ripple to run the historical database indefinitely, or you want access to historical transactions from within your own intranet.
+You can also serve the Data API v2 from your own instance of the Historical Database software, and populate it with transactions from your own `divvyd` instance. This is useful if you do not want to depend on Divvy to run the historical database indefinitely, or you want access to historical transactions from within your own intranet.
 
 ## Installation
 
@@ -5368,20 +5368,20 @@ To install the Data API v2:
 1. Install HBase. For production use, configure it in distributed mode.
 2. Clone the Historical Database Git Repository:
 
-        git clone https://github.com/ripple/rippled-historical-database.git
+        git clone https://github.com/xdv/divvyd-historical-database.git
 
     (You can also download and extract a zipped release instead.)
 
 3. Use npm to install additional modules:
 
-        cd rippled-historical-database
+        cd divvyd-historical-database
         npm install
 
     The install script creates the required config files: `config/api.config.json` and `config/import.config.json`
 
 4. Change the config files as needed. Remove the `postgres` section from `api.config.json`.
 
-Reports, stats, and aggregated exchange data needs more processing before the API can make it available. This processing uses Apache Storm as well as some custom scripts. See [Storm Setup](https://github.com/ripple/rippled-historical-database/blob/develop/storm/README.md) for more information.
+Reports, stats, and aggregated exchange data needs more processing before the API can make it available. This processing uses Apache Storm as well as some custom scripts. See [Storm Setup](https://github.com/xdv/divvyd-historical-database/blob/develop/storm/README.md) for more information.
 
 At this point, the Data API is installed. See [Services](#services) for the different components that you can run.
 
@@ -5399,11 +5399,11 @@ $ docker-compose run --rm webapp npm test
 
 ### Services
 
-The `rippled` Historical Database consists of several processes that can be run separately.
+The `divvyd` Historical Database consists of several processes that can be run separately.
 
-* [Live Ledger Importer](#live-ledger-importer) - Monitors `rippled` for newly-validated ledgers.
+* [Live Ledger Importer](#live-ledger-importer) - Monitors `divvyd` for newly-validated ledgers.
     Command: `node import/live`
-* [Backfiller](#backfiller) - Populates the database with older ledgers from a `rippled` instance.
+* [Backfiller](#backfiller) - Populates the database with older ledgers from a `divvyd` instance.
     Command: `node import/postgres/backfill`
 * API Server - Provides [REST API access](#api-method-reference) to the data.
     Command:  `npm start` (restarts the server automatically when source files change),
@@ -5411,9 +5411,9 @@ The `rippled` Historical Database consists of several processes that can be run 
 
 ## Importing Data
 
-In order to retrieve data from the `rippled` Historical Database, you must first populate it with data. Broadly speaking, there are two ways this can happen:
+In order to retrieve data from the `divvyd` Historical Database, you must first populate it with data. Broadly speaking, there are two ways this can happen:
 
-* Connect to a `rippled` server that has the historical ledgers, and retrieve them. (Later, you can reconfigure the `rippled` server not to keep history older than what you have in your Historical Database.)
+* Connect to a `divvyd` server that has the historical ledgers, and retrieve them. (Later, you can reconfigure the `divvyd` server not to keep history older than what you have in your Historical Database.)
     * You can choose to retrieve only new ledgers as they are validated, or you can retrieve old ledgers, too.
 * Or, you can load a dump from a database that already has the historical ledger data. (At this time, there are no publicly-available database dumps of historical data.) Use the standard process for your database.
 
@@ -5421,7 +5421,7 @@ In all cases, keep in mind that the integrity of the data is only as good as the
 
 ### Live Ledger Importer
 
-The Live Ledger Importer is a service that connects to a `rippled` server using the WebSocket API, and listens for ledger close events. Each time a new ledger is closed, the Importer requests the latest validated ledger. Although this process has some fault tolerance built in to prevent ledgers from being skipped, the Importer may still miss ledgers.
+The Live Ledger Importer is a service that connects to a `divvyd` server using the WebSocket API, and listens for ledger close events. Each time a new ledger is closed, the Importer requests the latest validated ledger. Although this process has some fault tolerance built in to prevent ledgers from being skipped, the Importer may still miss ledgers.
 
 The Live Ledger Importer includes a secondary process that runs periodically to validate the data already imported and check for gaps in the ledger history.
 
@@ -5436,13 +5436,13 @@ $ node import/live
 
 ### Backfiller
 
-The Backfiller retrieves old ledgers from a `rippled` instance by moving backwards in time. You can optionally provide start and stop indexes to retrieve a specific range of ledgers, by their sequence number.
+The Backfiller retrieves old ledgers from a `divvyd` instance by moving backwards in time. You can optionally provide start and stop indexes to retrieve a specific range of ledgers, by their sequence number.
 
 The `--startIndex` parameter defines the most-recent ledger to retrieve. The Backfiller retrieves this ledger first and then continues retrieving progressively older ledgers. If this parameter is omitted, the Backfiller begins with the newest validated ledger.
 
 The `--stopIndex` parameter defines the oldest ledger to retrieve. The Backfiller stops after it retrieves this ledger. If omitted, the Backfiller continues as far back as possible. Because backfilling goes from most recent to least recent, the stop index should be a smaller than the start index.
 
-**Caution:** The Backfiller is best for filling in relatively short histories of transactions. Importing a complete history of all XRP Ledger transactions using the Backfiller could take weeks. If you want a full history, we recommend acquiring a database dump with early transctions, and importing it directly. For the public server, Ripple (the company) used the internal SQLite database from an offline `rippled` to populate its historical databases with the early transactions, then used the Backfiller to catch up to date after the import finished.
+**Caution:** The Backfiller is best for filling in relatively short histories of transactions. Importing a complete history of all XDV Ledger transactions using the Backfiller could take weeks. If you want a full history, we recommend acquiring a database dump with early transctions, and importing it directly. For the public server, Divvy (the company) used the internal SQLite database from an offline `divvyd` to populate its historical databases with the early transactions, then used the Backfiller to catch up to date after the import finished.
 
 Example usage:
 

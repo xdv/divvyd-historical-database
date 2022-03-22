@@ -78,7 +78,7 @@ describe('account exchanges API endpoint', function() {
   });
 
   it('should make sure /accounts/:account/exhanges/:curr-iss/:counter handles parameters correctly', function(done) {
-    var url = 'http://localhost:' + port + '/v2/accounts/rHsZHqa5oMQNL5hFm4kfLd47aEMYjPstpg/exchanges/USD+rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q/xrp';
+    var url = 'http://localhost:' + port + '/v2/accounts/rHsZHqa5oMQNL5hFm4kfLd47aEMYjPstpg/exchanges/USD+rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q/xdv';
     request({
       url: url,
       json: true,
@@ -90,7 +90,7 @@ describe('account exchanges API endpoint', function() {
       body.exchanges.forEach( function(exch) {
         assert.strictEqual(exch.base_currency, 'USD');
         assert.strictEqual(exch.base_issuer, 'rMwjYedjc7qqtKYVLiAccJSmCwih4LnE2q');
-        assert.strictEqual(exch.counter_currency, 'XRP');
+        assert.strictEqual(exch.counter_currency, 'XDV');
       });
       done();
     });
